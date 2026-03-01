@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⛏️ Greatland Resources (GGP) — Private Investor Portal</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; min-height: 100vh; }
+
+.header { background: linear-gradient(135deg, #0d2b0d, #1a3a1a); border-bottom: 2px solid #238636; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.header-left { display: flex; align-items: center; gap: 14px; }
+.logo { font-size: 36px; }
+.header h1 { font-size: 22px; font-weight: 800; color: #3fb950; }
+.header p { font-size: 12px; color: #8b949e; margin-top: 3px; }
+.header-right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.btn { padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; text-decoration: none; display: inline-block; }
+.btn-green { background: #238636; color: white; }
+.btn-ghost { background: transparent; color: #8b949e; border: 1px solid #30363d; }
+.live-badge { background: #0d2b0d; border: 1px solid #238636; color: #3fb950; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.status-dot { width: 7px; height: 7px; background: #3fb950; border-radius: 50%; display: inline-block; margin-right: 5px; box-shadow: 0 0 5px #3fb950; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; padding: 24px 32px; max-width: 1600px; margin: 0 auto; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-12 { grid-column: span 12; }
+
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; }
+.card.highlight { border-color: #238636; }
+.card-header { padding: 13px 18px; border-bottom: 1px solid #30363d; display: flex; align-items: center; justify-content: space-between; }
+.card-header h2 { font-size: 13px; font-weight: 700; color: #f0f6fc; display: flex; align-items: center; gap: 7px; }
+.card-body { padding: 18px; }
+.card-link { font-size: 11px; color: #58a6ff; text-decoration: none; }
+.card-link:hover { text-decoration: underline; }
+
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat { background: #0d1117; border-radius: 8px; padding: 12px 14px; border: 1px solid #21262d; }
+.stat .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: #8b949e; }
+.stat .val { font-size: 22px; font-weight: 800; margin-top: 4px; }
+.stat .chg { font-size: 11px; margin-top: 3px; }
+.green { color: #3fb950; }
+.red { color: #f85149; }
+.yellow { color: #d29922; }
+.blue { color: #58a6ff; }
+.purple { color: #bc8cff; }
+.muted { color: #8b949e; }
+
+.big-stat { background: #0d1117; border-radius: 10px; padding: 20px; text-align: center; border: 1px solid #238636; }
+.big-stat .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; }
+.big-stat .val { font-size: 36px; font-weight: 900; color: #3fb950; margin: 8px 0 4px; }
+.big-stat .sub { font-size: 12px; color: #8b949e; }
+
+.progress-wrap { margin: 8px 0; }
+.progress-label { display: flex; justify-content: space-between; font-size: 11px; color: #8b949e; margin-bottom: 5px; }
+.progress-bar { height: 8px; background: #21262d; border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 4px; }
+
+.news-item { padding: 11px 0; border-bottom: 1px solid #21262d; }
+.news-item:last-child { border-bottom: none; }
+.news-item .source { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #3fb950; margin-bottom: 3px; }
+.news-item a { font-size: 13px; color: #e6edf3; line-height: 1.5; text-decoration: none; }
+.news-item a:hover { color: #58a6ff; }
+.news-item .meta { font-size: 11px; color: #8b949e; margin-top: 3px; }
+
+.tag { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-right: 4px; }
+.tag-green { background: #0d2b0d; color: #3fb950; border: 1px solid #238636; }
+.tag-blue { background: #0c2233; color: #58a6ff; border: 1px solid #1f6feb; }
+.tag-yellow { background: #2d2a00; color: #d29922; border: 1px solid #9e6a03; }
+.tag-purple { background: #1e0a3c; color: #bc8cff; border: 1px solid #6e40c9; }
+
+.project-card { background: #0d1117; border-radius: 10px; padding: 16px; border: 1px solid #21262d; margin-bottom: 10px; }
+.project-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.project-card p { font-size: 12px; color: #8b949e; line-height: 1.6; }
+.project-card .tags { margin-top: 10px; }
+
+.links-col a { display: flex; align-items: center; gap: 8px; padding: 9px 12px; background: #0d1117; border: 1px solid #21262d; border-radius: 8px; text-decoration: none; color: #e6edf3; font-size: 12px; margin-bottom: 7px; transition: border-color 0.2s; }
+.links-col a:hover { border-color: #3fb950; color: #3fb950; }
+
+.insight-box { background: #0d2b0d; border: 1px solid #238636; border-radius: 10px; padding: 16px 18px; font-size: 13px; line-height: 1.6; margin-top: 14px; }
+.insight-box strong { color: #3fb950; }
+
+.disclaimer { text-align: center; padding: 16px 32px; color: #484f58; font-size: 11px; border-top: 1px solid #21262d; max-width: 1600px; margin: 0 auto; }
+
+@media (max-width: 1024px) { .col-3, .col-4 { grid-column: span 6; } .col-7, .col-8 { grid-column: span 12; } }
+@media (max-width: 768px) { .grid { padding: 12px; gap: 10px; } .col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8 { grid-column: span 12; } }
+
+/* ── MOBILE (max 768px) ─────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Header */
+  .header { padding: 14px 16px; flex-direction: column; align-items: flex-start; }
+  .header h1 { font-size: 16px; }
+  .header-right { display: flex; flex-wrap: wrap; gap: 6px; }
+  .header-right .btn { font-size: 11px; padding: 5px 10px; }
+  .logo { font-size: 28px; }
+
+  /* All internal multi-column grids collapse to 1 column */
+  [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr 1fr"],
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns:repeat(3"] { display: block !important; }
+
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns:repeat(2"] { display: block !important; }
+
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(4"] { display: block !important; }
+
+  /* Stat grids */
+  .stat-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* Big stats */
+  .big-stat .val { font-size: 26px !important; }
+
+  /* Cards */
+  .card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .card-body { padding: 12px !important; }
+
+  /* Border-right separators — remove on mobile */
+  [style*="border-right: 1px solid"],
+  [style*="border-right:1px solid"] { border-right: none !important; border-bottom: 1px solid #21262d !important; }
+
+  /* Chart iframes */
+  iframe { width: 100% !important; }
+
+  /* Summary grid cards */
+  .summary-grid { grid-template-columns: 1fr !important; }
+
+  /* ETF section — padding */
+  [style*="padding:18px;border-right"] { padding: 14px !important; }
+
+  /* Tables — allow scroll */
+  table { display: block; overflow-x: auto; white-space: nowrap; font-size: 11px !important; }
+  th, td { padding: 6px 8px !important; }
+
+  /* Feedback grid */
+  #fc-comments { max-height: 200px; }
+
+  /* Footer */
+  [style*="grid-template-columns:1fr 1fr 1fr"] { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+  [style*="justify-content:space-between"] { flex-wrap: wrap; gap: 8px; }
+
+  /* Ticker tape */
+  .tradingview-widget-container { overflow-x: auto; }
+
+  /* Comment ribbon */
+  #comment-ribbon { flex-wrap: wrap; padding: 8px 12px; }
+  #comment-ribbon input { min-width: 0; font-size: 12px; }
+
+  /* RNS dropdown */
+  #rns-content [style*="grid-template-columns: 1fr 1fr 1fr"] { display: block !important; }
+
+  /* X feed cards */
+  .ggp-x-grid { grid-template-columns: 1fr !important; }
+
+  /* Padding resets */
+  .grid { padding: 10px !important; }
+  body > div[style*="padding:0 0 0 0"] { padding: 10px !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- RNS INTEL DROPDOWN - moved below charts, rendered in grid -->
+<div id="rns-banner" style="display:none">
+  <div style="max-width:1600px; margin:0 auto; padding:0 32px;">
+
+    <!-- Toggle bar -->
+    <div onclick="toggleRNS()" style="cursor:pointer; padding:10px 0; display:flex; align-items:center; justify-content:space-between; user-select:none;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="font-size:13px; font-weight:700; color:#3fb950;">📋 GGP — RNS Intelligence · Key Milestones, Synopsis &amp; Roadmap</span>
+        <span style="background:#238636; color:white; font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px;">LAST 12 MONTHS</span>
+      </div>
+      <span id="rns-chevron" style="color:#3fb950; font-size:16px; transition:transform 0.3s;">▼</span>
+    </div>
+
+    <!-- Dropdown content -->
+    <div id="rns-content" style="padding-bottom:20px;">
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:24px;">
+
+        <!-- COL 1: Key Milestones -->
+        <div>
+          <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#3fb950; margin-bottom:12px; border-bottom:1px solid #1a3a1a; padding-bottom:6px;">⚡ Key Milestones</div>
+          <div style="font-size:12px; line-height:1.9; color:#c9d1d9;">
+            <div>📌 <strong style="color:#3fb950">Jun 2025</strong> — Dual listed on AIM (London) alongside ASX</div>
+            <div>📌 <strong style="color:#3fb950">Aug 2025</strong> — Strong preliminary FY25 results; Telfer integration complete</div>
+            <div>📌 <strong style="color:#3fb950">Oct 2025</strong> — Record 240,000m FY26 drilling program launched</div>
+            <div>📌 <strong style="color:#3fb950">Nov 2025</strong> — West Dome Underground: encouraging high-grade hits confirmed</div>
+            <div>📌 <strong style="color:#3fb950">Dec 1, 2025</strong> — <strong>Havieron Feasibility Study complete</strong> — NPV A$2.9bn post-tax, capex A$1.065bn</div>
+            <div>📌 <strong style="color:#3fb950">Dec 2025</strong> — A$500M debt facility committed for Havieron development</div>
+            <div>📌 <strong style="color:#3fb950">Jan 2026</strong> — Q2 production: 86,273oz gold + 3,528t copper; "very promising" Telfer drilling</div>
+            <div>📌 <strong style="color:#3fb950">Feb 18, 2026</strong> — COO Simon Tyrrell departs; Otto Richter appointed acting COO</div>
+            <div>📌 <strong style="color:#3fb950">Feb 23, 2026</strong> — <strong>H1 FY26: Revenue A$977M · NPAT A$342.9M · Cash A$948M · Zero debt</strong></div>
+          </div>
+        </div>
+
+        <!-- COL 2: Synopsis -->
+        <div>
+          <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#58a6ff; margin-bottom:12px; border-bottom:1px solid #0c2233; padding-bottom:6px;">📊 Synopsis</div>
+          <div style="font-size:12px; line-height:1.8; color:#c9d1d9;">
+            <p style="margin-bottom:10px;">Greatland Resources acquired the Telfer gold-copper mine (WA) in 2025 and has executed exceptionally well since. Telfer is cash-generative from day one — A$658M operating cash flow in H1 FY26 alone.</p>
+            <p style="margin-bottom:10px;">The balance sheet is fortress-grade: <strong style="color:#3fb950">A$948M cash, zero debt</strong> — and a committed A$500M debt facility in reserve for Havieron construction.</p>
+            <p style="margin-bottom:10px;">Havieron Feasibility Study (Dec 2025) confirmed a <strong style="color:#58a6ff">world-class, lowest-quartile-cost mine</strong> with A$2.9bn post-tax NPV — adjacent to Telfer, leveraging existing infrastructure.</p>
+            <p>Record drilling (240,000m FY26), expanding West Dome Underground resource, and strong H2 FY26 guidance maintained. This is a company building a multi-decade mining platform — Telfer funds Havieron.</p>
+          </div>
+          <div style="margin-top:12px; padding:10px 14px; background:#0c2233; border-radius:8px; border-left:3px solid #58a6ff; font-size:12px; color:#c9d1d9;">
+            <strong style="color:#58a6ff;">Key Metrics (H1 FY26):</strong><br>
+            · 154,411oz gold sold @ avg A$5,756/oz<br>
+            · 6,578t copper @ A$13,606/t<br>
+            · AISC: A$2,176/oz — healthy margin<br>
+            · EBITDA: A$560.3M
+          </div>
+        </div>
+
+        <!-- COL 3: Roadmap -->
+        <div>
+          <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#d29922; margin-bottom:12px; border-bottom:1px solid #2d2a00; padding-bottom:6px;">🗺️ Roadmap &amp; Timeline</div>
+          <div style="font-size:12px; color:#c9d1d9;">
+
+            <div style="display:flex; gap:10px; margin-bottom:10px; padding:8px 10px; background:#1a1a0a; border-radius:6px; border-left:3px solid #3fb950;">
+              <div style="min-width:80px; font-weight:700; color:#3fb950;">Q1 2026<br><span style="font-size:10px; color:#8b949e;">NOW</span></div>
+              <div>Updated Telfer Mineral Resource estimate · Maiden West Dome Underground resource · Record drilling program ongoing</div>
+            </div>
+
+            <div style="display:flex; gap:10px; margin-bottom:10px; padding:8px 10px; background:#1a1200; border-radius:6px; border-left:3px solid #d29922;">
+              <div style="min-width:80px; font-weight:700; color:#d29922;">H2 2026</div>
+              <div>Full-year FY26 results · Havieron development financing finalised · FID (Final Investment Decision) expected · New COO appointment</div>
+            </div>
+
+            <div style="display:flex; gap:10px; margin-bottom:10px; padding:8px 10px; background:#140d1a; border-radius:6px; border-left:3px solid #bc8cff;">
+              <div style="min-width:80px; font-weight:700; color:#bc8cff;">2027</div>
+              <div>Havieron construction begins (A$1.065bn capex) · Telfer continues funding operations · Expanded resource base from drilling</div>
+            </div>
+
+            <div style="display:flex; gap:10px; margin-bottom:10px; padding:8px 10px; background:#0c2233; border-radius:6px; border-left:3px solid #58a6ff;">
+              <div style="min-width:80px; font-weight:700; color:#58a6ff;">2028–29</div>
+              <div>Havieron underground development complete · Pre-production milestones · Ramp-up to nameplate capacity</div>
+            </div>
+
+            <div style="display:flex; gap:10px; padding:8px 10px; background:#0d2b0d; border-radius:6px; border-left:3px solid #3fb950;">
+              <div style="min-width:80px; font-weight:700; color:#3fb950;">2030+</div>
+              <div><strong style="color:#3fb950">Havieron first production</strong> — dual mine platform: Telfer + Havieron · A$2.9bn NPV value unlock · Long-life lowest-quartile cost producer</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:16px; padding:10px 14px; background:#161b22; border-radius:8px; font-size:11px; color:#484f58; display:flex; justify-content:space-between; align-items:center;">
+        <span>Sources: LSE RNS · Proactive Investors · Sharecast · H&L · Company announcements · Feb 2026</span>
+        <a href="https://www.londonstockexchange.com/stock/GGP/greatland-resources-limited/regulatory-news" target="_blank" style="color:#58a6ff; text-decoration:none;">View all RNS ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GOLD & SILVER TICKER TAPE -->
+<div style="background:#0a0f1a;border-bottom:1px solid #21262d;">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName":"ASX:GGP","title":"GGP (ASX)"},
+        {"proName":"TVC:GOLD","title":"Gold (USD/oz)"},
+        {"proName":"OANDA:XAUAUD","title":"Gold (AUD/oz)"},
+        {"proName":"TVC:SILVER","title":"Silver (USD/oz)"},
+        {"proName":"OANDA:AUDUSD","title":"AUD/USD"},
+        {"proName":"AMEX:GDX","title":"GDX ETF"},
+        {"proName":"AMEX:GDXJ","title":"GDXJ ETF"}
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">⛏️</div>
+    <div>
+      <h1>Greatland Resources (GGP) — Private Investor Portal</h1>
+      <p><span class="status-dot"></span>AIM: LON:GGP &nbsp;·&nbsp; ASX: GGP &nbsp;·&nbsp; Telfer &amp; Havieron &nbsp;·&nbsp; Paterson Province, WA</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <span class="live-badge">🔴 LIVE FEED</span>
+    <a href="https://www.greatland.com.au" target="_blank" class="btn" style="background:#E8821C; color:white;">🌐 Greatland Website</a>
+    <a href="https://twitter.com/GreatlandGold" target="_blank" class="btn" style="background:#000; color:white;">𝕏 @GreatlandGold</a>
+    <a href="https://t.me/+-vKDs_BOb0E1YTFk" target="_blank" class="btn" style="background:#229ED9; color:white;">✈️ Join Telegram</a>
+    <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-chat" target="_blank" class="btn btn-green">AIM Chart ↗</a>
+    <a href="https://finance.yahoo.com/quote/GGP.AX" target="_blank" class="btn btn-ghost">ASX Chart ↗</a>
+    <span class="btn btn-ghost" id="clock">--:--</span>
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- LIVE PRICE CHARTS -->
+  <div class="col-6 card highlight">
+    <div class="card-header">
+      <h2>📈 AIM London — LON:GGP (pence)</h2>
+      <a href="https://www.tradingview.com/symbols/LSE-GGP/" target="_blank" class="card-link">TradingView ↗</a>
+    </div>
+    <div class="card-body" style="padding:0;">
+      <div style="height:240px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#0d1117; gap:12px;">
+        <div style="font-size:13px; color:#8b949e; text-align:center;">Live interactive chart — opens in TradingView</div>
+        <a href="https://www.tradingview.com/symbols/LSE-GGP/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#E8821C;color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">📈 View LSE:GGP Live Chart ↗</a>
+        <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-price" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:8px 18px;border-radius:8px;font-size:12px;text-decoration:none;">📊 ADVFN Chart ↗</a>
+      </div>
+      <div style="padding: 10px 16px; display:flex; gap:20px; background:#0d1117; border-top:1px solid #21262d; flex-wrap:wrap; align-items:center;">
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">AIM Close</div><div style="font-size:18px;font-weight:800;color:#3fb950;">730p</div><div style="font-size:11px;color:#8b949e;">52wk high 730p</div></div>
+        <div style="font-size:22px;color:#30363d;">→</div>
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">ASX Equiv (live FX)</div><div style="font-size:18px;font-weight:800;color:#58a6ff;" id="aim-aud-equiv">Calculating...</div><div style="font-size:11px;color:#484f58;" id="aim-fx-label">fetching GBP/AUD...</div></div>
+        <div style="width:1px;height:40px;background:#30363d;"></div>
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Live GBP/AUD</div><div style="font-size:18px;font-weight:800;color:#d29922;" id="gbp-aud-rate">—</div><div style="font-size:11px;color:#8b949e;" id="aim-fx-updated">loading...</div></div>
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Exchange</div><div style="font-size:14px;font-weight:700;color:#e6edf3;margin-top:4px;">LSE / AIM</div></div>
+        <div style="width:100%;font-size:11px;color:#484f58;margin-top:4px;">💡 ASX equiv = AIM price (pence) ÷ 100 × live GBP/AUD rate. FX via frankfurter.app.</div>
+      </div>
+
+      <!-- AIM TECHNICAL ANALYSIS -->
+      <div style="background:#1a0e00;border-top:2px solid #E8821C;padding:14px 18px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <span style="font-size:12px;font-weight:800;color:#E8821C;text-transform:uppercase;letter-spacing:1px;">📐 Technical Analysis — LON:GGP (Daily)</span>
+          <span style="font-size:10px;color:#8b949e;" id="aim-ta-updated">Updated: 28 Feb 2026</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;font-size:12px;">
+
+          <div>
+            <div style="color:#E8821C;font-weight:700;margin-bottom:6px;">🔴 Resistance & Fib Extensions</div>
+            <div style="line-height:2;color:#c9d1d9;">
+              <div style="display:flex;justify-content:space-between;"><span>Ext 2.618 — major target</span><span style="color:#f85149;font-weight:700;">1,152p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>Ext 2.0 — bull target</span><span style="color:#f85149;font-weight:700;">984p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>Ext 1.618 — golden ext.</span><span style="color:#f85149;font-weight:700;">880p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>Ext 1.382</span><span style="color:#d29922;font-weight:700;">816p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>Ext 1.272</span><span style="color:#d29922;font-weight:700;">786p</span></div>
+              <div style="display:flex;justify-content:space-between;border-top:1px solid #3d2200;padding-top:4px;"><span>R1 — 52wk High / ATH</span><span style="color:#E8821C;font-weight:800;">730p ⚡</span></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="color:#3fb950;font-weight:700;margin-bottom:6px;">🟢 Support</div>
+            <div style="line-height:2;color:#c9d1d9;">
+              <div style="display:flex;justify-content:space-between;"><span>S1 — Recent high / Fib 23.6%</span><span style="color:#3fb950;font-weight:700;">680p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>S2 — Fib 38.2%</span><span style="color:#3fb950;font-weight:700;">608p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>S3 — Fib 50% / Psych</span><span style="color:#3fb950;font-weight:700;">576p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>S4 — Golden ratio 61.8%</span><span style="color:#3fb950;font-weight:700;">544p</span></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="color:#E8821C;font-weight:700;margin-bottom:6px;">📊 Fibonacci (440p → 730p)</div>
+            <div style="line-height:1.9;color:#c9d1d9;font-size:11px;">
+              <div style="display:flex;justify-content:space-between;"><span style="color:#f85149;">▲ Ext 1.618</span><span style="color:#f85149;">880p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#d29922;">▲ Ext 1.272</span><span style="color:#d29922;">786p</span></div>
+              <div style="display:flex;justify-content:space-between;border-top:1px solid #3d2200;border-bottom:1px solid #3d2200;padding:2px 0;"><span style="color:#E8821C;">● ATH</span><span style="color:#E8821C;font-weight:700;">730p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>▼ 23.6%</span><span>648p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>▼ 38.2%</span><span>608p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>▼ 50.0%</span><span>576p</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#d29922;">▼ 61.8%</span><span style="color:#d29922;">544p</span></div>
+            </div>
+          </div>
+
+        </div>
+        <div style="margin-top:10px;padding:8px 12px;background:#0d0800;border-radius:6px;border-left:3px solid #E8821C;font-size:11px;color:#c9d1d9;line-height:1.8;" id="aim-ta-bullets">
+          · <strong style="color:#E8821C;">Trend:</strong> Strong uptrend — higher highs and higher lows intact since June 2025 AIM listing<br>
+          · <strong style="color:#E8821C;">ATH breakout:</strong> 730p hit 23 Feb — price testing all-time highs, healthy consolidation expected<br>
+          · <strong style="color:#E8821C;">Key level:</strong> 680p = first buy-on-dip zone (Fib 23.6% + prior resistance turned support)<br>
+          · <strong style="color:#E8821C;">RSI:</strong> Likely overbought short-term post H1 results — watch for consolidation before next leg<br>
+          · <strong style="color:#E8821C;">Signal:</strong> Hold above 680p = bullish continuation. Break below 640p = caution, Fib 50% test likely
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-6 card" style="border-color:#58a6ff;">
+    <div class="card-header">
+      <h2>📈 ASX Australia — ASX:GGP (AUD) + UK equiv.</h2>
+      <a href="https://www.tradingview.com/symbols/ASX-GGP/" target="_blank" class="card-link">TradingView ↗</a>
+    </div>
+    <div class="card-body" style="padding:0;">
+      <div class="tradingview-widget-container" style="height:240px;">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+        {
+          "symbols": [["Greatland Resources ASX","ASX:GGP|1D"]],
+          "chartOnly": true,
+          "width": "100%",
+          "height": 240,
+          "locale": "en",
+          "colorTheme": "dark",
+          "autosize": true,
+          "showVolume": false,
+          "chartType": "area",
+          "lineColor": "#58a6ff",
+          "bottomColor": "rgba(88,166,255,0.1)",
+          "topColor": "rgba(88,166,255,0.3)"
+        }
+        </script>
+      </div>
+      <div style="padding: 10px 16px; display:flex; gap:20px; background:#0d1117; border-top:1px solid #21262d; flex-wrap:wrap; align-items:center;">
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">ASX:GGP</div><div style="font-size:18px;font-weight:800;color:#58a6ff;">~A$13.80</div><div style="font-size:11px;color:#3fb950;">↑ Near highs</div></div>
+        <div style="font-size:22px;color:#30363d;">→</div>
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">UK Equiv (live FX)</div><div style="font-size:18px;font-weight:800;color:#3fb950;" id="uk-equiv-live">Calculating...</div><div style="font-size:11px;color:#484f58;" id="fx-label">fetching AUD/GBP...</div></div>
+        <div style="width:1px;height:40px;background:#30363d;"></div>
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Live AUD/GBP</div><div style="font-size:18px;font-weight:800;color:#d29922;" id="fx-rate-live">—</div><div style="font-size:11px;color:#8b949e;" id="fx-updated">loading...</div></div>
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">All-Time High</div><div style="font-size:18px;font-weight:800;color:#d29922;">A$14.43</div><div style="font-size:11px;color:#8b949e;">Jan 2026</div></div>
+        <div style="width:100%;font-size:11px;color:#484f58;margin-top:4px;">💡 UK equiv = ASX price × live AUD/GBP rate. FX via frankfurter.app. ASX price from chart above. <a href="https://finance.yahoo.com/quote/GGP.AX/" target="_blank" style="color:#58a6ff;">Live ASX ↗</a></div>
+      </div>
+
+      <!-- ASX TECHNICAL ANALYSIS -->
+      <div style="background:#1a0e00;border-top:2px solid #E8821C;padding:14px 18px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <span style="font-size:12px;font-weight:800;color:#E8821C;text-transform:uppercase;letter-spacing:1px;">📐 Technical Analysis — ASX:GGP (Daily)</span>
+          <span style="font-size:10px;color:#8b949e;" id="asx-ta-updated">Updated: 28 Feb 2026</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;font-size:12px;">
+
+          <div>
+            <div style="color:#E8821C;font-weight:700;margin-bottom:6px;">🔴 Resistance & Fib Extensions</div>
+            <div style="line-height:2;color:#c9d1d9;">
+              <div style="display:flex;justify-content:space-between;"><span>Ext 2.618 — major target</span><span style="color:#f85149;font-weight:700;">A$22.38</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>Ext 2.0 — bull target</span><span style="color:#f85149;font-weight:700;">A$19.36</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>Ext 1.618 — golden ext.</span><span style="color:#f85149;font-weight:700;">A$17.41</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>Ext 1.382</span><span style="color:#d29922;font-weight:700;">A$16.25</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>Ext 1.272</span><span style="color:#d29922;font-weight:700;">A$15.71</span></div>
+              <div style="display:flex;justify-content:space-between;border-top:1px solid #3d2200;padding-top:4px;"><span>R1 — ATH (Jan 2026)</span><span style="color:#E8821C;font-weight:800;">A$14.43 ⚡</span></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="color:#3fb950;font-weight:700;margin-bottom:6px;">🟢 Support</div>
+            <div style="line-height:2;color:#c9d1d9;">
+              <div style="display:flex;justify-content:space-between;"><span>S1 — 20MA / Fib 23.6%</span><span style="color:#3fb950;font-weight:700;">A$13.11</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>S2 — Fib 38.2%</span><span style="color:#3fb950;font-weight:700;">A$12.55</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>S3 — Fib 50% / Psych</span><span style="color:#3fb950;font-weight:700;">A$11.96</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>S4 — Golden ratio 61.8%</span><span style="color:#3fb950;font-weight:700;">A$11.38</span></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="color:#E8821C;font-weight:700;margin-bottom:6px;">📊 Fibonacci (A$9.50 → A$14.43)</div>
+            <div style="line-height:1.9;color:#c9d1d9;font-size:11px;">
+              <div style="display:flex;justify-content:space-between;"><span style="color:#f85149;">▲ Ext 1.618</span><span style="color:#f85149;">A$17.41</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#d29922;">▲ Ext 1.272</span><span style="color:#d29922;">A$15.71</span></div>
+              <div style="display:flex;justify-content:space-between;border-top:1px solid #3d2200;border-bottom:1px solid #3d2200;padding:2px 0;"><span style="color:#E8821C;">● ATH</span><span style="color:#E8821C;font-weight:700;">A$14.43</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>▼ 23.6%</span><span>A$13.27</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>▼ 38.2%</span><span>A$12.55</span></div>
+              <div style="display:flex;justify-content:space-between;"><span>▼ 50.0%</span><span>A$11.96</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#d29922;">▼ 61.8%</span><span style="color:#d29922;">A$11.38</span></div>
+            </div>
+          </div>
+
+        </div>
+        <div style="margin-top:10px;padding:8px 12px;background:#0d0800;border-radius:6px;border-left:3px solid #E8821C;font-size:11px;color:#c9d1d9;line-height:1.8;" id="asx-ta-bullets">
+          · <strong style="color:#E8821C;">Trend:</strong> Strong uptrend — +25% YTD 2026, bounced off 0.786 Fib on weekly chart (community confirmed on TradingView)<br>
+          · <strong style="color:#E8821C;">ATH:</strong> A$14.43 hit Jan 2026 — currently consolidating ~A$13.80, healthy pullback from highs<br>
+          · <strong style="color:#E8821C;">Key level:</strong> A$13.11 = short-term MA resistance turned support — hold here = bullish<br>
+          · <strong style="color:#E8821C;">20MA:</strong> Rising and below price — uptrend intact. Watch for golden cross confirmation<br>
+          · <strong style="color:#E8821C;">Signal:</strong> Hold above A$13.11 = continuation to ATH retest. Break below A$12.55 = Fib 38.2% test likely
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS STATS -->
+  <div class="col-3">
+    <div class="big-stat">
+      <div class="lbl">AIM (LON:GGP)</div>
+      <div class="val">730p</div>
+      <div class="sub">↑ 52-Week High · 28 Feb 2026</div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="big-stat" style="border-color:#58a6ff;">
+      <div class="lbl">H1 Revenue</div>
+      <div class="val" style="color:#58a6ff;">A$977M</div>
+      <div class="sub">Record · FY2026 H1</div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="big-stat" style="border-color:#d29922;">
+      <div class="lbl">H1 Net Profit (NPAT)</div>
+      <div class="val" style="color:#d29922;">A$342M</div>
+      <div class="sub">Significantly above prior period</div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="big-stat" style="border-color:#bc8cff;">
+      <div class="lbl">H2 Outlook</div>
+      <div class="val" style="color:#bc8cff; font-size:24px; padding-top:6px;">Confident</div>
+      <div class="sub">Telfer on track · FY2026 guidance maintained</div>
+    </div>
+  </div>
+
+  <!-- RNS INTEL DROPDOWN -->
+  <div class="col-12">
+    <div style="background:#0a1f0a; border:1px solid #238636; border-radius:12px; overflow:hidden;">
+
+      <div onclick="toggleRNS()" style="cursor:pointer; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; user-select:none;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:13px; font-weight:700; color:#3fb950;">📋 GGP — RNS Intelligence · Key Milestones, Synopsis &amp; Roadmap</span>
+          <span style="background:#238636; color:white; font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px;">LAST 12 MONTHS</span>
+        </div>
+        <span id="rns-chevron" style="color:#3fb950; font-size:16px; transition:transform 0.3s;">▼</span>
+      </div>
+
+      <div id="rns-content" style="padding:0 20px 20px;">
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:24px;">
+
+          <div>
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#3fb950; margin-bottom:12px; border-bottom:1px solid #1a3a1a; padding-bottom:6px;">⚡ Key Milestones</div>
+            <div style="font-size:12px; line-height:1.9; color:#c9d1d9;">
+              <div>📌 <strong style="color:#3fb950">Jun 2025</strong> — Dual listed on AIM (London) alongside ASX</div>
+              <div>📌 <strong style="color:#3fb950">Aug 2025</strong> — Strong preliminary FY25 results; Telfer integration complete</div>
+              <div>📌 <strong style="color:#3fb950">Oct 2025</strong> — Record 240,000m FY26 drilling program launched</div>
+              <div>📌 <strong style="color:#3fb950">Nov 2025</strong> — West Dome Underground: encouraging high-grade hits confirmed</div>
+              <div>📌 <strong style="color:#3fb950">Dec 1, 2025</strong> — <strong>Havieron Feasibility Study complete</strong> — NPV A$2.9bn post-tax, capex A$1.065bn</div>
+              <div>📌 <strong style="color:#3fb950">Dec 2025</strong> — A$500M debt facility committed for Havieron development</div>
+              <div>📌 <strong style="color:#3fb950">Jan 2026</strong> — Q2: 86,273oz gold + 3,528t copper; "very promising" Telfer drilling</div>
+              <div>📌 <strong style="color:#3fb950">Feb 18, 2026</strong> — COO Simon Tyrrell departs; Otto Richter acting COO</div>
+              <div>📌 <strong style="color:#3fb950">Feb 23, 2026</strong> — <strong>H1 FY26: Revenue A$977M · NPAT A$342.9M · Cash A$948M · Zero debt</strong></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#58a6ff; margin-bottom:12px; border-bottom:1px solid #0c2233; padding-bottom:6px;">📊 Synopsis</div>
+            <div style="font-size:12px; line-height:1.8; color:#c9d1d9;">
+              <p style="margin-bottom:10px;">Greatland acquired Telfer in 2025 and has executed exceptionally well. Telfer is cash-generative from day one — A$658M operating cash flow in H1 FY26 alone.</p>
+              <p style="margin-bottom:10px;">Balance sheet: <strong style="color:#3fb950">A$948M cash, zero debt</strong> — plus a committed A$500M facility in reserve for Havieron construction.</p>
+              <p style="margin-bottom:10px;">Havieron Feasibility Study (Dec 2025) confirmed a <strong style="color:#58a6ff">world-class, lowest-quartile-cost mine</strong> with A$2.9bn post-tax NPV — adjacent to Telfer, using existing infrastructure.</p>
+              <p>Record drilling (240,000m FY26), expanding West Dome Underground, strong H2 guidance. Strategy in one line: <em>Telfer funds Havieron.</em></p>
+            </div>
+            <div style="margin-top:12px; padding:10px 14px; background:#0c2233; border-radius:8px; border-left:3px solid #58a6ff; font-size:12px; color:#c9d1d9;">
+              <strong style="color:#58a6ff;">H1 FY26 Key Numbers:</strong><br>
+              · 154,411oz gold @ avg A$5,756/oz<br>
+              · 6,578t copper @ A$13,606/t<br>
+              · AISC A$2,176/oz · EBITDA A$560.3M
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#d29922; margin-bottom:12px; border-bottom:1px solid #2d2a00; padding-bottom:6px;">🗺️ Roadmap &amp; Timeline</div>
+            <div style="font-size:12px; color:#c9d1d9;">
+              <div style="display:flex; gap:10px; margin-bottom:8px; padding:8px 10px; background:#1a1a0a; border-radius:6px; border-left:3px solid #3fb950;">
+                <div style="min-width:70px; font-weight:700; color:#3fb950;">Q1 2026<br><span style="font-size:10px;color:#8b949e;">NOW</span></div>
+                <div><strong style="color:#3fb950;">🔑 KEY CATALYSTS:</strong> Maiden WDU MRE (est. 1.5–2Moz) · Updated Telfer MRE · WA EPA environmental approvals targeted · 240,000m record drilling ongoing<br><strong style="color:#f85149;">🔥 ~20 Mar 2026 — GDX inclusion expected</strong> (~$140M forced passive buying) · <strong style="color:#bc8cff;">GDXJ Q1 rebalance — weighting likely ↑ from 1.16%</strong></div>
+              </div>
+              <div style="display:flex; gap:10px; margin-bottom:8px; padding:8px 10px; background:#1a1200; border-radius:6px; border-left:3px solid #d29922;">
+                <div style="min-width:70px; font-weight:700; color:#d29922;">H2 2026</div>
+                <div>Permanent COO appointed · Environmental approvals confirmed · Havieron FID announced · $500M debt drawn · WDU pre-feasibility complete · FY26 full-year results (260–310koz guidance; management expects upper end)</div>
+              </div>
+              <div style="display:flex; gap:10px; margin-bottom:8px; padding:8px 10px; background:#140d1a; border-radius:6px; border-left:3px solid #bc8cff;">
+                <div style="min-width:70px; font-weight:700; color:#bc8cff;">2027</div>
+                <div>Havieron box cut + portal construction · UG development ramps up · A$1.065bn capex program underway · Telfer continues as cashflow engine · WDU feasibility outcome → potential 3rd production source</div>
+              </div>
+              <div style="display:flex; gap:10px; margin-bottom:8px; padding:8px 10px; background:#0c2233; border-radius:6px; border-left:3px solid #58a6ff;">
+                <div style="min-width:70px; font-weight:700; color:#58a6ff;">2028–29</div>
+                <div>Havieron decline development · Shaft sinking · Pre-production stockpiling · First ore to Telfer mill · Infrastructure commissioning · WDU potentially in production via MDU spare capacity</div>
+              </div>
+              <div style="display:flex; gap:10px; padding:8px 10px; background:#0d2b0d; border-radius:6px; border-left:3px solid #3fb950;">
+                <div style="min-width:70px; font-weight:700; color:#3fb950;">2030+</div>
+                <div><strong style="color:#3fb950;">Havieron nameplate:</strong> 266koz Au + 9,600t Cu/yr · AISC A$1,610/oz · Dual mine platform live · NPV A$2.9bn (base) / A$5.4bn (spot) unlocked · Potential triple platform with WDU</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div style="margin-top:14px; padding:8px 14px; background:#161b22; border-radius:8px; font-size:11px; color:#484f58; display:flex; justify-content:space-between;">
+          <span>Sources: LSE RNS · Proactive Investors · Sharecast · H&amp;L · Feb 2026</span>
+          <a href="https://www.londonstockexchange.com/stock/GGP/greatland-resources-limited/regulatory-news" target="_blank" style="color:#58a6ff; text-decoration:none;">View all RNS ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KEY MINING RISKS -->
+  <div class="col-12">
+    <div class="card" style="border-color:#f85149;">
+      <div class="card-header" style="background:#1a0a0a;">
+        <h2 style="color:#f85149;">⚠️ Key Mining Risks &amp; Upcoming Catalysts Priced In</h2>
+        <span style="font-size:11px;color:#8b949e;">Deep dive: Havieron FS · Telfer ops · West Dome Underground analysis · Wilson's MRE estimate</span>
+      </div>
+      <div class="card-body" style="padding:0;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;">
+
+          <!-- HAVIERON RISKS -->
+          <div style="padding:16px;border-right:1px solid #30363d;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#f85149;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #3d1111;">🔴 Havieron Development Risks</div>
+            <div style="font-size:12px;line-height:1.8;color:#c9d1d9;">
+              <div style="margin-bottom:8px;"><span style="color:#f85149;font-weight:700;">HIGH</span> — <strong>Capex overrun</strong><br><span style="color:#8b949e;">A$1.065bn target. Underground mines routinely run 15–30% over. Funding cushion exists but discipline critical.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#f85149;font-weight:700;">HIGH</span> — <strong>Environmental approvals</strong><br><span style="color:#8b949e;">WA EPA targeted FY26. Remote Paterson Province. Aboriginal heritage consultations ongoing — any delay pushes FID and construction.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>Gold price sensitivity</strong><br><span style="color:#8b949e;">Base case built on A$4,500/oz. Spot A$6,250 means project looks exceptional now — but a price reversal compresses NPV fast.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>Timeline slippage</strong><br><span style="color:#8b949e;">Underground mine builds routinely slip 12–18 months. First production target (2030) has no buffer built in.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>Grade reconciliation</strong><br><span style="color:#8b949e;">FS grade assumptions vs actual mined tonnes. Havieron is high-grade but underground complexity adds reconciliation risk.</span></div>
+              <div><span style="color:#3fb950;font-weight:700;">LOW</span> — <strong>Financing execution</strong><br><span style="color:#8b949e;">$500M committed by ANZ/ING/HSBC/NAB/Westpac Tier 1 syndicate. Drawdown terms favourable — low risk unless gold crashes.</span></div>
+            </div>
+          </div>
+
+          <!-- TELFER RISKS -->
+          <div style="padding:16px;border-right:1px solid #30363d;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#d29922;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #2d2a00;">🟡 Telfer Operational Risks</div>
+            <div style="font-size:12px;line-height:1.8;color:#c9d1d9;">
+              <div style="margin-bottom:8px;"><span style="color:#f85149;font-weight:700;">HIGH</span> — <strong>Grade decline trajectory</strong><br><span style="color:#8b949e;">Current open pit grade 0.61g/t — well below historical Telfer average. Stage 7 West Dome cutback must deliver higher grade ore or H2 risks disappointment.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#f85149;font-weight:700;">HIGH</span> — <strong>COO vacancy</strong><br><span style="color:#8b949e;">Simon Tyrrell resigned Feb 2026. Acting COO Otto Richter in seat. Operational continuity risk during a critical ramp-up period.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>Tailings Storage (TSF8)</strong><br><span style="color:#8b949e;">Stage 3 lift complete, but TSF management in WA is highly regulated. Failure or regulatory action would halt production.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>WA cost inflation</strong><br><span style="color:#8b949e;">Labour, diesel, equipment all inflated in WA. AISC at A$2,176/oz is manageable at spot but leaves limited margin if costs rise.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>Hedge cap on upside</strong><br><span style="color:#8b949e;">225,004oz hedged Jan 2026–Jun 2027 @ A$4,500/oz avg strike. At spot A$6,250 this locks in significant opportunity cost (~$393M foregone revenue on hedged oz).</span></div>
+              <div><span style="color:#3fb950;font-weight:700;">LOW</span> — <strong>Infrastructure age</strong><br><span style="color:#8b949e;">Telfer built by Newcrest — aging plant. MDU operating at 1.2Mtpa vs 5Mtpa+ historical. Maintenance capex risk manageable but real.</span></div>
+            </div>
+          </div>
+
+          <!-- PRICED IN / NOT PRICED IN -->
+          <div style="padding:16px;border-right:1px solid #30363d;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#58a6ff;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #0c2233;">📊 What's Priced In vs Not</div>
+            <div style="font-size:12px;color:#c9d1d9;">
+              <div style="margin-bottom:12px;padding:10px;background:#0d2b0d;border-radius:6px;border-left:3px solid #3fb950;">
+                <div style="font-weight:700;color:#3fb950;margin-bottom:6px;">✅ Already Priced In</div>
+                <div style="line-height:1.8;">· COO departure — market absorbed, barely moved<br>· H1 results — fully baked in at 730p<br>· Havieron FS capex A$1.065bn — known<br>· $500M debt facility — announced<br>· Conservative FY26 guidance — market expects beat<br>· Record drilling program — widely flagged</div>
+              </div>
+              <div style="padding:10px;background:#1a0a0a;border-radius:6px;border-left:3px solid #f85149;">
+                <div style="font-weight:700;color:#f85149;margin-bottom:6px;">❗ NOT Priced In (Upcoming Risk/Reward)</div>
+                <div style="line-height:1.8;">· <strong style="color:#3fb950;">WDU Maiden MRE (Mar 2026)</strong> — likely positive surprise given drilling results<br>· Environmental approval timing — delay = selloff<br>· Havieron FID announcement — re-rating event<br>· Updated Telfer MRE — West Dome adds ounces<br>· Gold price correction from A$6,250 — high sensitivity<br>· New permanent COO appointment — sentiment boost<br>· Telfer H2 production beat vs 260–310koz guidance</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WEST DOME MRE ESTIMATE -->
+          <div style="padding:16px;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#bc8cff;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1e0a3c;">🔬 West Dome Underground — Wilson's MRE Estimate</div>
+            <div style="font-size:11px;color:#8b949e;margin-bottom:10px;font-style:italic;">⚠️ Analyst estimate only — NOT official JORC resource. Official maiden MRE targeted March 2026.</div>
+
+            <div style="font-size:12px;color:#c9d1d9;margin-bottom:10px;">
+              <strong style="color:#bc8cff;">Drilling data used:</strong><br>
+              · WSC: 700m+ strike · 200m+ dip · 40–70m true width<br>
+              · Best hits: 82.2m @ 1.90g/t; 56.6m @ 2.24g/t<br>
+              · W. Limb: 500m+ strike; 34.5m @ 4.06g/t; 30m @ 5.6g/t<br>
+              · E. Limb: comparable; 30m @ 5.6g/t; 35m @ 2.9g/t<br>
+              · 19 holes, >9,000m Phase 2; system open all directions
+            </div>
+
+            <div style="background:#1e0a3c;border-radius:8px;padding:12px;margin-bottom:10px;">
+              <div style="font-size:11px;font-weight:700;color:#bc8cff;margin-bottom:8px;">Estimated Resource Envelope</div>
+              <div style="font-size:12px;line-height:1.9;">
+                <div style="display:flex;justify-content:space-between;"><span>WSC tonnage (est.)</span><span style="color:#bc8cff;">~21Mt</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>WSC grade (est.)</span><span style="color:#bc8cff;">~1.9g/t Au</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>W+E Limb combined</span><span style="color:#bc8cff;">~3–5Mt @ 4g/t+</span></div>
+                <div style="display:flex;justify-content:space-between;border-top:1px solid #6e40c9;margin-top:6px;padding-top:6px;font-weight:700;"><span>Total Au estimate</span><span style="color:#3fb950;">~1.5–2.0Moz</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Cu (est. avg 0.3%)</span><span style="color:#58a6ff;">~70–100kt Cu</span></div>
+              </div>
+            </div>
+
+            <div style="font-size:12px;color:#c9d1d9;background:#0d1117;border-radius:6px;padding:10px;border-left:3px solid #bc8cff;">
+              <strong style="color:#bc8cff;">Wilson's Read:</strong> If WDU maiden MRE comes in at 1–2Moz (as drilling suggests), this is a <strong>Telfer mine life extension of ~3–5 years</strong> beyond current schedule using existing MDU infrastructure running well below capacity. At A$5,000+/oz gold this adds A$500M–A$1bn+ in NPV value — largely not in the current share price.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAIR VALUE & DCF -->
+  <div class="col-12">
+    <div class="card" style="border-color:#E8821C;">
+      <div class="card-header" style="background:#1a0e00;">
+        <h2 style="color:#E8821C;">💰 Fair Value — PE Multiples & DCF · Wilson's Model</h2>
+        <a href="GGP-Valuation-Report.html" target="_blank" style="background:#E8821C;color:white;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;text-decoration:none;">📄 Full Report (Print to PDF) ↗</a>
+      </div>
+      <div class="card-body" style="padding:14px 18px;">
+
+        <!-- PE TABLE -->
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#E8821C;margin-bottom:10px;">P/E Multiple Scenarios — ASX (A$) &amp; AIM (p) side by side</div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:12px;">
+            <thead>
+              <tr style="background:#1a0e00;">
+                <th style="padding:8px 10px;text-align:left;color:#E8821C;font-size:11px;border-bottom:1px solid #3d2200;">Scenario</th>
+                <th style="padding:8px 10px;text-align:center;color:#8b949e;font-size:11px;border-bottom:1px solid #3d2200;">NPAT</th>
+                <th style="padding:8px 10px;text-align:center;color:#8b949e;font-size:11px;border-bottom:1px solid #3d2200;">EPS</th>
+                <th style="padding:8px 10px;text-align:center;color:#f85149;font-size:11px;border-bottom:1px solid #3d2200;">PE 10×<br>ASX / AIM</th>
+                <th style="padding:8px 10px;text-align:center;color:#d29922;font-size:11px;border-bottom:1px solid #3d2200;">PE 15×<br>ASX / AIM</th>
+                <th style="padding:8px 10px;text-align:center;color:#3fb950;font-size:11px;border-bottom:1px solid #3d2200;">PE 20×<br>ASX / AIM</th>
+                <th style="padding:8px 10px;text-align:center;color:#8b949e;font-size:11px;border-bottom:1px solid #3d2200;">vs A$13.80</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #21262d;">
+                <td style="padding:8px 10px;color:#c9d1d9;">🏭 Telfer Only <span style="font-size:10px;color:#8b949e;">(now)</span></td>
+                <td style="padding:8px 10px;text-align:center;color:#8b949e;">A$685M</td>
+                <td style="padding:8px 10px;text-align:center;color:#8b949e;">A$1.02</td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#f85149;font-weight:700;">A$10.20</span><br><span style="color:#f85149;">497p</span></td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#d29922;font-weight:700;">A$15.30</span><br><span style="color:#d29922;">745p</span></td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#3fb950;font-weight:700;">A$20.40</span><br><span style="color:#3fb950;">994p</span></td>
+                <td style="padding:8px 10px;text-align:center;font-size:11px;color:#8b949e;">13.5× implied</td>
+              </tr>
+              <tr style="border-bottom:1px solid #21262d;background:#1a0e00;">
+                <td style="padding:8px 10px;color:#c9d1d9;">⛏️ +WDU Online <span style="font-size:10px;color:#8b949e;">(2028)</span></td>
+                <td style="padding:8px 10px;text-align:center;color:#8b949e;">A$807M</td>
+                <td style="padding:8px 10px;text-align:center;color:#8b949e;">A$1.20</td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#f85149;font-weight:700;">A$12.00</span><br><span style="color:#f85149;">584p</span></td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#d29922;font-weight:700;">A$18.00</span><br><span style="color:#d29922;">877p</span></td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#3fb950;font-weight:700;">A$24.00</span><br><span style="color:#3fb950;">1,169p</span></td>
+                <td style="padding:8px 10px;text-align:center;font-size:11px;color:#d29922;">+30% at PE15</td>
+              </tr>
+              <tr style="border-bottom:1px solid #21262d;">
+                <td style="padding:8px 10px;color:#c9d1d9;">🚀 Full Platform <span style="font-size:10px;color:#8b949e;">(2030+)</span></td>
+                <td style="padding:8px 10px;text-align:center;color:#8b949e;">A$1,242M</td>
+                <td style="padding:8px 10px;text-align:center;color:#8b949e;">A$1.85</td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#f85149;font-weight:700;">A$18.50</span><br><span style="color:#f85149;">901p</span></td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#d29922;font-weight:700;">A$27.75</span><br><span style="color:#d29922;">1,352p</span></td>
+                <td style="padding:8px 10px;text-align:center;"><span style="color:#3fb950;font-weight:700;">A$37.00</span><br><span style="color:#3fb950;">1,802p</span></td>
+                <td style="padding:8px 10px;text-align:center;font-size:11px;color:#3fb950;">+101% at PE15</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- DCF RESULT -->
+        <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;">
+          <div style="background:#0d2b0d;border:1px solid #238636;border-radius:8px;padding:12px;text-align:center;">
+            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:4px;">DCF Base (10%)</div>
+            <div style="font-size:22px;font-weight:900;color:#3fb950;">A$18.96</div>
+            <div style="font-size:12px;color:#3fb950;">~924p</div>
+            <div style="font-size:10px;color:#8b949e;margin-top:3px;">+37% upside</div>
+          </div>
+          <div style="background:#0c2233;border:1px solid #1f6feb;border-radius:8px;padding:12px;text-align:center;">
+            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:4px;">DCF Bull (8% + spot)</div>
+            <div style="font-size:22px;font-weight:900;color:#58a6ff;">A$27.60</div>
+            <div style="font-size:12px;color:#58a6ff;">~1,344p</div>
+            <div style="font-size:10px;color:#8b949e;margin-top:3px;">+100% upside</div>
+          </div>
+          <div style="background:#1a1200;border:1px solid #9e6a03;border-radius:8px;padding:12px;text-align:center;">
+            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:4px;">DCF Bear (12%)</div>
+            <div style="font-size:22px;font-weight:900;color:#d29922;">A$15.20</div>
+            <div style="font-size:12px;color:#d29922;">~740p</div>
+            <div style="font-size:10px;color:#8b949e;margin-top:3px;">+10% upside</div>
+          </div>
+          <div style="background:#1a0e00;border:2px solid #E8821C;border-radius:8px;padding:12px;text-align:center;">
+            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:4px;">Wilson's Central View</div>
+            <div style="font-size:22px;font-weight:900;color:#E8821C;">A$19–22</div>
+            <div style="font-size:12px;color:#E8821C;">925–1,072p</div>
+            <div style="font-size:10px;color:#8b949e;margin-top:3px;">12-month base</div>
+          </div>
+        </div>
+
+        <!-- $5,000 USD GOLD SCENARIO -->
+        <div style="margin-top:14px;border-top:1px solid #3d2200;padding-top:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#d29922;margin-bottom:10px;">🥇 All Scenarios at USD $5,000/oz Gold (A$8,065/oz at AUD/USD 0.62)</div>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+              <thead>
+                <tr style="background:#2d2a00;">
+                  <th style="padding:7px 10px;text-align:left;color:#d29922;font-size:11px;border-bottom:1px solid #9e6a03;">Scenario @ $5k USD gold</th>
+                  <th style="padding:7px 10px;text-align:center;color:#8b949e;font-size:11px;border-bottom:1px solid #9e6a03;">NPAT</th>
+                  <th style="padding:7px 10px;text-align:center;color:#8b949e;font-size:11px;border-bottom:1px solid #9e6a03;">EPS</th>
+                  <th style="padding:7px 10px;text-align:center;color:#f85149;font-size:11px;border-bottom:1px solid #9e6a03;">PE 10×<br>ASX / AIM</th>
+                  <th style="padding:7px 10px;text-align:center;color:#d29922;font-size:11px;border-bottom:1px solid #9e6a03;">PE 15×<br>ASX / AIM</th>
+                  <th style="padding:7px 10px;text-align:center;color:#3fb950;font-size:11px;border-bottom:1px solid #9e6a03;">PE 20×<br>ASX / AIM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid #21262d;">
+                  <td style="padding:7px 10px;color:#c9d1d9;">🏭 Telfer Only</td>
+                  <td style="padding:7px 10px;text-align:center;color:#8b949e;">A$1,153M</td>
+                  <td style="padding:7px 10px;text-align:center;color:#8b949e;">A$1.72</td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#f85149;font-weight:700;">A$17.20</span><br><span style="color:#f85149;">838p</span></td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#d29922;font-weight:700;">A$25.80</span><br><span style="color:#d29922;">1,257p</span></td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#3fb950;font-weight:700;">A$34.40</span><br><span style="color:#3fb950;">1,676p</span></td>
+                </tr>
+                <tr style="border-bottom:1px solid #21262d;background:#1a1200;">
+                  <td style="padding:7px 10px;color:#c9d1d9;">⛏️ +WDU (2028)</td>
+                  <td style="padding:7px 10px;text-align:center;color:#8b949e;">A$1,269M</td>
+                  <td style="padding:7px 10px;text-align:center;color:#8b949e;">A$1.89</td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#f85149;font-weight:700;">A$18.90</span><br><span style="color:#f85149;">921p</span></td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#d29922;font-weight:700;">A$28.35</span><br><span style="color:#d29922;">1,381p</span></td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#3fb950;font-weight:700;">A$37.80</span><br><span style="color:#3fb950;">1,842p</span></td>
+                </tr>
+                <tr>
+                  <td style="padding:7px 10px;color:#c9d1d9;">🚀 Full Platform (2030+)</td>
+                  <td style="padding:7px 10px;text-align:center;color:#8b949e;">A$2,477M</td>
+                  <td style="padding:7px 10px;text-align:center;color:#8b949e;">A$3.69</td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#f85149;font-weight:700;">A$36.90</span><br><span style="color:#f85149;">1,798p</span></td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#d29922;font-weight:700;">A$55.35</span><br><span style="color:#d29922;">2,697p</span></td>
+                  <td style="padding:7px 10px;text-align:center;"><span style="color:#3fb950;font-weight:700;">A$73.80</span><br><span style="color:#3fb950;">3,596p</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px;">
+            <div style="background:#2d2a00;border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">DCF Base @ $5k USD</div>
+              <div style="font-size:20px;font-weight:900;color:#d29922;">A$34.97</div>
+              <div style="font-size:11px;color:#d29922;">~1,703p · +154% upside</div>
+            </div>
+            <div style="background:#2d2a00;border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">DCF Bull @ $5k USD (8%)</div>
+              <div style="font-size:20px;font-weight:900;color:#3fb950;">~A$44.00</div>
+              <div style="font-size:11px;color:#3fb950;">~2,145p · +219% upside</div>
+            </div>
+            <div style="background:#2d2a00;border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Implied PE @ $5k gold</div>
+              <div style="font-size:20px;font-weight:900;color:#d29922;">8.0×</div>
+              <div style="font-size:11px;color:#8b949e;">On Telfer-only earnings</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;padding:8px 14px;background:#0d0800;border-radius:6px;border-left:3px solid #E8821C;font-size:11px;color:#c9d1d9;line-height:1.8;">
+          · Current price A$13.80 = <strong style="color:#E8821C;">37% discount to DCF base value</strong> (A$5k base) · Argonaut's A$18.50 validated ✅<br>
+          · At <strong style="color:#d29922;">$5,000 USD gold</strong> DCF jumps to <strong style="color:#d29922;">A$34.97 / 1,703p</strong> — 154% upside from current price<br>
+          · <strong style="color:#f85149;">🔥 GDX inclusion ~20 Mar</strong> = ~$140M forced passive buying on top of this valuation<br>
+          · ⚠️ NOT financial advice — <a href="GGP-Valuation-Report.html" target="_blank" style="color:#58a6ff;">Full report ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ETF INCLUSION: GDXJ & GDX -->
+  <div class="col-12">
+    <div class="card" style="border-color:#bc8cff;">
+      <div class="card-header" style="background:#1a0a2e;">
+        <h2 style="color:#bc8cff;">📦 ETF Inclusion — GDXJ &amp; GDX (VanEck)</h2>
+        <span style="font-size:11px;color:#8b949e;">GDXJ: confirmed ✅ · GDX: expected ~20 Mar 2026 🔥</span>
+      </div>
+      <div class="card-body" style="padding:0;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;">
+
+          <!-- GDXJ -->
+          <div style="padding:18px;border-right:1px solid #30363d;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#bc8cff;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1e0a3c;">✅ GDXJ — Junior Gold Miners ETF (CONFIRMED)</div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+              <div style="background:#1e0a3c;border-radius:8px;padding:10px;text-align:center;">
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP Weighting</div>
+                <div style="font-size:24px;font-weight:900;color:#bc8cff;">1.16%</div>
+                <div style="font-size:10px;color:#8b949e;">#25 of 95 holdings</div>
+              </div>
+              <div style="background:#1e0a3c;border-radius:8px;padding:10px;text-align:center;">
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Shares Held</div>
+                <div style="font-size:20px;font-weight:900;color:#bc8cff;">14.15M</div>
+                <div style="font-size:10px;color:#8b949e;">14,152,148 shares</div>
+              </div>
+              <div style="background:#1e0a3c;border-radius:8px;padding:10px;text-align:center;">
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GDXJ AUM</div>
+                <div style="font-size:20px;font-weight:900;color:#bc8cff;">$11.53B</div>
+                <div style="font-size:10px;color:#8b949e;">USD</div>
+              </div>
+              <div style="background:#1e0a3c;border-radius:8px;padding:10px;text-align:center;">
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP Value in ETF</div>
+                <div style="font-size:20px;font-weight:900;color:#3fb950;">~$134M</div>
+                <div style="font-size:10px;color:#8b949e;">USD · as of 26 Feb 2026</div>
+              </div>
+            </div>
+
+            <div style="font-size:12px;line-height:1.8;color:#c9d1d9;margin-bottom:12px;">
+              <div style="margin-bottom:6px;">· GDXJ tracks the <strong>MVIS® Global Junior Gold Miners Index</strong></div>
+              <div style="margin-bottom:6px;">· GGP sits at #25 in GDXJ — top 30% of the fund by weighting</div>
+              <div style="margin-bottom:6px;">· As market cap grows and liquidity increases, weighting will rise at each rebalance</div>
+              <div>· Current weighting likely to <strong>increase at March 2026 rebalance</strong> given strong price performance</div>
+            </div>
+
+            <div style="background:#0d1117;border-radius:8px;padding:10px;font-size:11px;color:#8b949e;">
+              <strong style="color:#bc8cff;">GDXJ Rebalance Schedule (MarketVector)</strong><br>
+              Quarterly: <strong style="color:#e6edf3;">~20 Mar · ~20 Jun · ~19 Sep · ~19 Dec 2026</strong><br>
+              Changes effective the following trading day after implementation.<br>
+              <a href="https://www.marketvector.com/documents/periodic-index-reviews/quarterly" target="_blank" style="color:#58a6ff;">MarketVector schedule ↗</a> · <a href="https://stockanalysis.com/etf/gdxj/holdings/" target="_blank" style="color:#58a6ff;">GDXJ Holdings ↗</a>
+            </div>
+          </div>
+
+          <!-- GDX -->
+          <div style="padding:18px;border-right:1px solid #30363d;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1e0a3c;">
+              <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#f85149;">🔥 GDX — Gold Miners ETF (EXPECTED ~20 MAR 2026)</div>
+              <span style="background:#3d1111;color:#f85149;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;">NOT YET CONFIRMED</span>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+              <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Est. GDX Weighting</div>
+                <div style="font-size:24px;font-weight:900;color:#f85149;">~0.8–1.2%</div>
+                <div style="font-size:10px;color:#8b949e;">Based on float-adj. mkt cap</div>
+              </div>
+              <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Est. Forced Buying</div>
+                <div style="font-size:20px;font-weight:900;color:#f85149;">$112–168M</div>
+                <div style="font-size:10px;color:#8b949e;">USD at 1% of $14B GDX AUM</div>
+              </div>
+              <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GDX AUM</div>
+                <div style="font-size:20px;font-weight:900;color:#d29922;">~$14B</div>
+                <div style="font-size:10px;color:#8b949e;">USD (approx)</div>
+              </div>
+              <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP Mkt Cap (USD)</div>
+                <div style="font-size:20px;font-weight:900;color:#d29922;">~$5.7B</div>
+                <div style="font-size:10px;color:#8b949e;">A$9.25B ÷ AUD/USD</div>
+              </div>
+            </div>
+
+            <div style="font-size:12px;line-height:1.8;color:#c9d1d9;margin-bottom:12px;">
+              <div style="margin-bottom:6px;">· GDX tracks the <strong>NYSE Arca Gold Miners Index</strong> — larger cap producers</div>
+              <div style="margin-bottom:6px;">· GGP market cap of ~$5.7B USD now <strong>comfortably meets minimum threshold</strong> for GDX inclusion</div>
+              <div style="margin-bottom:6px;">· Already in GDXJ = VanEck familiarity — "promotion" from junior to senior ETF</div>
+              <div style="margin-bottom:6px;">· GDX quarterly rebalance expected <strong>~20 March 2026</strong> — inclusion would trigger <strong>$112–168M forced buying</strong></div>
+              <div>· Community analysis on GGPChat estimates ~1.0% weighting (0.8–1.2% range)</div>
+            </div>
+
+            <div style="background:#1a0808;border:1px solid #f85149;border-radius:8px;padding:10px;font-size:11px;color:#c9d1d9;">
+              <strong style="color:#f85149;">⚠️ Key Criteria for GDX:</strong> Must be primarily gold-focused, minimum market cap threshold, minimum daily liquidity ($1M+ USD/day). At 730p with A$9.25B market cap — GGP comfortably qualifies. Watch for official announcement ~1–2 weeks before March 20.<br><br>
+              <a href="https://www.vaneck.com/us/en/investments/gold-miners-etf-gdx" target="_blank" style="color:#58a6ff;">GDX official ↗</a> · <a href="https://stockanalysis.com/etf/gdx/holdings/" target="_blank" style="color:#58a6ff;">GDX Holdings ↗</a>
+            </div>
+          </div>
+
+          <!-- ETF IMPACT & KEY DATES -->
+          <div style="padding:18px;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#d29922;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #2d2a00;">📅 Key ETF Dates &amp; Market Impact</div>
+
+            <div style="font-size:11px;font-weight:700;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">2026 Rebalance Calendar</div>
+            <div style="font-size:12px;color:#c9d1d9;margin-bottom:14px;">
+              <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
+                <span style="color:#f85149;font-weight:700;">🔥 ~20 Mar 2026</span><span>GDX Q1 rebalance — <strong>GGP inclusion expected</strong></span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
+                <span style="color:#bc8cff;font-weight:700;">~20 Mar 2026</span><span>GDXJ Q1 rebalance — weighting likely ↑</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
+                <span style="color:#8b949e;">~20 Jun 2026</span><span>GDXJ/GDX Q2 rebalance</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
+                <span style="color:#8b949e;">~19 Sep 2026</span><span>GDXJ/GDX Q3 rebalance</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:6px 0;">
+                <span style="color:#8b949e;">~18 Dec 2026</span><span>GDXJ/GDX Q4 rebalance</span>
+              </div>
+            </div>
+
+            <div style="font-size:11px;font-weight:700;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Combined ETF Buying Pressure</div>
+            <div style="background:#0d1117;border-radius:8px;padding:12px;font-size:12px;margin-bottom:12px;">
+              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDXJ current holding</span><span style="color:#bc8cff;font-weight:700;">$134M USD</span></div>
+              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDX expected (at 1%)</span><span style="color:#f85149;font-weight:700;">~$140M USD</span></div>
+              <div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid #30363d;margin-top:4px;"><span><strong>Combined ETF exposure</strong></span><span style="color:#3fb950;font-weight:800;">~$274M USD</span></div>
+              <div style="font-size:10px;color:#8b949e;margin-top:6px;">~£218M · ~A$443M in passive buying pressure</div>
+            </div>
+
+            <div style="background:#1a0808;border:1px solid #f85149;border-radius:8px;padding:10px;font-size:12px;color:#c9d1d9;line-height:1.8;">
+              <strong style="color:#f85149;">Wilson's read:</strong> GDX inclusion on ~20 March is a <strong>massive forced-buying catalyst</strong>. Passive ETF funds must buy regardless of price. Combined with all shorts covered and gold at ATH — the setup into March 20 is very strong. <strong>Watch for pre-announcement buying in the 1–2 weeks prior.</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- SHORT POSITIONS - moved below analyst targets -->
+  <div class="col-12" id="short-positions-section">
+    <div class="card" style="border-color:#f85149;">
+      <div class="card-header" style="background:#1a0808;">
+        <h2 style="color:#f85149;">🩳 Short Positions — AIM &amp; ASX</h2>
+        <span style="font-size:11px;color:#8b949e;">Source: FCA daily short positions report (AIM) · ASIC (ASX) · Disclosed ≥0.5% only</span>
+      </div>
+      <div class="card-body" style="padding:0;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;">
+
+          <!-- AIM SHORTS CURRENT -->
+          <div style="padding:18px;border-right:1px solid #30363d;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#f85149;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #3d1111;">🇬🇧 AIM — LON:GGP Current Shorts</div>
+
+            <div style="background:#0d2b0d;border:1px solid #238636;border-radius:8px;padding:12px;margin-bottom:14px;text-align:center;">
+              <div style="font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px;">Total Disclosed Short Interest</div>
+              <div style="font-size:40px;font-weight:900;color:#3fb950;margin:6px 0;">0.0%</div>
+              <div style="font-size:12px;color:#3fb950;">✅ All disclosed shorts covered</div>
+              <div style="font-size:11px;color:#484f58;margin-top:4px;">Last disclosure: Jane Street 0.49% — 20 Jan 2026<br>Dropped below 0.5% threshold — no longer reportable</div>
+            </div>
+
+            <!-- Jane Street -->
+            <div style="padding:10px;background:#0d1117;border-radius:8px;margin-bottom:8px;border-left:3px solid #f85149;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:#e6edf3;">Jane Street Group LLC</div>
+                  <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last: 0.49% · 20 Jan 2026</div>
+                  <div style="font-size:11px;color:#3fb950;margin-top:2px;">↓ Reducing — was 0.75% in Dec 2025</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:800;color:#d29922;">&lt;0.5%</div>
+                  <div style="font-size:10px;color:#8b949e;">COVERED*</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Regal -->
+            <div style="padding:10px;background:#0d1117;border-radius:8px;margin-bottom:8px;border-left:3px solid #3fb950;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:#e6edf3;">Regal Funds Management</div>
+                  <div style="font-size:11px;color:#8b949e;margin-top:2px;">Closed: 0.00% · 11 Dec 2025</div>
+                  <div style="font-size:11px;color:#3fb950;margin-top:2px;">✅ Fully covered — was 0.52% Oct 2025</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:800;color:#3fb950;">0.0%</div>
+                  <div style="font-size:10px;color:#3fb950;">CLOSED</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrowstreet -->
+            <div style="padding:10px;background:#0d1117;border-radius:8px;border-left:3px solid #3fb950;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:#e6edf3;">Arrowstreet Capital LP</div>
+                  <div style="font-size:11px;color:#8b949e;margin-top:2px;">Dropped below threshold: 2 Oct 2025</div>
+                  <div style="font-size:11px;color:#3fb950;margin-top:2px;">✅ Covered — was 0.80% peak Aug 2025</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:800;color:#3fb950;">&lt;0.5%</div>
+                  <div style="font-size:10px;color:#3fb950;">COVERED</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;font-size:11px;color:#484f58;">* Positions below 0.5% are not required to be disclosed under FCA rules. May still hold a small position. Source: <a href="https://www.shorttracker.co.uk/company/AU0000397705/" target="_blank" style="color:#58a6ff;">ShortTracker ↗</a> · <a href="https://shortdata.co.uk/company.php?isin=AU0000397705" target="_blank" style="color:#58a6ff;">ShortData ↗</a></div>
+          </div>
+
+          <!-- SHORT HISTORY CHART -->
+          <div style="padding:18px;border-right:1px solid #30363d;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#f85149;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #3d1111;">📉 Short Position History — AIM (FCA Disclosed)</div>
+            <canvas id="shortsChart" style="width:100%;max-height:320px;"></canvas>
+            <div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;font-size:11px;">
+              <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;background:#f85149;border-radius:2px;display:inline-block;"></span>Arrowstreet Capital</span>
+              <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;background:#d29922;border-radius:2px;display:inline-block;"></span>Regal Funds</span>
+              <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;background:#bc8cff;border-radius:2px;display:inline-block;"></span>Jane Street</span>
+            </div>
+            <div style="margin-top:10px;padding:8px 10px;background:#0d1117;border-radius:6px;font-size:11px;color:#c9d1d9;line-height:1.8;">
+              · <strong style="color:#3fb950;">Bullish signal:</strong> All 3 short sellers have covered since Aug 2025 peak<br>
+              · Arrowstreet peaked at <strong>0.80%</strong> (Aug 2025) — fully covered by Oct 2025<br>
+              · Regal fully covered Dec 2025 · Jane Street reduced from 0.75% → &lt;0.5% Jan 2026<br>
+              · <strong style="color:#3fb950;">Net short squeeze potential</strong> as shorts continue covering into rising price
+            </div>
+          </div>
+
+          <!-- ASX SHORTS -->
+          <div style="padding:18px;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#f85149;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #3d1111;">🇦🇺 ASX — GGP.AX Short Selling</div>
+
+            <div style="background:#1a0808;border:1px solid #f85149;border-radius:8px;padding:12px;margin-bottom:14px;">
+              <div style="font-size:12px;color:#c9d1d9;line-height:1.8;">
+                <div style="font-weight:700;color:#f85149;margin-bottom:6px;">⚠️ ASX Short Data — ASIC Fortnightly Report</div>
+                ASX short selling is disclosed differently to AIM — ASIC publishes aggregate short positions fortnightly rather than individual fund disclosures. Specific fund-level data requires a paid data provider (ORTEX, S3 Partners).<br><br>
+                <strong style="color:#d29922;">Key context:</strong> Given the stock is up +140% in 6 months, any meaningful short position on the ASX would be under severe squeeze pressure at current levels.
+              </div>
+            </div>
+
+            <div style="font-size:11px;font-weight:700;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Live Short Data Sources</div>
+            <div class="links-col">
+              <a href="https://app.ortex.com/s/ASX/GGP" target="_blank" style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:#0d1117;border:1px solid #21262d;border-radius:8px;text-decoration:none;color:#e6edf3;font-size:12px;margin-bottom:7px;">📊 ORTEX — ASX:GGP Short Interest (live)</a>
+              <a href="https://www.marketindex.com.au/asx/ggp" target="_blank" style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:#0d1117;border:1px solid #21262d;border-radius:8px;text-decoration:none;color:#e6edf3;font-size:12px;margin-bottom:7px;">📈 Market Index — ASX:GGP Data</a>
+              <a href="https://www.asx.com.au/markets/company/GGP" target="_blank" style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:#0d1117;border:1px solid #21262d;border-radius:8px;text-decoration:none;color:#e6edf3;font-size:12px;margin-bottom:7px;">🏦 ASX Official Company Page</a>
+              <a href="https://shorttracker.com.au" target="_blank" style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:#0d1117;border:1px solid #21262d;border-radius:8px;text-decoration:none;color:#e6edf3;font-size:12px;margin-bottom:7px;">🩳 ShortTracker.com.au — ASX Shorts</a>
+            </div>
+
+            <div style="margin-top:14px;padding:10px 12px;background:#0d2b0d;border-radius:8px;border-left:3px solid #3fb950;font-size:12px;color:#c9d1d9;line-height:1.8;">
+              <strong style="color:#3fb950;">Wilson's read:</strong> The covering of all three AIM short sellers (Arrowstreet, Regal, Jane Street) as the stock rallied is a clear bullish signal. Short sellers have been wrong and are exiting. With 0% disclosed shorts on AIM and an ATH at 730p — the shorts are toast. 🔥
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANALYST TARGETS -->
+  <div class="col-12" data-section="analyst">
+    <div class="card" style="border-color:#E8821C;">
+      <div class="card-header" style="background:#1a0e00;">
+        <h2 style="color:#E8821C;">🎯 Analyst Price Targets & Recommendations</h2>
+        <span style="font-size:11px;color:#8b949e;" id="analyst-updated">Updated: 28 Feb 2026 · Refreshed weekly</span>
+      </div>
+      <div class="card-body" style="padding:0;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;">
+
+          <!-- AIM ANALYSTS -->
+          <div style="padding:18px;border-right:1px solid #30363d;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#E8821C;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #3d2200;">🇬🇧 AIM London — LON:GGP (pence)</div>
+
+            <!-- Berenberg -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #21262d;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Berenberg Bank</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last changed: Apr 2025 (pre-listing — stale)</div>
+                <div style="font-size:11px;color:#484f58;margin-top:2px;">⚠️ Pre-20:1 consolidation target — needs update post AIM listing</div>
+              </div>
+              <div style="text-align:right;min-width:80px;">
+                <div style="font-size:16px;font-weight:800;color:#8b949e;">~240p*</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#1a1a0a;color:#8b949e;margin-top:3px;">STALE</div>
+              </div>
+            </div>
+
+            <!-- Canaccord -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #21262d;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Canaccord Genuity</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last changed: Dec 2024 (pre-listing — stale)</div>
+                <div style="font-size:11px;color:#484f58;margin-top:2px;">⚠️ Pre-listing coverage on old structure — needs refresh</div>
+              </div>
+              <div style="text-align:right;min-width:80px;">
+                <div style="font-size:16px;font-weight:800;color:#8b949e;">~380p*</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#1a1a0a;color:#8b949e;margin-top:3px;">STALE</div>
+              </div>
+            </div>
+
+            <!-- Investors Chronicle consensus -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #21262d;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Investors Chronicle (2 analysts)</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last changed: Feb 2026</div>
+                <div style="font-size:11px;color:#3fb950;margin-top:2px;">High: 821p · Low: 684p</div>
+              </div>
+              <div style="text-align:right;min-width:80px;">
+                <div style="font-size:16px;font-weight:800;color:#E8821C;">753p</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#1a1800;color:#d29922;margin-top:3px;">MEDIAN</div>
+              </div>
+            </div>
+
+            <!-- TipRanks consensus -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">TipRanks (8 analysts, 3 months)</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last updated: Feb 2026</div>
+                <div style="font-size:11px;color:#3fb950;margin-top:2px;">High: 968p · Low: 288p</div>
+              </div>
+              <div style="text-align:right;min-width:80px;">
+                <div style="font-size:16px;font-weight:800;color:#E8821C;">672p</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#0d2b0d;color:#3fb950;margin-top:3px;">AVG</div>
+              </div>
+            </div>
+
+            <!-- AIM Summary box -->
+            <div style="margin-top:14px;background:#1a0e00;border:1px solid #E8821C;border-radius:8px;padding:12px;">
+              <div style="font-size:11px;font-weight:700;color:#E8821C;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">📊 AIM Consensus Summary</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;">
+                <div style="background:#0d1117;border-radius:6px;padding:8px;">
+                  <div style="font-size:10px;color:#8b949e;">AVG TARGET</div>
+                  <div style="font-size:18px;font-weight:800;color:#E8821C;">672p</div>
+                </div>
+                <div style="background:#0d1117;border-radius:6px;padding:8px;">
+                  <div style="font-size:10px;color:#8b949e;">HIGH</div>
+                  <div style="font-size:18px;font-weight:800;color:#3fb950;">968p</div>
+                </div>
+                <div style="background:#0d1117;border-radius:6px;padding:8px;">
+                  <div style="font-size:10px;color:#8b949e;">LOW</div>
+                  <div style="font-size:18px;font-weight:800;color:#f85149;">288p</div>
+                </div>
+              </div>
+              <div style="margin-top:8px;font-size:11px;color:#8b949e;text-align:center;">vs current 730p · <span style="color:#f85149;">Avg target BELOW current price</span> — most targets set before the big run ⚠️</div>
+            </div>
+          </div>
+
+          <!-- ASX ANALYSTS -->
+          <div style="padding:18px;border-right:1px solid #30363d;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#E8821C;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #3d2200;">🇦🇺 ASX Australia — ASX:GGP (AUD)</div>
+
+            <!-- Macquarie -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #21262d;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Macquarie</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last changed: Nov 2025 (reiterated)</div>
+                <div style="font-size:11px;color:#3fb950;margin-top:2px;">Initiated Jun 2025 @ A$7.80 · raised Nov 2025</div>
+              </div>
+              <div style="text-align:right;min-width:90px;">
+                <div style="font-size:16px;font-weight:800;color:#3fb950;">A$10.50</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#0d2b0d;color:#3fb950;margin-top:3px;">OUTPERFORM</div>
+              </div>
+            </div>
+
+            <!-- RBC Capital -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #21262d;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">RBC Capital Markets</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last changed: Dec 2025 (initiated)</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Initiated coverage at listing</div>
+              </div>
+              <div style="text-align:right;min-width:90px;">
+                <div style="font-size:16px;font-weight:800;color:#d29922;">A$7.70</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#2d2a00;color:#d29922;margin-top:3px;">SECTOR PERF</div>
+              </div>
+            </div>
+
+            <!-- Argonaut -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #21262d;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Argonaut Securities</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last changed: Dec 2025 (post FS)</div>
+                <div style="font-size:11px;color:#3fb950;margin-top:2px;">Co-manager on ASX IPO · 50/50 spot/NPV blend model</div>
+              </div>
+              <div style="text-align:right;min-width:90px;">
+                <div style="font-size:16px;font-weight:800;color:#3fb950;">A$18.50</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#0d2b0d;color:#3fb950;margin-top:3px;">BUY</div>
+              </div>
+            </div>
+
+            <!-- High estimate unknown -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Consensus (Investing.com — 8 analysts)</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">3 Buy · 3 Hold · 2 Sell · Feb 2026</div>
+                <div style="font-size:11px;color:#3fb950;margin-top:2px;">High: A$18.50 · Low: A$5.50</div>
+              </div>
+              <div style="text-align:right;min-width:90px;">
+                <div style="font-size:16px;font-weight:800;color:#E8821C;">A$12.41</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#2d2a00;color:#d29922;margin-top:3px;">NEUTRAL</div>
+              </div>
+            </div>
+
+            <!-- ASX Summary box -->
+            <div style="margin-top:14px;background:#1a0e00;border:1px solid #E8821C;border-radius:8px;padding:12px;">
+              <div style="font-size:11px;font-weight:700;color:#E8821C;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">📊 ASX Consensus Summary</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;">
+                <div style="background:#0d1117;border-radius:6px;padding:8px;">
+                  <div style="font-size:10px;color:#8b949e;">AVG TARGET</div>
+                  <div style="font-size:18px;font-weight:800;color:#E8821C;">A$12.41</div>
+                </div>
+                <div style="background:#0d1117;border-radius:6px;padding:8px;">
+                  <div style="font-size:10px;color:#8b949e;">HIGH</div>
+                  <div style="font-size:18px;font-weight:800;color:#3fb950;">A$18.50</div>
+                </div>
+                <div style="background:#0d1117;border-radius:6px;padding:8px;">
+                  <div style="font-size:10px;color:#8b949e;">LOW</div>
+                  <div style="font-size:18px;font-weight:800;color:#f85149;">A$5.50</div>
+                </div>
+              </div>
+              <div style="margin-top:8px;font-size:11px;color:#8b949e;text-align:center;">vs current ~A$13.80 · <span style="color:#f85149;">Most targets set before +25% YTD run</span> — consensus lagging ⚠️</div>
+            </div>
+          </div>
+
+          <!-- WILSON'S TAKE + RATINGS BREAKDOWN -->
+          <div style="padding:18px;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#E8821C;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #3d2200;">📈 Ratings Breakdown & Wilson's View</div>
+
+            <!-- Ratings donut summary -->
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px;text-align:center;">
+              <div style="background:#0d2b0d;border:1px solid #238636;border-radius:8px;padding:10px;">
+                <div style="font-size:24px;font-weight:900;color:#3fb950;">3</div>
+                <div style="font-size:11px;color:#3fb950;font-weight:700;">BUY</div>
+              </div>
+              <div style="background:#1a1200;border:1px solid #9e6a03;border-radius:8px;padding:10px;">
+                <div style="font-size:24px;font-weight:900;color:#d29922;">3</div>
+                <div style="font-size:11px;color:#d29922;font-weight:700;">HOLD</div>
+              </div>
+              <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;">
+                <div style="font-size:24px;font-weight:900;color:#f85149;">2</div>
+                <div style="font-size:11px;color:#f85149;font-weight:700;">SELL</div>
+              </div>
+            </div>
+
+            <!-- Key insight -->
+            <div style="background:#1a0e00;border-left:3px solid #E8821C;border-radius:0 6px 6px 0;padding:12px;margin-bottom:12px;font-size:12px;color:#c9d1d9;line-height:1.8;">
+              <strong style="color:#E8821C;">⚠️ Critical context:</strong> The majority of analyst targets were set <strong>before the stock's +140% 6-month run</strong> and +25% YTD. Most are now <strong>below the current price</strong> — consensus is lagging reality, not leading it.
+            </div>
+
+            <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
+              <div style="margin-bottom:6px;">· <strong style="color:#3fb950;">Bull case</strong> (Argonaut A$18.50 / TipRanks high 968p) — reflects Havieron NPV at spot gold + WDU upside</div>
+              <div style="margin-bottom:6px;">· <strong style="color:#d29922;">Bear case</strong> (RBC A$7.70 / TipRanks low 288p) — assumes gold price normalisation + capex blowout at Havieron</div>
+              <div style="margin-bottom:6px;">· <strong style="color:#E8821C;">Wilson's view:</strong> Consensus is meaningless here — targets set at A$7–$10 are stale. Post H1 results + WDU MRE due, expect a fresh round of upgrades. Argonaut's A$18.50 and the 968p high are more relevant at current gold prices.</div>
+              <div>· <strong style="color:#bc8cff;">Watch for:</strong> Analyst upgrades post WDU MRE (March 2026) — likely to be a significant re-rating event across multiple brokers</div>
+            </div>
+
+            <div style="margin-top:14px;padding:10px 12px;background:#0d1117;border-radius:8px;border:1px solid #E8821C;font-size:11px;">
+              <div style="color:#E8821C;font-weight:700;margin-bottom:6px;">Sources</div>
+              <div style="color:#8b949e;line-height:1.8;">
+                <a href="https://www.tipranks.com/stocks/gb:ggp/forecast" target="_blank" style="color:#58a6ff;">TipRanks ↗</a> ·
+                <a href="https://markets.investorschronicle.co.uk/data/equities/tearsheet/forecasts?s=GGP:LSE" target="_blank" style="color:#58a6ff;">Investors Chronicle ↗</a> ·
+                <a href="https://www.investing.com/equities/greatland-resources-consensus-estimates" target="_blank" style="color:#58a6ff;">Investing.com ↗</a> ·
+                <a href="https://www.tradingview.com/symbols/ASX-GGP/forecast/" target="_blank" style="color:#58a6ff;">TradingView ↗</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY METRICS -->
+  <div class="col-4 card highlight">
+    <div class="card-header">
+      <h2>📊 Key Metrics</h2>
+      <a href="https://www.marketbeat.com/instant-alerts/greatland-gold-longgp-hits-new-52-week-high-should-you-buy-2026-02-23/" target="_blank" class="card-link">MarketBeat ↗</a>
+    </div>
+    <div class="card-body">
+      <div class="stat-grid">
+        <div class="stat"><div class="lbl">AIM Close</div><div class="val green">730p</div><div class="chg green">New 52-wk High</div></div>
+        <div class="stat"><div class="lbl">ASX (GGP)</div><div class="val blue">Live ↗</div><div class="chg"><a href="https://finance.yahoo.com/quote/GGP.AX" target="_blank" class="card-link">Yahoo Finance</a></div></div>
+        <div class="stat"><div class="lbl">Revenue H1</div><div class="val green">A$977M</div><div class="chg">~A$2bn annualised</div></div>
+        <div class="stat"><div class="lbl">NPAT H1</div><div class="val green">A$342M</div><div class="chg green">Record</div></div>
+        <div class="stat"><div class="lbl">Commodity</div><div class="val yellow">Gold + Cu</div><div class="chg">Record prices H1</div></div>
+        <div class="stat"><div class="lbl">H2 Guidance</div><div class="val green">✅ On track</div><div class="chg">Production up</div></div>
+      </div>
+      <div style="margin-top: 14px;">
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Telfer Production vs Guidance</span><span>On Track</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:82%; background: #3fb950;"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Cost Control</span><span>Strong</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:78%; background: #58a6ff;"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="col-4 card">
+    <div class="card-header">
+      <h2>🗺️ Projects</h2>
+      <span style="font-size:11px; color:#8b949e;">Paterson Province, WA</span>
+    </div>
+    <div class="card-body">
+      <div class="project-card">
+        <h3 class="green">⚙️ Telfer Mine</h3>
+        <p>Fully operational gold & copper mine in the Paterson Province. H1 FY2026 — ~A$1bn revenue. Production trending up entering H2. CEO confirmed FY2026 guidance on track.</p>
+        <div class="tags">
+          <span class="tag tag-green">Producing</span>
+          <span class="tag tag-green">On Guidance</span>
+          <span class="tag tag-blue">Gold + Copper</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 class="blue">🔬 Havieron Project</h3>
+        <p>World-class gold-copper deposit adjacent to Telfer. One of the most significant discoveries in the Paterson Province. Development pathway ongoing — major long-term value driver for GGP.</p>
+        <div class="tags">
+          <span class="tag tag-yellow">Development</span>
+          <span class="tag tag-purple">High Grade</span>
+          <span class="tag tag-blue">Adjacent Telfer</span>
+        </div>
+      </div>
+      <div class="project-card" style="margin-bottom:0">
+        <h3 class="yellow">🌏 Paterson Province</h3>
+        <p>One of Australia's most prospective mineral regions. Underexplored relative to its potential. Multiple targets across the region — Greatland is the dominant operator.</p>
+        <div class="tags">
+          <span class="tag tag-yellow">Regional</span>
+          <span class="tag tag-green">Prospective</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LATEST NEWS -->
+  <div class="col-4 card">
+    <div class="card-header">
+      <h2>📰 Latest News & RNS</h2>
+      <a href="https://www.londonstockexchange.com/stock/GGP/greatland-resources-limited/regulatory-news" target="_blank" class="card-link">All RNS ↗</a>
+    </div>
+    <div class="card-body">
+      <div class="news-item">
+        <div class="source">RNS · 23 Feb 2026</div>
+        <a href="https://www.sharecast.com/news/news-and-announcements/greatland-resources-enters-h2-with-confidence-as-h1-revenues-soar--21790264.html" target="_blank">H1 Results: Revenue ~A$1bn, NPAT A$342.9M — enters H2 with confidence</a>
+        <div class="meta">Sharecast · <span class="tag tag-green">Headline</span></div>
+      </div>
+      <div class="news-item">
+        <div class="source">Mining Journal · 23 Feb 2026</div>
+        <a href="https://www.mining-journal.com/miners/news-analysis/4527552/greatland-telfer-tracking" target="_blank">Greatland's Telfer tracking well — production up, costs stable</a>
+        <div class="meta">Mining Journal · <span class="tag tag-blue">Operations</span></div>
+      </div>
+      <div class="news-item">
+        <div class="source">CNBC · 23 Feb 2026</div>
+        <a href="https://www.cnbc.com/video/2026/02/23/gold-and-copper-the-ultimate-hedge-for-tariffs-greatland-resources.html" target="_blank">CEO Shaun Day on CNBC: "Gold and copper — the ultimate hedge for tariffs"</a>
+        <div class="meta">CNBC · <span class="tag tag-yellow">CEO Interview</span></div>
+      </div>
+      <div class="news-item">
+        <div class="source">Stockopedia · 24 Feb 2026</div>
+        <a href="https://www.stockopedia.com/articles/1046331/" target="_blank">GGP featured in daily company analysis roundup</a>
+        <div class="meta">Stockopedia · <span class="tag tag-blue">Analysis</span></div>
+      </div>
+      <div class="news-item">
+        <div class="source">MarketBeat · 23 Feb 2026</div>
+        <a href="https://www.marketbeat.com/instant-alerts/greatland-gold-longgp-hits-new-52-week-high-should-you-buy-2026-02-23/" target="_blank">LON:GGP hits new New 52-wk High — should you buy?</a>
+        <div class="meta">MarketBeat · <span class="tag tag-green">Technical</span></div>
+      </div>
+      <div class="insight-box">
+        <strong>💡 Signal:</strong> H1 results + New 52-wk High + record commodity prices = strong fundamental and technical alignment. Watch for pullback to 680p as potential entry. FY2026 guidance maintained.
+      </div>
+    </div>
+  </div>
+
+  <!-- X FEEDS -->
+  <div class="col-12 card">
+    <div class="card-header">
+      <h2>🐦 X Community — Key Accounts</h2>
+      <span style="font-size:11px;color:#8b949e;">Click any account to view their latest posts on X · Twitter embedded timelines require hosting to display inline</span>
+    </div>
+    <div class="card-body" style="padding:14px;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+
+        <!-- Official -->
+        <div style="background:#0d1117;border:1px solid #238636;border-radius:10px;padding:14px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#3fb950;margin-bottom:10px;">🏢 Official</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="https://x.com/GreatlandGold" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#161b22;border-radius:8px;padding:10px 12px;text-decoration:none;border:1px solid #30363d;">
+              <div><div style="font-weight:700;color:#e6edf3;font-size:13px;">@GreatlandGold</div><div style="font-size:11px;color:#8b949e;">Official company account</div></div>
+              <span style="background:#1d9bf0;color:white;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">View ↗</span>
+            </a>
+            <a href="https://x.com/greatland_ggp" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#161b22;border-radius:8px;padding:10px 12px;text-decoration:none;border:1px solid #30363d;">
+              <div><div style="font-weight:700;color:#e6edf3;font-size:13px;">@greatland_ggp</div><div style="font-size:11px;color:#8b949e;">GGP investor relations</div></div>
+              <span style="background:#1d9bf0;color:white;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">View ↗</span>
+            </a>
+            <a href="https://x.com/ggphelp" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#161b22;border-radius:8px;padding:10px 12px;text-decoration:none;border:1px solid #30363d;">
+              <div><div style="font-weight:700;color:#e6edf3;font-size:13px;">@ggphelp</div><div style="font-size:11px;color:#8b949e;">GGP shareholder support</div></div>
+              <span style="background:#1d9bf0;color:white;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">View ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Community Investors -->
+        <div style="background:#0d1117;border:1px solid #1f6feb;border-radius:10px;padding:14px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#58a6ff;margin-bottom:10px;">👥 Community Investors</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="https://x.com/stuartw6040" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#161b22;border-radius:8px;padding:10px 12px;text-decoration:none;border:1px solid #30363d;">
+              <div><div style="font-weight:700;color:#e6edf3;font-size:13px;">@stuartw6040</div><div style="font-size:11px;color:#8b949e;">Stuart · Portal creator</div></div>
+              <span style="background:#E8821C;color:white;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">You ↗</span>
+            </a>
+            <a href="https://x.com/paddygall1" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#161b22;border-radius:8px;padding:10px 12px;text-decoration:none;border:1px solid #30363d;">
+              <div><div style="font-weight:700;color:#e6edf3;font-size:13px;">@paddygall1</div><div style="font-size:11px;color:#8b949e;">GGP community investor</div></div>
+              <span style="background:#1d9bf0;color:white;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">View ↗</span>
+            </a>
+            <a href="https://x.com/hinds_stuart" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#161b22;border-radius:8px;padding:10px 12px;text-decoration:none;border:1px solid #30363d;">
+              <div><div style="font-weight:700;color:#e6edf3;font-size:13px;">@hinds_stuart</div><div style="font-size:11px;color:#8b949e;">GGP community investor</div></div>
+              <span style="background:#1d9bf0;color:white;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">View ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Media -->
+        <div style="background:#0d1117;border:1px solid #6e40c9;border-radius:10px;padding:14px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#bc8cff;margin-bottom:10px;">📰 Media</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="https://x.com/MiningJournal" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#161b22;border-radius:8px;padding:10px 12px;text-decoration:none;border:1px solid #30363d;">
+              <div><div style="font-weight:700;color:#e6edf3;font-size:13px;">@MiningJournal</div><div style="font-size:11px;color:#8b949e;">Mining industry news</div></div>
+              <span style="background:#1d9bf0;color:white;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">View ↗</span>
+            </a>
+            <a href="https://x.com/ProactiveInvstrs" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#161b22;border-radius:8px;padding:10px 12px;text-decoration:none;border:1px solid #30363d;">
+              <div><div style="font-weight:700;color:#e6edf3;font-size:13px;">@ProactiveInvstrs</div><div style="font-size:11px;color:#8b949e;">AIM investor news</div></div>
+              <span style="background:#1d9bf0;color:white;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">View ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- #GGPPortal Live Search -->
+        <div style="background:#0d1117;border:1px solid #E8821C;border-radius:10px;padding:14px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#E8821C;margin-bottom:10px;">🏷️ Search #GGPPortal on X</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.8;margin-bottom:12px;">
+            All community posts tagged #GGPPortal appear here. Post with the tag to have your thoughts shown to everyone using this portal.
+          </div>
+          <a href="https://x.com/search?q=%23GGPPortal&f=live" target="_blank" style="display:block;text-align:center;background:#E8821C;color:white;font-size:13px;font-weight:700;padding:10px;border-radius:8px;text-decoration:none;margin-bottom:8px;">🔍 View #GGPPortal Live Feed ↗</a>
+          <a href="https://x.com/search?q=%23GGP%20%23Havieron&f=live" target="_blank" style="display:block;text-align:center;background:#161b22;color:#E8821C;border:1px solid #E8821C;font-size:12px;font-weight:700;padding:8px;border-radius:8px;text-decoration:none;margin-bottom:8px;">#GGP #Havieron Live ↗</a>
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20" target="_blank" style="display:block;text-align:center;background:#1d9bf0;color:white;font-size:12px;font-weight:700;padding:8px;border-radius:8px;text-decoration:none;">✍️ Post with #GGPPortal</a>
+        </div>
+
+      </div>
+      <div style="margin-top:10px;padding:8px 12px;background:#161b22;border-radius:6px;font-size:11px;color:#484f58;">
+        💡 Twitter/X embedded timelines require a hosted environment to display inline. <strong style="color:#8b949e;">Host on Netlify</strong> for live feeds inside the portal · Click any card above to view on X directly
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="disclaimer">
+  ⚠️ This dashboard is for informational purposes only. Not financial advice. Data sourced from public market information and news. Always do your own research.
+  <br>Last updated: 28 Feb 2026 · Prices may be delayed
+</div>
+
+<!-- RESOURCE LINKS BAR -->
+<div style="background:#0a0f1a;border-top:1px solid #21262d;padding:24px 32px;">
+  <div style="max-width:1600px;margin:0 auto;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#8b949e;margin-bottom:16px;">🔗 Resources &amp; Quick Links</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+
+      <!-- Price & Trading -->
+      <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-chat" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">⛏️ GGP AIM — ADVFN</a>
+      <a href="https://finance.yahoo.com/quote/GGP.AX" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">🇦🇺 GGP ASX — Yahoo</a>
+      <a href="https://www.marketbeat.com/stocks/LON/GGP/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">📊 MarketBeat</a>
+      <a href="https://www.stockopedia.com" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">📉 Stockopedia</a>
+
+      <!-- RNS & News -->
+      <a href="https://www.londonstockexchange.com/stock/GGP/greatland-resources-limited/regulatory-news" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">📄 LSE RNS</a>
+      <a href="https://www.mining-journal.com/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">📰 Mining Journal</a>
+      <a href="https://www.proactiveinvestors.co.uk" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">🔍 Proactive Investors</a>
+      <a href="https://www.sharecast.com" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">📡 Sharecast</a>
+      <a href="https://www.australianmining.com.au" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">🇦🇺 Australian Mining</a>
+
+      <!-- Project -->
+      <a href="https://www.greatland.com.au" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1a0e00;border:1px solid #E8821C;color:#E8821C;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:700;">🌐 Greatland Website</a>
+      <a href="https://www.asx.com.au/asx/share-price-research/company/GGP" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">📋 ASX Company Page</a>
+
+      <!-- Shorts -->
+      <a href="https://www.shorttracker.co.uk/company/AU0000397705/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1a0808;border:1px solid #f85149;color:#f85149;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">📉 Short Tracker</a>
+      <a href="https://ortex.com" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">📊 ORTEX</a>
+
+      <!-- Community -->
+      <a href="https://t.me/+-vKDs_BOb0E1YTFk" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#0c1821;border:1px solid #229ED9;color:#229ED9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:700;">✈️ Telegram Group</a>
+      <a href="https://www.ggpchat.co.uk" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">💬 GGPChat Forum</a>
+      <a href="https://x.com/search?q=%23GGP&f=live" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:7px 13px;border-radius:20px;font-size:12px;text-decoration:none;">𝕏 #GGP on X</a>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+  // Live FX conversions — both panels
+  const ASX_PRICE_AUD = 13.80;
+  const AIM_PRICE_P = 730;
+  async function fetchFX() {
+    try {
+      const res = await fetch('https://api.frankfurter.app/latest?from=AUD&to=GBP');
+      const data = await res.json();
+      const audGbp = data.rates.GBP;           // e.g. 0.487
+      const gbpAud = 1 / audGbp;              // e.g. 2.053
+      const pPerAud = audGbp * 100;           // pence per A$
+      const now = new Date().toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
+
+      // ASX panel: A$13.80 → pence
+      const ukEquiv = (ASX_PRICE_AUD * pPerAud).toFixed(0);
+      document.getElementById('fx-rate-live').textContent = audGbp.toFixed(4);
+      document.getElementById('uk-equiv-live').textContent = ukEquiv + 'p';
+      document.getElementById('fx-label').textContent = 'A$' + ASX_PRICE_AUD + ' × ' + pPerAud.toFixed(2) + 'p/A$';
+      document.getElementById('fx-updated').textContent = 'Updated ' + now;
+
+      // AIM panel: 730p → A$
+      const audEquiv = ((AIM_PRICE_P / 100) * gbpAud).toFixed(2);
+      document.getElementById('gbp-aud-rate').textContent = gbpAud.toFixed(4);
+      document.getElementById('aim-aud-equiv').textContent = 'A$' + audEquiv;
+      document.getElementById('aim-fx-label').textContent = '730p ÷ 100 × ' + gbpAud.toFixed(3) + ' GBP/AUD';
+      document.getElementById('aim-fx-updated').textContent = 'Updated ' + now;
+    } catch(e) {
+      document.getElementById('uk-equiv-live').textContent = '~672p';
+      document.getElementById('fx-label').textContent = 'FX offline';
+      document.getElementById('fx-updated').textContent = 'offline';
+      document.getElementById('aim-aud-equiv').textContent = '~A$14.40';
+      document.getElementById('aim-fx-label').textContent = 'FX offline';
+      document.getElementById('aim-fx-updated').textContent = 'offline';
+    }
+  }
+  fetchFX();
+  setInterval(fetchFX, 60000);
+
+  // Short position chart
+  const ctx = document.getElementById('shortsChart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['28 Jul','14 Aug','19 Aug','28 Aug','11 Sep','24 Sep','30 Sep','2 Oct','3 Oct','11 Dec','19 Dec','30 Dec','7 Jan','20 Jan','28 Feb'],
+        datasets: [
+          {
+            label: 'Arrowstreet Capital',
+            data: [0.50, 0.66, 0.70, 0.80, 0.78, 0.69, 0.57, 0.48, 0, 0, 0, 0, 0, 0, 0],
+            backgroundColor: '#f85149cc',
+            borderColor: '#f85149',
+            borderWidth: 1,
+            borderRadius: 3,
+          },
+          {
+            label: 'Regal Funds',
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0.52, 0, 0, 0, 0, 0, 0],
+            backgroundColor: '#d29922cc',
+            borderColor: '#d29922',
+            borderWidth: 1,
+            borderRadius: 3,
+          },
+          {
+            label: 'Jane Street',
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.75, 0.68, 0.59, 0.49, 0],
+            backgroundColor: '#bc8cffcc',
+            borderColor: '#bc8cff',
+            borderWidth: 1,
+            borderRadius: 3,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%`
+            }
+          }
+        },
+        scales: {
+          x: {
+            stacked: true,
+            ticks: { color: '#8b949e', font: { size: 9 } },
+            grid: { color: '#21262d' }
+          },
+          y: {
+            stacked: true,
+            min: 0, max: 1.2,
+            ticks: { color: '#8b949e', callback: v => v + '%' },
+            grid: { color: '#21262d' },
+            title: { display: true, text: '% Short', color: '#8b949e', font: { size: 10 } }
+          }
+        }
+      }
+    });
+  }
+
+  // Move short positions section below analyst targets
+  document.addEventListener('DOMContentLoaded', function() {
+    const shorts = document.getElementById('short-positions-section');
+    const analyst = document.querySelector('[data-section="analyst"]');
+    if (shorts && analyst && analyst.nextSibling) {
+      analyst.parentNode.insertBefore(shorts, analyst.nextSibling);
+    }
+  });
+
+  // RNS banner toggle
+  var rnsOpen = true;
+  function toggleRNS() {
+    var content = document.getElementById('rns-content');
+    var banner = document.getElementById('rns-banner');
+    var chevron = document.getElementById('rns-chevron');
+    rnsOpen = !rnsOpen;
+    if (rnsOpen) {
+      content.style.display = 'block';
+      chevron.style.transform = 'rotate(0deg)';
+    } else {
+      content.style.display = 'none';
+      chevron.style.transform = 'rotate(-90deg)';
+    }
+  }
+
+  function updateClock() {
+    const now = new Date();
+    document.getElementById('clock').textContent = now.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit', timeZone:'Europe/London'}) + ' London';
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+<!-- INVESTOR FEEDBACK & COMMENTS -->
+<div style="max-width:100%;padding:0 0 0 0;">
+  <div style="background:#0d1117;border:1px solid #1d9bf0;border-radius:12px;margin:0 0 20px 0;overflow:hidden;">
+
+    <div style="background:#0c1821;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1d9bf0;">
+      <div>
+        <h2 style="font-size:18px;font-weight:800;color:#1d9bf0;margin-bottom:2px;">💬 Investor Feedback &amp; Comments</h2>
+        <p style="font-size:12px;color:#8b949e;">Leave a note, thought, or question · managed by <strong style="color:#e6edf3;">@stuartw6040</strong></p>
+      </div>
+      <a href="https://x.com/search?q=%23GGPPortal&f=live" target="_blank" style="background:#1c2938;color:#1d9bf0;border:1px solid #1d9bf0;padding:7px 14px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;">🔍 View #GGPPortal on X ↗</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+
+      <!-- LEFT: comment input + display -->
+      <div style="padding:20px;border-right:1px solid #21262d;">
+
+        <!-- Input form -->
+        <div style="margin-bottom:20px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:10px;">✍️ Leave a Comment</div>
+          <input id="fc-name" type="text" placeholder="Your name or handle (optional)" maxlength="50"
+            style="width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:9px 14px;color:#e6edf3;font-size:13px;font-family:inherit;outline:none;margin-bottom:8px;" />
+          <textarea id="fc-text" placeholder="Share a thought, question, analysis, or feedback about GGP or this portal…" maxlength="500" rows="4"
+            style="width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:9px 14px;color:#e6edf3;font-size:13px;font-family:inherit;outline:none;resize:vertical;margin-bottom:8px;"></textarea>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span id="fc-count" style="font-size:11px;color:#8b949e;">500 chars remaining</span>
+            <button onclick="submitFeedback()" style="background:#1d9bf0;color:white;border:none;border-radius:20px;padding:9px 22px;font-size:13px;font-weight:700;cursor:pointer;">Post Comment</button>
+          </div>
+        </div>
+
+        <!-- X posting prompt modal (hidden by default) -->
+        <div id="fc-xprompt" style="display:none;background:#0c1821;border:1px solid #1d9bf0;border-radius:10px;padding:16px;margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:700;color:#e6edf3;margin-bottom:8px;">🐦 Also share on X?</div>
+          <div style="font-size:12px;color:#8b949e;margin-bottom:12px;">Tag <strong style="color:#1d9bf0;">@stuartw6040</strong> with <strong style="color:#1d9bf0;">#GGPPortal</strong> so the community sees it too.</div>
+          <div style="display:flex;gap:8px;">
+            <button id="fc-xyes" onclick="postToX()" style="flex:1;background:#1d9bf0;color:white;border:none;border-radius:20px;padding:9px;font-size:13px;font-weight:700;cursor:pointer;">Yes, post to 𝕏</button>
+            <button onclick="dismissXPrompt()" style="flex:1;background:#161b22;color:#8b949e;border:1px solid #30363d;border-radius:20px;padding:9px;font-size:13px;font-weight:700;cursor:pointer;">No thanks</button>
+          </div>
+        </div>
+
+        <!-- Saved comments display -->
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:10px;">📋 Comments on this Portal</div>
+        <div id="fc-comments" style="max-height:320px;overflow-y:auto;">
+          <div style="font-size:12px;color:#484f58;text-align:center;padding:20px 0;" id="fc-empty">No comments yet — be the first!</div>
+        </div>
+        <div style="margin-top:8px;text-align:right;">
+          <button onclick="clearComments()" style="background:transparent;color:#484f58;border:none;font-size:11px;cursor:pointer;text-decoration:underline;">Clear all comments</button>
+        </div>
+      </div>
+
+      <!-- RIGHT: pinned notes + quick tags -->
+      <div style="padding:20px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:12px;">📌 Quick Tag Posts to X</div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;">
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20BUY%20-%20" target="_blank" style="display:block;text-align:center;background:#0d2b0d;border:1px solid #238636;color:#3fb950;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">📈 Log Buy</a>
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20WATCH%20-%20" target="_blank" style="display:block;text-align:center;background:#2d2a00;border:1px solid #9e6a03;color:#d29922;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">👀 Flag Watch</a>
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20CATALYST%20-%20" target="_blank" style="display:block;text-align:center;background:#1a0808;border:1px solid #6e1010;color:#f85149;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">⚡ Catalyst</a>
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20TA%20-%20" target="_blank" style="display:block;text-align:center;background:#1a0e00;border:1px solid #7d3c00;color:#E8821C;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">📊 TA Note</a>
+        </div>
+
+        <div style="background:#161b22;border-radius:10px;padding:14px;margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;color:#1d9bf0;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;">📌 How it works</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
+            · Type a comment below and hit <strong>Post Comment</strong><br>
+            · It appears on this page immediately<br>
+            · You'll be asked if you want to also share it on <strong style="color:#1d9bf0;">𝕏</strong> tagged <strong>#GGPPortal @stuartw6040</strong><br>
+            · X posts let the wider GGP community see your note<br>
+            · Comments are stored in your browser locally
+          </div>
+        </div>
+
+        <div style="background:#0d2b0d;border:1px solid #238636;border-radius:10px;padding:14px;">
+          <div style="font-size:11px;font-weight:700;color:#3fb950;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;">💡 Netlify tip</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.8;">
+            Host this portal on <strong>Netlify</strong> to share it with the community — then comments from others will be visible to everyone via the #GGPPortal X feed.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Feedback / Comment system ──────────────────────────────
+  const FC_KEY = 'ggpPortalComments';
+  let pendingComment = '';
+
+  const fcText = document.getElementById('fc-text');
+  const fcCount = document.getElementById('fc-count');
+  fcText.addEventListener('input', () => { fcCount.textContent = (500 - fcText.value.length) + ' chars remaining'; });
+
+  function loadComments() {
+    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
+    const container = document.getElementById('fc-comments');
+    const empty = document.getElementById('fc-empty');
+    if (stored.length === 0) { empty.style.display = 'block'; return; }
+    empty.style.display = 'none';
+    container.innerHTML = '';
+    [...stored].reverse().forEach(c => {
+      const div = document.createElement('div');
+      div.style.cssText = 'background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px;margin-bottom:8px;';
+      div.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span style="font-weight:700;font-size:13px;color:#e6edf3;">${c.name || '👤 Anonymous'}</span>
+          <span style="font-size:10px;color:#484f58;">${c.time}</span>
+        </div>
+        <div style="font-size:13px;color:#c9d1d9;line-height:1.7;">${c.text}</div>
+        ${c.postedToX ? '<div style="font-size:10px;color:#1d9bf0;margin-top:6px;">✓ Also posted to 𝕏 #GGPPortal</div>' : ''}
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function submitFeedback() {
+    const name = document.getElementById('fc-name').value.trim();
+    const text = fcText.value.trim();
+    if (!text) return;
+    pendingComment = text;
+    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
+    stored.push({ name: name || '', text, time: new Date().toLocaleString('en-GB', {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}), postedToX: false });
+    localStorage.setItem(FC_KEY, JSON.stringify(stored));
+    fcText.value = ''; fcCount.textContent = '500 chars remaining';
+    loadComments();
+    document.getElementById('fc-xprompt').style.display = 'block';
+    document.getElementById('fc-xprompt').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function postToX() {
+    const name = document.getElementById('fc-name').value.trim() || '';
+    const tag = name ? `(${name}) ` : '';
+    const tweet = encodeURIComponent(`#GGPPortal #GGP ${tag}${pendingComment} @stuartw6040`);
+    window.open('https://twitter.com/intent/tweet?text=' + tweet, '_blank');
+    // Mark latest comment as posted to X
+    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
+    if (stored.length) { stored[stored.length - 1].postedToX = true; localStorage.setItem(FC_KEY, JSON.stringify(stored)); }
+    dismissXPrompt();
+    loadComments();
+  }
+
+  function dismissXPrompt() {
+    document.getElementById('fc-xprompt').style.display = 'none';
+    pendingComment = '';
+  }
+
+  function clearComments() {
+    if (confirm('Clear all comments from this portal?')) {
+      localStorage.removeItem(FC_KEY);
+      loadComments();
+    }
+  }
+
+  loadComments();
+</script>
+
+<!-- FOOTER -->
+<div style="background:#0a0f1a;border-top:2px solid #21262d;padding:28px 32px;margin-top:20px;">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:center;">
+
+    <!-- LEFT: Created by -->
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#e6edf3;margin-bottom:6px;">⛏️ Greatland Resources — Private Investor Portal</div>
+      <div style="font-size:12px;color:#8b949e;line-height:1.8;">
+        Created &amp; maintained by <strong style="color:#e6edf3;">Stuart Wilson</strong><br>
+        Independent investor · Not affiliated with Greatland Resources plc<br>
+        <span style="color:#f85149;font-size:11px;">⚠️ Not financial advice. Do your own research.</span>
+      </div>
+    </div>
+
+    <!-- CENTRE: Contact & Social -->
+    <div style="text-align:center;">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:10px;">Connect</div>
+      <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+        <a href="https://x.com/stuartw6040" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1c2938;border:1px solid #1d9bf0;color:#1d9bf0;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:700;text-decoration:none;">𝕏 @stuartw6040</a>
+        <a href="https://t.me/+-vKDs_BOb0E1YTFk" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1c2938;border:1px solid #229ED9;color:#229ED9;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:700;text-decoration:none;">✈️ Telegram Group</a>
+        <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1c2938;border:1px solid #E8821C;color:#E8821C;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:700;text-decoration:none;">💬 Leave Feedback</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Buy Me a Coffee -->
+    <div style="text-align:right;">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:10px;">Support the Portal</div>
+      <a id="bmc-button" href="https://buymeacoffee.com/stuartw" target="_blank"
+        style="display:inline-flex;align-items:center;gap:8px;background:#FFDD00;color:#000000;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:800;text-decoration:none;border:none;">
+        ☕ Buy the Team a Coffee
+      </a>
+      <div style="font-size:11px;color:#8b949e;margin-top:6px;">If this portal saves you research time,<br>buy the team a coffee ☕</div>
+    </div>
+
+  </div>
+  <div style="max-width:1400px;margin:16px auto 0;padding-top:14px;border-top:1px solid #21262d;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#484f58;">
+    <span>© 2026 Stuart Wilson · Private use only · Data sourced from public RNS, VanEck, FCA, TipRanks, Investors Chronicle</span>
+    <span>Last updated: <span id="footer-updated"></span></span>
+  </div>
+</div>
+
+<script>
+  document.getElementById('footer-updated').textContent = new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
+</script>
+
+<!-- BUY ME A COFFEE FLOATING WIDGET (activates once account is live) -->
+<script data-name="BMC-Widget" data-cfasync="false"
+  src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+  data-id="stuartw"
+  data-description="Support the GGP Private Investor Portal!"
+  data-message="If this portal saves you research time, buy the team a coffee ☕"
+  data-color="#E8821C"
+  data-position="Right"
+  data-x_margin="18"
+  data-y_margin="80">
+</script>
+
+<!-- STICKY COMMENT RIBBON -->
+<div id="comment-ribbon" style="position:fixed;bottom:0;left:0;right:0;z-index:1000;background:#0c1821;border-top:2px solid #1d9bf0;padding:10px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
+  <div style="font-size:13px;font-weight:700;color:#1d9bf0;white-space:nowrap;">💬 Leave a Comment</div>
+  <input id="comment-input" type="text" placeholder="Share a thought, flag something, or leave feedback on the portal…" maxlength="220"
+    style="flex:1;background:#1c2938;border:1px solid #1d9bf0;border-radius:20px;padding:8px 16px;color:#e6edf3;font-size:13px;outline:none;font-family:inherit;"
+    onkeydown="if(event.key==='Enter') postComment()"
+  />
+  <span id="comment-count" style="font-size:11px;color:#8b949e;white-space:nowrap;">220</span>
+  <button onclick="postComment()" style="background:#1d9bf0;color:white;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;">Post via 𝕏</button>
+  <button onclick="document.getElementById('comment-ribbon').style.display='none'" style="background:transparent;color:#8b949e;border:none;font-size:18px;cursor:pointer;line-height:1;padding:0 4px;" title="Dismiss">✕</button>
+</div>
+
+<!-- pad page bottom so ribbon doesn't cover content -->
+<div style="height:60px;"></div>
+
+<script>
+  const inp = document.getElementById('comment-input');
+  const cnt = document.getElementById('comment-count');
+  inp.addEventListener('input', () => { cnt.textContent = 220 - inp.value.length; });
+  function postComment() {
+    const txt = inp.value.trim();
+    if (!txt) return;
+    const tweet = encodeURIComponent('#GGPPortal ' + txt + ' @stuartw6040');
+    window.open('https://twitter.com/intent/tweet?text=' + tweet, '_blank');
+    inp.value = '';
+    cnt.textContent = '220';
+  }
+</script>
+
+</body>
+</html>

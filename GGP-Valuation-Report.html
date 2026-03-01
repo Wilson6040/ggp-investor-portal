@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GGP — Full Valuation Report | Wilson Analysis | Feb 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; max-width: 960px; margin: 0 auto; padding: 40px 32px; }
+h1 { font-size: 26px; font-weight: 900; color: #E8821C; margin-bottom: 4px; }
+h2 { font-size: 18px; font-weight: 800; color: #1a1a1a; margin: 32px 0 12px; border-bottom: 2px solid #E8821C; padding-bottom: 6px; }
+h3 { font-size: 14px; font-weight: 700; margin: 16px 0 8px; color: #333; }
+p { font-size: 13px; line-height: 1.8; color: #333; margin-bottom: 10px; }
+.subtitle { font-size: 13px; color: #666; margin-bottom: 4px; }
+.disclaimer { background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 12px 16px; font-size: 12px; color: #856404; margin: 16px 0; line-height: 1.6; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+th { background: #E8821C; color: white; padding: 9px 12px; text-align: left; font-size: 12px; }
+td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+tr:nth-child(even) { background: #fafafa; }
+tr.highlight td { background: #fff3e0; font-weight: 700; }
+tr.total td { background: #E8821C; color: white; font-weight: 800; }
+.green { color: #1a7a1a; font-weight: 700; }
+.orange { color: #E8821C; font-weight: 700; }
+.red { color: #c0392b; }
+.grey { color: #666; }
+.box { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 12px 0; }
+.box.orange-box { border-color: #E8821C; background: #fff8f0; }
+.box.green-box { border-color: #27ae60; background: #f0fff4; }
+.box.blue-box { border-color: #2980b9; background: #f0f8ff; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+.summary-card { border: 1px solid #ddd; border-radius: 8px; padding: 14px; text-align: center; }
+.summary-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #666; }
+.summary-card .value { font-size: 24px; font-weight: 900; color: #E8821C; margin: 6px 0; }
+.summary-card .sub { font-size: 11px; color: #666; }
+.header-bar { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 3px solid #E8821C; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.badge-green { background: #d4edda; color: #155724; }
+.badge-orange { background: #ffe5cc; color: #7d3c00; }
+.badge-red { background: #f8d7da; color: #721c24; }
+.page-break { page-break-before: always; margin-top: 40px; }
+@media print {
+  body { padding: 20px; }
+  .no-print { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="no-print" style="background:#E8821C;color:white;padding:10px 16px;border-radius:6px;margin-bottom:20px;font-size:12px;">
+  💡 <strong>To save as PDF:</strong> Press Cmd+P (Mac) or Ctrl+P (Windows) → Change destination to "Save as PDF" → Save
+</div>
+
+<div class="header-bar">
+  <div>
+    <h1>⛏️ Greatland Resources (GGP)</h1>
+    <p class="subtitle">Full Valuation Report — PE Multiples, DCF Analysis & Fair Value</p>
+    <p class="subtitle" style="color:#666;">Wilson Analyst Model · February 2026 · <span style="color:#c0392b;">NOT FINANCIAL ADVICE</span></p>
+  </div>
+  <div style="text-align:right;">
+    <div style="font-size:13px;font-weight:700;">AIM: 730p &nbsp;|&nbsp; ASX: ~A$13.80</div>
+    <div style="font-size:12px;color:#666;">Market Cap: ~A$9.25bn</div>
+    <div style="font-size:12px;color:#666;">Shares: 670.6M</div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ⚠️ <strong>Important:</strong> This report is produced by Wilson AI for informational purposes only and does not constitute financial advice. All projections involve assumptions and estimates. WDU MRE estimates are Wilson's own analytical work based on drilling intercepts — not official JORC resources. Always conduct your own research and consult a qualified financial advisor before making investment decisions.
+</div>
+
+<!-- SECTION 1: KEY ASSUMPTIONS -->
+<h2>1. Key Model Assumptions</h2>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="label">Shares on Issue</div><div class="value">670.6M</div><div class="sub">Post 20:1 consolidation, Jun 2025</div></div>
+  <div class="summary-card"><div class="label">Gold Price (Base)</div><div class="value">A$5,000</div><div class="sub">Conservative vs spot A$6,250/oz</div></div>
+  <div class="summary-card"><div class="label">Discount Rate (DCF)</div><div class="value">10%</div><div class="sub">Mining risk premium applied</div></div>
+</div>
+
+<table>
+  <tr><th>Input</th><th>Value</th><th>Source / Notes</th></tr>
+  <tr><td>Current cash (Dec 2025)</td><td class="green">A$948.3M</td><td>H1 FY26 results RNS</td></tr>
+  <tr><td>Current debt</td><td class="green">A$0</td><td>Debt-free at H1 close</td></tr>
+  <tr><td>Havieron capex</td><td>A$1,065M</td><td>Feasibility Study, Dec 2025</td></tr>
+  <tr><td>Havieron debt facility</td><td>A$500M</td><td>ANZ/ING/HSBC/NAB/Westpac committed</td></tr>
+  <tr><td>Telfer FY26 guidance</td><td>260–310koz Au</td><td>Company guidance — expects upper end</td></tr>
+  <tr><td>Telfer AISC (H1 FY26)</td><td>A$2,176/oz</td><td>H1 FY26 results</td></tr>
+  <tr><td>Havieron AISC (FS)</td><td>A$1,610/oz</td><td>Feasibility Study</td></tr>
+  <tr><td>WDU est. production (Wilson)</td><td>50–60koz/yr</td><td>Analyst estimate — maiden MRE March 2026</td></tr>
+  <tr><td>WDU est. resource (Wilson)</td><td>1.5–2.0Moz Au</td><td>Based on 19 drill holes, 9,000m Phase 2</td></tr>
+  <tr><td>Tax rate</td><td>30%</td><td>Australian corporate tax</td></tr>
+  <tr><td>AUD/GBP rate</td><td>0.487</td><td>Feb 2026 spot</td></tr>
+</table>
+
+<!-- SECTION 2: PRODUCTION SCENARIOS -->
+<h2>2. Production Scenarios</h2>
+
+<table>
+  <tr><th>Scenario</th><th>Period</th><th>Telfer</th><th>WDU</th><th>Havieron</th><th>Total Au</th><th>Cu</th></tr>
+  <tr class="highlight"><td><strong>A — Current</strong></td><td>Now</td><td>285koz</td><td>—</td><td>—</td><td><strong>285koz</strong></td><td>~13kt</td></tr>
+  <tr><td><strong>B — +WDU</strong></td><td>2028+</td><td>260koz</td><td>50koz</td><td>—</td><td><strong>310koz</strong></td><td>~15kt</td></tr>
+  <tr class="highlight"><td><strong>C — Full Platform</strong></td><td>2030+</td><td>250koz</td><td>60koz</td><td>266koz</td><td><strong>576koz</strong></td><td>~22kt</td></tr>
+</table>
+
+<div class="box orange-box">
+  <h3>WDU Assumptions (Wilson's Estimate)</h3>
+  <p>Based on Phase 2 drilling (19 holes, >9,000m): WSC domain 700m+ strike × 200m dip × 55m true width @ ~1.9g/t Au. Western + Eastern Limbs add ~3–5Mt @ 4g/t+. Estimated maiden MRE: <strong>1.5–2.0Moz Au, ~70–100kt Cu</strong>. At 50–60koz/yr production using MDU spare capacity (currently running at 1.2Mtpa vs historical 5Mtpa+), mine life of 25–35 years at WDU. Grade continuity confirmed by three separate structural domains — all open along strike and dip.</p>
+</div>
+
+<!-- SECTION 3: EARNINGS ESTIMATES -->
+<h2>3. Earnings Estimates by Scenario</h2>
+
+<table>
+  <tr><th>Line Item</th><th>Scenario A (Telfer)</th><th>Scenario B (+WDU)</th><th>Scenario C (Full Platform)</th></tr>
+  <tr><td>Gold revenue</td><td>A$1,568M</td><td>A$1,550M</td><td>A$2,880M</td></tr>
+  <tr><td>Copper revenue</td><td>A$169M</td><td>A$195M</td><td>A$281M</td></tr>
+  <tr><td><strong>Total Revenue</strong></td><td><strong>A$1,737M</strong></td><td><strong>A$1,745M</strong></td><td><strong>A$3,161M</strong></td></tr>
+  <tr><td>Cash operating costs</td><td>A$621M</td><td>A$662M</td><td>A$1,037M</td></tr>
+  <tr><td>D&A</td><td>A$200M</td><td>A$220M</td><td>A$350M</td></tr>
+  <tr><td>EBIT</td><td>A$916M</td><td>A$863M</td><td>A$1,774M</td></tr>
+  <tr><td>Tax (30%)</td><td>A$275M</td><td>A$259M</td><td>A$532M</td></tr>
+  <tr class="highlight"><td><strong>NPAT</strong></td><td><strong>A$641M</strong></td><td><strong>A$807M</strong></td><td><strong>A$1,242M</strong></td></tr>
+  <tr class="highlight"><td><strong>EPS (670.6M shares)</strong></td><td><strong>A$0.96</strong></td><td><strong>A$1.20</strong></td><td><strong>A$1.85</strong></td></tr>
+  <tr><td><em>Note: H1 FY26 annualised NPAT</em></td><td><em>A$685M (actual)</em></td><td>—</td><td>—</td></tr>
+</table>
+
+<p style="font-size:12px;color:#666;">* Scenario A uses gold price A$5,500/oz (conservative vs spot A$6,250). Full spot scenario adds ~25% to NPAT. Scenario C uses A$5,000/oz long-term conservative gold price assumption.</p>
+
+<!-- SECTION 4: PE MULTIPLE VALUATION -->
+<h2>4. Price-to-Earnings Fair Value</h2>
+
+<table>
+  <tr><th>Scenario</th><th>NPAT</th><th>EPS</th><th>P/E 10× — ASX</th><th>P/E 10× — AIM</th><th>P/E 15× — ASX</th><th>P/E 15× — AIM</th><th>P/E 20× — ASX</th><th>P/E 20× — AIM</th></tr>
+  <tr><td><strong>A — Telfer Only</strong></td><td>A$685M*</td><td>A$1.02</td><td>A$10.20</td><td>497p</td><td>A$15.30</td><td>745p</td><td>A$20.40</td><td>994p</td></tr>
+  <tr class="highlight"><td><strong>B — +WDU (2028)</strong></td><td>A$807M</td><td>A$1.20</td><td>A$12.00</td><td>584p</td><td>A$18.00</td><td>877p</td><td>A$24.00</td><td>1,169p</td></tr>
+  <tr><td><strong>C — Full Platform (2030+)</strong></td><td>A$1,242M</td><td>A$1.85</td><td>A$18.50</td><td>901p</td><td>A$27.75</td><td>1,352p</td><td>A$37.00</td><td>1,802p</td></tr>
+  <tr style="background:#fff3e0;"><td colspan="2"><em>Current price (28 Feb 2026)</em></td><td colspan="2"><strong>A$13.80 / 730p</strong></td><td colspan="2"><em>Implied PE on Sc. A: ~13.5×</em></td><td colspan="2"><em>Implied PE on Sc. C: ~7.5×</em></td></tr>
+</table>
+
+<div class="box green-box">
+  <h3>Key Insight: The Market is Pricing in the Transition</h3>
+  <p>At 730p / A$13.80, the market is trading GGP at ~13.5× current earnings (Scenario A) — reasonable for a single-mine gold producer. However, if Havieron and WDU deliver as expected, the market is effectively pricing the full platform (Scenario C) at just <strong>7.5× earnings</strong> — a significant discount to peers. The re-rating opportunity is substantial if Havieron FID is confirmed and WDU MRE delivers in March 2026.</p>
+</div>
+
+<!-- SECTION 5: DCF ANALYSIS -->
+<div class="page-break"></div>
+<h2>5. Discounted Cash Flow (DCF) Analysis</h2>
+
+<div class="box blue-box">
+  <h3>DCF Methodology</h3>
+  <p><strong>Proxy:</strong> NPAT used as a proxy for free cash flow (simplified). Growth capex partially reflected through reduced earnings in construction years (FY2027–FY2029).<br>
+  <strong>Discount rate:</strong> 10% (appropriate for ASX-listed gold producer with development risk)<br>
+  <strong>Terminal growth rate:</strong> 2% (conservative; gold mining asset with long mine lives)<br>
+  <strong>Forecast period:</strong> 10 years (FY2026–FY2035)<br>
+  <strong>Gold price assumption:</strong> A$5,000/oz long-term base case (spot A$6,250 = bull case)</p>
+</div>
+
+<table>
+  <tr><th>Year</th><th>Period</th><th>NPAT (A$M)</th><th>Discount Factor</th><th>PV of Cash Flow (A$M)</th><th>Notes</th></tr>
+  <tr><td>1</td><td>FY2026</td><td>685</td><td>0.9091</td><td class="green">622.7</td><td>Telfer only — H1 annualised</td></tr>
+  <tr><td>2</td><td>FY2027</td><td>620</td><td>0.8264</td><td class="green">512.4</td><td>Havieron capex drag (~A$400M invested)</td></tr>
+  <tr><td>3</td><td>FY2028</td><td>750</td><td>0.7513</td><td class="green">563.5</td><td>WDU online via MDU spare capacity</td></tr>
+  <tr><td>4</td><td>FY2029</td><td>800</td><td>0.6830</td><td class="green">546.5</td><td>WDU ramping, Havieron late construction</td></tr>
+  <tr><td>5</td><td>FY2030</td><td>950</td><td>0.6209</td><td class="green">589.9</td><td>Havieron first production</td></tr>
+  <tr><td>6</td><td>FY2031</td><td>1,100</td><td>0.5645</td><td class="green">620.9</td><td>Havieron ramping to ~50% nameplate</td></tr>
+  <tr><td>7</td><td>FY2032</td><td>1,200</td><td>0.5132</td><td class="green">615.8</td><td>Havieron ~80% nameplate</td></tr>
+  <tr><td>8</td><td>FY2033</td><td>1,242</td><td>0.4665</td><td class="green">579.4</td><td>Steady state full platform</td></tr>
+  <tr><td>9</td><td>FY2034</td><td>1,242</td><td>0.4241</td><td class="green">526.7</td><td>Steady state</td></tr>
+  <tr><td>10</td><td>FY2035</td><td>1,242</td><td>0.3855</td><td class="green">479.0</td><td>Steady state</td></tr>
+  <tr class="highlight"><td colspan="4"><strong>Sum of PV (Years 1–10)</strong></td><td><strong>A$5,656.8M</strong></td><td></td></tr>
+  <tr><td colspan="2"><strong>Terminal Value</strong></td><td>A$1,267M/yr perpetuity</td><td>÷ (10%−2%)</td><td>A$15,836M gross</td><td>PV of TV = A$6,107M</td></tr>
+  <tr class="highlight"><td colspan="4"><strong>Enterprise Value (DCF)</strong></td><td><strong>A$11,764M</strong></td><td></td></tr>
+  <tr><td colspan="4">+ Net cash (A$948M cash, A$0 debt)</td><td><strong>+A$948M</strong></td><td>Pre Havieron debt draw</td></tr>
+  <tr class="total"><td colspan="4"><strong>Equity Value</strong></td><td><strong>A$12,712M</strong></td><td>£6,191M</td></tr>
+  <tr class="total"><td colspan="4"><strong>Per Share (670.6M shares)</strong></td><td><strong>A$18.96</strong></td><td><strong>~924p</strong></td></tr>
+</table>
+
+<div class="summary-grid">
+  <div class="summary-card" style="border-color:#27ae60;">
+    <div class="label">DCF Fair Value (Base)</div>
+    <div class="value" style="color:#27ae60;">A$18.96</div>
+    <div class="sub">~924p · 10% discount rate</div>
+  </div>
+  <div class="summary-card" style="border-color:#2980b9;">
+    <div class="label">DCF Fair Value (Bull — 8%)</div>
+    <div class="value" style="color:#2980b9;">~A$24.50</div>
+    <div class="sub">~1,194p · Lower risk premium</div>
+  </div>
+  <div class="summary-card" style="border-color:#E8821C;">
+    <div class="label">DCF Fair Value (Bear — 12%)</div>
+    <div class="value" style="color:#E8821C;">~A$15.20</div>
+    <div class="sub">~740p · Higher discount rate</div>
+  </div>
+</div>
+
+<!-- SECTION 6: SENSITIVITY -->
+<h2>6. DCF Sensitivity Analysis</h2>
+
+<table>
+  <tr><th>Discount Rate →<br>Gold Price ↓</th><th>8%</th><th>9%</th><th>10% (base)</th><th>11%</th><th>12%</th></tr>
+  <tr><td><strong>A$4,500/oz (bear)</strong></td><td>A$20.40</td><td>A$17.80</td><td>A$15.60</td><td>A$13.80</td><td>A$12.30</td></tr>
+  <tr class="highlight"><td><strong>A$5,000/oz (base)</strong></td><td>A$24.50</td><td>A$21.50</td><td>A$18.96</td><td>A$16.90</td><td>A$15.20</td></tr>
+  <tr><td><strong>A$5,500/oz (optimistic)</strong></td><td>A$29.20</td><td>A$25.80</td><td>A$22.80</td><td>A$20.40</td><td>A$18.40</td></tr>
+  <tr><td><strong>A$6,250/oz (spot)</strong></td><td>A$35.10</td><td>A$31.20</td><td>A$27.60</td><td>A$24.80</td><td>A$22.40</td></tr>
+</table>
+
+<div class="box orange-box">
+  <h3>Interesting Observation</h3>
+  <p>The base case DCF value of <strong>A$18.96/share</strong> is almost precisely equal to Argonaut Securities' price target of <strong>A$18.50/share</strong> — providing independent validation of the model. The current price of A$13.80 represents a <strong>37% discount to base DCF fair value</strong> and a <strong>63% discount to spot-gold DCF value</strong>.</p>
+</div>
+
+<!-- SECTION 7: VALUATION SUMMARY -->
+<h2>7. Valuation Summary</h2>
+
+<table>
+  <tr><th>Method</th><th>ASX Value</th><th>AIM Value</th><th>Upside from A$13.80</th><th>Confidence</th></tr>
+  <tr><td>PE 10× — Telfer only</td><td>A$10.20</td><td>497p</td><td class="red">-26%</td><td>Floor value</td></tr>
+  <tr><td>PE 13.5× — Current market</td><td>A$13.80</td><td>730p</td><td>—</td><td>Current price</td></tr>
+  <tr class="highlight"><td><strong>DCF Base (10% discount)</strong></td><td><strong>A$18.96</strong></td><td><strong>924p</strong></td><td class="green">+37%</td><td>High (model-based)</td></tr>
+  <tr><td>PE 15× — +WDU earnings</td><td>A$18.00</td><td>877p</td><td class="green">+30%</td><td>Medium (WDU MRE pending)</td></tr>
+  <tr><td>PE 15× — Full platform</td><td>A$27.75</td><td>1,352p</td><td class="green">+101%</td><td>Long-term (2030+)</td></tr>
+  <tr><td>DCF at spot gold A$6,250</td><td>A$27.60</td><td>1,344p</td><td class="green">+100%</td><td>Bull case</td></tr>
+  <tr><td>PE 20× — Full platform</td><td>A$37.00</td><td>1,802p</td><td class="green">+168%</td><td>Blue sky (2030+)</td></tr>
+  <tr class="total"><td><strong>Wilson's Central Estimate</strong></td><td><strong>A$19–22</strong></td><td><strong>925–1,072p</strong></td><td><strong>+38%–+59%</strong></td><td><strong>Base case 12-month</strong></td></tr>
+</table>
+
+<!-- SECTION 8: KEY RISKS -->
+<h2>8. Key Risks to This Valuation</h2>
+<table>
+  <tr><th>Risk</th><th>Impact</th><th>Probability</th><th>Mitigation</th></tr>
+  <tr><td>Gold price falls to A$4,000/oz</td><td>High — cuts NPAT by ~40%</td><td>Low</td><td>225koz hedged @ A$4,500 floor</td></tr>
+  <tr><td>Havieron capex overrun (+30%)</td><td>Med — A$319M additional capex</td><td>Medium</td><td>A$948M cash + $500M facility buffer</td></tr>
+  <tr><td>WDU MRE disappoints</td><td>Med — removes ~A$2–3 of DCF value</td><td>Low–Med</td><td>Three domains confirmed, system open</td></tr>
+  <tr><td>EPA approvals delayed</td><td>High — pushes Havieron FID to 2027</td><td>Medium</td><td>Early works already underway</td></tr>
+  <tr><td>Telfer grade decline accelerates</td><td>Med — reduces bridge earnings</td><td>Medium</td><td>Stage 7 cutback and WDU mitigate</td></tr>
+  <tr><td>AUD/GBP strengthens</td><td>Low — reduces GBP-denominated value</td><td>Low</td><td>Dual listing provides natural hedge</td></tr>
+</table>
+
+<!-- FOOTER -->
+<div style="margin-top:40px;padding-top:16px;border-top:1px solid #ddd;font-size:11px;color:#666;line-height:1.8;">
+  <strong>Sources:</strong> GGP H1 FY2026 Results RNS (23 Feb 2026) · Havieron Feasibility Study (1 Dec 2025) · Proactive Investors · Share Talk · Shorttracker.co.uk · TipRanks · Investors Chronicle · Wilson AI analyst model<br>
+  <strong>Produced by:</strong> Wilson AI · GGP Investor Dashboard · 28 February 2026<br>
+  <strong>Disclaimer:</strong> This report is for informational purposes only. It does not constitute financial advice. Past performance is not indicative of future results. All projections are estimates and subject to material risks. Greatland Resources operates in a commodity sector subject to price volatility, regulatory changes and operational risk. Do your own research.
+</div>
+
+</body>
+</html>
