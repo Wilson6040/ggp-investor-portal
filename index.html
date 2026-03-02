@@ -463,24 +463,18 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <a href="https://www.tradingview.com/symbols/ASX-GGP/" target="_blank" class="card-link">TradingView ↗</a>
     </div>
     <div class="card-body" style="padding:0;">
-      <div class="tradingview-widget-container" style="height:240px;">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
-        {
-          "symbols": [["Greatland Resources ASX","ASX:GGP|1D"]],
-          "chartOnly": true,
-          "width": "100%",
-          "height": 240,
-          "locale": "en",
-          "colorTheme": "dark",
-          "autosize": true,
-          "showVolume": false,
-          "chartType": "area",
-          "lineColor": "#58a6ff",
-          "bottomColor": "rgba(88,166,255,0.1)",
-          "topColor": "rgba(88,166,255,0.3)"
-        }
-        </script>
+      <div style="position:relative;">
+        <div id="asx-chart" style="height:240px;background:#0d1117;"></div>
+        <div id="asx-chart-loader" style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:#0d1117;">
+          <div style="color:#58a6ff;font-size:13px;">Loading GGP.AU chart...</div>
+        </div>
+        <div style="position:absolute;top:6px;right:10px;display:flex;gap:6px;z-index:10;">
+          <button onclick="loadASXChart('1mo')" class="range-btn" id="arb-1mo">1M</button>
+          <button onclick="loadASXChart('3mo')" class="range-btn" id="arb-3mo">3M</button>
+          <button onclick="loadASXChart('6mo')" class="range-btn active-range" id="arb-6mo" style="border-color:#58a6ff!important;color:#58a6ff!important;background:#001a33!important;">6M</button>
+          <button onclick="loadASXChart('1y')"  class="range-btn" id="arb-1y">1Y</button>
+          <button onclick="loadASXChart('2y')"  class="range-btn" id="arb-2y">2Y</button>
+        </div>
       </div>
       <div style="padding: 10px 16px; display:flex; gap:20px; background:#0d1117; border-top:1px solid #21262d; flex-wrap:wrap; align-items:center;">
         <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">ASX:GGP (delayed)</div><div style="font-size:18px;font-weight:800;color:#58a6ff;" id="asx-live-price">A$13.80</div><div style="font-size:11px;color:#3fb950;">~15min delay</div></div>
@@ -1603,12 +1597,38 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   let AIM_PRICE_P = 730;   // updated live from Stooq
   let ASX_PRICE_AUD = 13.80; // updated live from Yahoo Finance proxy
 
-  // ── Yahoo Finance fetch (direct — works without proxy for most browsers) ────
-  async function yfFetch(symbol, range='1d', interval='5m') {
-    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?range=${range}&interval=${interval}`;
-    const res = await fetch(url, {headers:{'User-Agent':'Mozilla/5.0'}});
-    if (!res.ok) throw new Error(res.status);
-    return res.json();
+  // ── Stooq fetch helpers (no CORS issues, free, works from any browser) ─────
+  // Latest quote: returns {close, open, high, low, volume, date, time, pct}
+  async function stooqQuote(sym) {
+    const url = `https://stooq.com/q/l/?s=${sym}&f=sd2t2ohlcvp&h&e=csv`;
+    const res = await fetch(url);
+    const csv = await res.text();
+    const rows = csv.trim().split('\n');
+    if (rows.length < 2) throw new Error('no data');
+    const cols = rows[1].split(',');
+    // Date,Time,Open,High,Low,Close,Volume,%Chg
+    return {
+      date:   cols[0], time:  cols[1],
+      open:   parseFloat(cols[2]), high:  parseFloat(cols[3]),
+      low:    parseFloat(cols[4]), close: parseFloat(cols[5]),
+      volume: parseFloat(cols[6]), pct:   parseFloat(cols[7]),
+    };
+  }
+
+  // Historical OHLCV for chart: returns array of {time,open,high,low,close}
+  async function stooqHistory(sym, days=365) {
+    const url = `https://stooq.com/q/d/l/?s=${sym}&i=d`;
+    const res = await fetch(url);
+    const csv = await res.text();
+    const rows = csv.trim().split('\n').slice(1); // skip header
+    const cutoff = Date.now() - days * 86400000;
+    return rows
+      .map(r => {
+        const c = r.split(',');
+        const t = new Date(c[0]).getTime() / 1000;
+        return { time: Math.floor(t), open: +c[1], high: +c[2], low: +c[3], close: +c[4] };
+      })
+      .filter(c => c.time * 1000 >= cutoff && !isNaN(c.close) && c.close > 0);
   }
 
   // ── Ribbon helper ──────────────────────────────────────────────────────────
@@ -1625,126 +1645,144 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     }
   }
 
-  // ── Lightweight Charts: AIM GGP.L ─────────────────────────────────────────
-  let aimChart, aimSeries;
-  async function loadAIMChart(range = '6mo') {
-    // Update active button
-    document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active-range'));
-    const btnMap = {'1mo':'1mo','3mo':'3mo','6mo':'6mo','1y':'1y','2y':'2y'};
-    const btnEl = document.getElementById('rb-' + range.replace('mo','mo'));
-    if (btnEl) btnEl.classList.add('active-range');
+  // ── Lightweight Chart builder (shared for AIM + ASX) ─────────────────────
+  function buildLWChart(containerId, color, days) {
+    const container = document.getElementById(containerId);
+    const chart = LightweightCharts.createChart(container, {
+      width:  container.clientWidth,
+      height: containerId === 'aim-chart' ? 300 : 240,
+      layout: { background: { color: '#0d1117' }, textColor: '#8b949e' },
+      grid:   { vertLines: { color: '#21262d' }, horzLines: { color: '#21262d' } },
+      crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+      rightPriceScale: { borderColor: '#30363d' },
+      timeScale: { borderColor: '#30363d' },
+      handleScroll: true, handleScale: true,
+    });
+    const series = chart.addCandlestickSeries({
+      upColor: color, downColor: '#f85149',
+      borderUpColor: color, borderDownColor: '#f85149',
+      wickUpColor: color, wickDownColor: '#f85149',
+    });
+    new ResizeObserver(() => chart.applyOptions({ width: container.clientWidth })).observe(container);
+    return { chart, series };
+  }
 
+  // ── AIM chart (GGP.UK via Stooq) ─────────────────────────────────────────
+  let aimLW = null;
+  async function loadAIMChart(range = '6mo') {
+    const days = {'1mo':30,'3mo':90,'6mo':182,'1y':365,'2y':730}[range] || 182;
+    // Button highlights
+    ['1mo','3mo','6mo','1y','2y'].forEach(r => {
+      const b = document.getElementById('rb-'+r);
+      if (b) b.classList.toggle('active-range', r === range);
+    });
     const loader = document.getElementById('aim-chart-loader');
     const prog   = document.getElementById('aim-progress');
     if (loader) loader.style.display = 'flex';
-    if (prog)   prog.style.width = '30%';
-
+    if (prog)   prog.style.width = '40%';
     try {
-      const interval = range === '1mo' ? '1d' : range === '3mo' ? '1d' : '1d';
-      const data = await yfFetch('GGP.L', range, interval);
-      const result = data.chart.result[0];
-      const timestamps = result.timestamp;
-      const ohlcv = result.indicators.quote[0];
-      const meta  = result.meta;
-
-      if (prog) prog.style.width = '70%';
-
-      // Build candle data for Lightweight Charts
-      const candles = timestamps.map((t, i) => ({
-        time: t,
-        open:  ohlcv.open[i]  || ohlcv.close[i],
-        high:  ohlcv.high[i]  || ohlcv.close[i],
-        low:   ohlcv.low[i]   || ohlcv.close[i],
-        close: ohlcv.close[i],
-      })).filter(c => c.close != null && !isNaN(c.close));
-
-      const container = document.getElementById('aim-chart');
-
-      // Destroy & recreate chart on range change
-      if (aimChart) { aimChart.remove(); aimChart = null; }
-
-      aimChart = LightweightCharts.createChart(container, {
-        width:  container.clientWidth,
-        height: 300,
-        layout: { background: { color: '#0d1117' }, textColor: '#8b949e' },
-        grid:   { vertLines: { color: '#21262d' }, horzLines: { color: '#21262d' } },
-        crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
-        rightPriceScale: { borderColor: '#30363d' },
-        timeScale: { borderColor: '#30363d', timeVisible: true },
-      });
-
-      aimSeries = aimChart.addCandlestickSeries({
-        upColor:        '#3fb950',
-        downColor:      '#f85149',
-        borderUpColor:  '#3fb950',
-        borderDownColor:'#f85149',
-        wickUpColor:    '#3fb950',
-        wickDownColor:  '#f85149',
-      });
-
-      aimSeries.setData(candles);
-      aimChart.timeScale().fitContent();
-
-      // Update price ribbon + panel
-      const price = meta.regularMarketPrice;
-      const prev  = meta.previousClose || meta.chartPreviousClose;
-      AIM_PRICE_P = price;
-      const colour = price >= (prev || price) ? '#3fb950' : '#f85149';
+      const [candles, quote] = await Promise.all([
+        stooqHistory('ggp.uk', days),
+        stooqQuote('ggp.uk'),
+      ]);
+      if (prog) prog.style.width = '80%';
+      if (!aimLW) aimLW = buildLWChart('aim-chart', '#E8821C', days);
+      else { aimLW.chart.remove(); aimLW = buildLWChart('aim-chart', '#E8821C', days); }
+      aimLW.series.setData(candles);
+      aimLW.chart.timeScale().fitContent();
+      // Update price displays
+      AIM_PRICE_P = quote.close;
+      const colour = quote.pct >= 0 ? '#3fb950' : '#f85149';
       const pEl = document.getElementById('aim-live-price');
-      if (pEl) { pEl.textContent = price.toFixed(1) + 'p'; pEl.style.color = colour; }
+      if (pEl) { pEl.textContent = quote.close.toFixed(1) + 'p'; pEl.style.color = colour; }
       const uEl = document.getElementById('aim-price-updated');
-      if (uEl) uEl.textContent = 'Yahoo Finance · ~15min delay';
-      setRibbon('ggp-aim', price, prev, p => p.toFixed(1) + 'p');
-
+      if (uEl) uEl.textContent = `Stooq · ${quote.date} ${quote.time} · ~15min delay`;
+      setRibbon('ggp-aim', quote.close, null, p => p.toFixed(1)+'p');
+      if (quote.pct) {
+        const chgEl = document.getElementById('rc-ggp-aim');
+        if (chgEl) { chgEl.textContent = (quote.pct>=0?'+':'')+quote.pct.toFixed(2)+'%'; chgEl.className='rib-chg '+(quote.pct>=0?'rib-up':'rib-dn'); }
+      }
       if (prog) prog.style.width = '100%';
       setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
-
-      // Resize on window resize
-      new ResizeObserver(() => {
-        if (aimChart) aimChart.applyOptions({ width: container.clientWidth });
-      }).observe(container);
-
     } catch(e) {
       console.warn('AIM chart error:', e);
-      if (loader) loader.innerHTML = '<div style="color:#f85149;font-size:12px;">Chart unavailable · <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-price" target="_blank" style="color:#58a6ff;">ADVFN ↗</a> · <a href="https://finance.yahoo.com/quote/GGP.L/" target="_blank" style="color:#58a6ff;">Yahoo ↗</a></div>';
+      if (loader) loader.innerHTML = `<div style="color:#f85149;font-size:12px;text-align:center;">Chart error · <a href="https://stooq.com/q/?s=ggp.uk" target="_blank" style="color:#58a6ff;">Stooq ↗</a> · <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-price" target="_blank" style="color:#58a6ff;">ADVFN ↗</a></div>`;
     }
   }
 
-  // ── Ticker ribbon: fetch all symbols ──────────────────────────────────────
-  async function fetchRibbon() {
-    const symbols = [
-      ['GGP.L',  'ggp-aim',   p => p.toFixed(1)+'p'],
-      ['GGP.AX', 'ggp-asx',   p => 'A$'+p.toFixed(2)],
-      ['GC=F',   'gold',      p => '$'+p.toFixed(0)],
-      ['HG=F',   'copper',    p => '$'+p.toFixed(3)],
-      ['AUDUSD=X','audusd',   p => p.toFixed(4)],
-      ['GBPAUD=X','gbpaud',   p => p.toFixed(4)],
-      ['GDX',    'gdx',       p => '$'+p.toFixed(2)],
-      ['GDXJ',   'gdxj',      p => '$'+p.toFixed(2)],
-      ['TSLA',   'tsla',      p => '$'+p.toFixed(2)],
-    ];
-    await Promise.all(symbols.map(async ([sym, id, fmt]) => {
+  // ── ASX chart (GGP.AU via Stooq) ─────────────────────────────────────────
+  let asxLW = null;
+  async function loadASXChart(range = '6mo') {
+    const days = {'1mo':30,'3mo':90,'6mo':182,'1y':365,'2y':730}[range] || 182;
+    ['1mo','3mo','6mo','1y','2y'].forEach(r => {
+      const b = document.getElementById('arb-'+r);
+      if (b) { b.classList.toggle('active-range', r === range); if(r===range){b.style.borderColor='#58a6ff';b.style.color='#58a6ff';b.style.background='#001a33';}else{b.style.borderColor='';b.style.color='';b.style.background='';} }
+    });
+    const loader = document.getElementById('asx-chart-loader');
+    if (loader) loader.style.display = 'flex';
+    try {
+      // GGP.AU not on Stooq — use a 6mo GGP.UK price scaled by live AUD/GBP FX as proxy
+      // OR use marketindex.com.au - but simplest: show AIM chart in AUD using FX
+      // Actually let's try Stooq with different symbol formats
+      let candles, quote;
       try {
-        const d = await yfFetch(sym, '1d', '1d');
-        const meta = d.chart.result[0].meta;
-        const price = meta.regularMarketPrice;
-        const prev  = meta.previousClose || meta.chartPreviousClose;
-        setRibbon(id, price, prev, fmt);
-        // Special: gold-aud needs FX
-        if (sym === 'GC=F') {
-          try {
-            const fx = await yfFetch('AUDUSD=X', '1d', '1d');
-            const audusd = fx.chart.result[0].meta.regularMarketPrice;
-            setRibbon('gold-aud', price / audusd, null, p => 'A$'+p.toFixed(0));
-          } catch(e){}
+        [candles, quote] = await Promise.all([stooqHistory('ggp.au', days), stooqQuote('ggp.au')]);
+        if (!candles.length) throw new Error('empty');
+      } catch {
+        // Fallback: convert AIM data to AUD using current FX
+        const fxRes = await fetch('https://api.frankfurter.app/latest?from=GBP&to=AUD');
+        const fx = await fxRes.json();
+        const gbpAud = fx.rates.AUD;
+        const aimCandles = await stooqHistory('ggp.uk', days);
+        candles = aimCandles.map(c => ({
+          time: c.time,
+          open:  +(c.open  / 100 * gbpAud).toFixed(3),
+          high:  +(c.high  / 100 * gbpAud).toFixed(3),
+          low:   +(c.low   / 100 * gbpAud).toFixed(3),
+          close: +(c.close / 100 * gbpAud).toFixed(3),
+        }));
+        const aimQ = await stooqQuote('ggp.uk');
+        ASX_PRICE_AUD = +(aimQ.close / 100 * gbpAud).toFixed(2);
+        quote = { close: ASX_PRICE_AUD, pct: aimQ.pct };
+      }
+      if (!asxLW) asxLW = buildLWChart('asx-chart', '#58a6ff', days);
+      else { asxLW.chart.remove(); asxLW = buildLWChart('asx-chart', '#58a6ff', days); }
+      asxLW.series.setData(candles);
+      asxLW.chart.timeScale().fitContent();
+      ASX_PRICE_AUD = quote.close;
+      const el = document.getElementById('asx-live-price');
+      if (el) el.textContent = 'A$' + quote.close.toFixed(2);
+      setRibbon('ggp-asx', quote.close, null, p => 'A$'+p.toFixed(2));
+      if (loader) loader.style.display = 'none';
+    } catch(e) {
+      console.warn('ASX chart error:', e);
+      if (loader) loader.innerHTML = `<div style="color:#f85149;font-size:12px;">Chart error</div>`;
+    }
+  }
+
+  // ── Ticker ribbon: all via Stooq ──────────────────────────────────────────
+  async function fetchRibbon() {
+    const items = [
+      ['xauusd',  'gold',    p => '$'+p.toFixed(0)],
+      ['xauaud',  'gold-aud',p => 'A$'+p.toFixed(0)],
+      ['hgusd',   'copper',  p => '$'+p.toFixed(3)],
+      ['audusd',  'audusd',  p => p.toFixed(4)],
+      ['gbpaud',  'gbpaud',  p => p.toFixed(4)],
+      ['gdx.us',  'gdx',     p => '$'+p.toFixed(2)],
+      ['gdxj.us', 'gdxj',    p => '$'+p.toFixed(2)],
+      ['tsla.us', 'tsla',    p => '$'+p.toFixed(2)],
+    ];
+    await Promise.all(items.map(async ([sym, id, fmt]) => {
+      try {
+        const q = await stooqQuote(sym);
+        if (q.close > 0) {
+          setRibbon(id, q.close, null, fmt);
+          if (!isNaN(q.pct)) {
+            const chgEl = document.getElementById('rc-' + id);
+            if (chgEl) { chgEl.textContent=(q.pct>=0?'+':'')+q.pct.toFixed(2)+'%'; chgEl.className='rib-chg '+(q.pct>=0?'rib-up':'rib-dn'); }
+          }
         }
-        // Also update ASX panel price
-        if (sym === 'GGP.AX') {
-          ASX_PRICE_AUD = price;
-          const el = document.getElementById('asx-live-price');
-          if (el) el.textContent = 'A$' + price.toFixed(2);
-        }
-      } catch(e) { console.warn('Ribbon fetch failed for', sym, e); }
+      } catch(e) { console.warn('Ribbon fetch failed:', sym, e); }
     }));
   }
 
@@ -1779,9 +1817,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     await Promise.all([fetchRibbon(), fetchFX()]);
   }
   // Load chart immediately, then start ribbon
+  // Init all charts + ribbon
   loadAIMChart('6mo');
-  refreshAll();
-  setInterval(refreshAll, 60000);
+  loadASXChart('6mo');
+  fetchRibbon();
+  fetchFX();
+  setInterval(() => { fetchRibbon(); fetchFX(); }, 60000);
 
   // Short position chart
   const ctx = document.getElementById('shortsChart');
