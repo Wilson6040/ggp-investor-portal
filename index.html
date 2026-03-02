@@ -263,78 +263,50 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
 </div>
 
-<!-- LIVE PRICE TICKER RIBBON (custom — Yahoo Finance + Frankfurter, no TradingView restrictions) -->
-<div id="price-ribbon" style="background:#0a0f1a;border-bottom:1px solid #21262d;padding:7px 16px;display:flex;gap:0;overflow-x:auto;align-items:center;white-space:nowrap;scrollbar-width:none;">
-  <div class="ribbon-item" id="rib-ggp-aim">
-    <span class="rib-label">⛏️ GGP AIM</span>
-    <span class="rib-price" id="rp-ggp-aim">—p</span>
-    <span class="rib-chg" id="rc-ggp-aim"></span>
+<!-- SCROLLING TICKER RIBBON — TradingView tape (scrolling) + custom GGP AIM badge -->
+<div style="background:#0a0f1a;border-bottom:1px solid #21262d;">
+  <!-- Custom GGP AIM live price bar above the tape -->
+  <div style="display:flex;align-items:center;gap:16px;padding:4px 16px;border-bottom:1px solid #1a1f2a;flex-wrap:wrap;">
+    <span style="font-size:10px;color:#8b949e;">⛏️ GGP AIM:</span>
+    <span style="font-size:13px;font-weight:800;color:#E8821C;" id="rp-ggp-aim">—p</span>
+    <span style="font-size:10px;font-weight:600;" id="rc-ggp-aim"></span>
+    <span style="color:#30363d;font-size:12px;">|</span>
+    <span style="font-size:10px;color:#8b949e;">GGP ASX:</span>
+    <span style="font-size:13px;font-weight:800;color:#58a6ff;" id="rp-ggp-asx">A$—</span>
+    <span style="font-size:10px;font-weight:600;" id="rc-ggp-asx"></span>
+    <span style="font-size:9px;color:#484f58;margin-left:4px;" id="aim-ribbon-ts">fetching…</span>
   </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item" id="rib-ggp-asx">
-    <span class="rib-label">🇦🇺 GGP ASX</span>
-    <span class="rib-price" id="rp-ggp-asx">A$—</span>
-    <span class="rib-chg" id="rc-ggp-asx"></span>
+  <!-- TradingView scrolling tape for everything else -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName":"TVC:GOLD","title":"Gold (USD/oz)"},
+        {"proName":"OANDA:XAUAUD","title":"Gold (AUD/oz)"},
+        {"proName":"TVC:SILVER","title":"Silver"},
+        {"proName":"CAPITALCOM:COPPER","title":"Copper"},
+        {"proName":"OANDA:AUDUSD","title":"AUD/USD"},
+        {"proName":"OANDA:GBPAUD","title":"GBP/AUD"},
+        {"proName":"ASX:GGP","title":"GGP (ASX)"},
+        {"proName":"AMEX:GDX","title":"GDX"},
+        {"proName":"AMEX:GDXJ","title":"GDXJ"},
+        {"proName":"NYSE:NEM","title":"Newmont"},
+        {"proName":"NASDAQ:TSLA","title":"TSLA"},
+        {"proName":"NASDAQ:NVDA","title":"NVDA"}
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
   </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item">
-    <span class="rib-label">🥇 Gold</span>
-    <span class="rib-price" id="rp-gold">$—</span>
-    <span class="rib-chg" id="rc-gold"></span>
-  </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item">
-    <span class="rib-label">🥇 Gold AUD</span>
-    <span class="rib-price" id="rp-gold-aud">A$—</span>
-    <span class="rib-chg" id="rc-gold-aud"></span>
-  </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item">
-    <span class="rib-label">🔴 Copper</span>
-    <span class="rib-price" id="rp-copper">$—</span>
-    <span class="rib-chg" id="rc-copper"></span>
-  </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item">
-    <span class="rib-label">AUD/USD</span>
-    <span class="rib-price" id="rp-audusd">—</span>
-    <span class="rib-chg" id="rc-audusd"></span>
-  </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item">
-    <span class="rib-label">GBP/AUD</span>
-    <span class="rib-price" id="rp-gbpaud">—</span>
-    <span class="rib-chg" id="rc-gbpaud"></span>
-  </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item">
-    <span class="rib-label">📊 GDX</span>
-    <span class="rib-price" id="rp-gdx">$—</span>
-    <span class="rib-chg" id="rc-gdx"></span>
-  </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item">
-    <span class="rib-label">📊 GDXJ</span>
-    <span class="rib-price" id="rp-gdxj">$—</span>
-    <span class="rib-chg" id="rc-gdxj"></span>
-  </div>
-  <div class="rib-sep">|</div>
-  <div class="ribbon-item">
-    <span class="rib-label">⚡ TSLA</span>
-    <span class="rib-price" id="rp-tsla">$—</span>
-    <span class="rib-chg" id="rc-tsla"></span>
-  </div>
-  <span style="font-size:9px;color:#484f58;margin-left:16px;flex-shrink:0;">~15min delay · Yahoo Finance</span>
 </div>
 <style>
-  .ribbon-item { display:inline-flex; align-items:center; gap:5px; padding:0 10px; }
-  .rib-label   { font-size:10px; color:#8b949e; }
-  .rib-price   { font-size:12px; font-weight:800; color:#e6edf3; }
-  .rib-chg     { font-size:10px; font-weight:600; }
-  .rib-up      { color:#3fb950; }
-  .rib-dn      { color:#f85149; }
-  .rib-sep     { color:#30363d; font-size:14px; padding:0 2px; flex-shrink:0; }
-  #price-ribbon::-webkit-scrollbar { display:none; }
+  .rib-up { color:#3fb950; }
+  .rib-dn { color:#f85149; }
 </style>
 
 <div class="header">
@@ -1597,30 +1569,42 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   let AIM_PRICE_P = 730;   // updated live from Stooq
   let ASX_PRICE_AUD = 13.80; // updated live from Yahoo Finance proxy
 
-  // ── Stooq fetch helpers (no CORS issues, free, works from any browser) ─────
-  // Latest quote: returns {close, open, high, low, volume, date, time, pct}
+  // ── Stooq via Netlify proxy (CORS-safe from any browser/domain) ─────────────
+  // Proxy deployed at same Netlify site — zero external dependency
+  const PROXY = '/.netlify/functions/proxy?url=';
+
+  async function stooqFetch(stooqUrl) {
+    // Try via Netlify proxy first, fall back to direct (works on localhost/dev)
+    const urls = [
+      PROXY + encodeURIComponent(stooqUrl),
+      stooqUrl,   // direct fallback (works if CORS allows)
+    ];
+    for (const url of urls) {
+      try {
+        const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+        if (res.ok) return res.text();
+      } catch(e) { /* try next */ }
+    }
+    throw new Error('All fetch attempts failed for ' + stooqUrl);
+  }
+
   async function stooqQuote(sym) {
     const url = `https://stooq.com/q/l/?s=${sym}&f=sd2t2ohlcvp&h&e=csv`;
-    const res = await fetch(url);
-    const csv = await res.text();
+    const csv = await stooqFetch(url);
     const rows = csv.trim().split('\n');
     if (rows.length < 2) throw new Error('no data');
     const cols = rows[1].split(',');
-    // Date,Time,Open,High,Low,Close,Volume,%Chg
     return {
-      date:   cols[0], time:  cols[1],
-      open:   parseFloat(cols[2]), high:  parseFloat(cols[3]),
-      low:    parseFloat(cols[4]), close: parseFloat(cols[5]),
-      volume: parseFloat(cols[6]), pct:   parseFloat(cols[7]),
+      date: cols[0], time: cols[1],
+      open: +cols[2], high: +cols[3], low: +cols[4], close: +cols[5],
+      volume: +cols[6], pct: +cols[7],
     };
   }
 
-  // Historical OHLCV for chart: returns array of {time,open,high,low,close}
-  async function stooqHistory(sym, days=365) {
+  async function stooqHistory(sym, days = 365) {
     const url = `https://stooq.com/q/d/l/?s=${sym}&i=d`;
-    const res = await fetch(url);
-    const csv = await res.text();
-    const rows = csv.trim().split('\n').slice(1); // skip header
+    const csv = await stooqFetch(url);
+    const rows = csv.trim().split('\n').slice(1);
     const cutoff = Date.now() - days * 86400000;
     return rows
       .map(r => {
@@ -1760,30 +1744,48 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     }
   }
 
-  // ── Ticker ribbon: all via Stooq ──────────────────────────────────────────
+  // ── GGP ribbon bar (AIM + ASX prices only) ────────────────────────────────
   async function fetchRibbon() {
-    const items = [
-      ['xauusd',  'gold',    p => '$'+p.toFixed(0)],
-      ['xauaud',  'gold-aud',p => 'A$'+p.toFixed(0)],
-      ['hgusd',   'copper',  p => '$'+p.toFixed(3)],
-      ['audusd',  'audusd',  p => p.toFixed(4)],
-      ['gbpaud',  'gbpaud',  p => p.toFixed(4)],
-      ['gdx.us',  'gdx',     p => '$'+p.toFixed(2)],
-      ['gdxj.us', 'gdxj',    p => '$'+p.toFixed(2)],
-      ['tsla.us', 'tsla',    p => '$'+p.toFixed(2)],
-    ];
-    await Promise.all(items.map(async ([sym, id, fmt]) => {
-      try {
-        const q = await stooqQuote(sym);
-        if (q.close > 0) {
-          setRibbon(id, q.close, null, fmt);
-          if (!isNaN(q.pct)) {
-            const chgEl = document.getElementById('rc-' + id);
-            if (chgEl) { chgEl.textContent=(q.pct>=0?'+':'')+q.pct.toFixed(2)+'%'; chgEl.className='rib-chg '+(q.pct>=0?'rib-up':'rib-dn'); }
-          }
+    // GGP AIM
+    try {
+      const q = await stooqQuote('ggp.uk');
+      if (q.close > 0) {
+        AIM_PRICE_P = q.close;
+        const priceEl = document.getElementById('rp-ggp-aim');
+        const chgEl   = document.getElementById('rc-ggp-aim');
+        const tsEl    = document.getElementById('aim-ribbon-ts');
+        if (priceEl) priceEl.textContent = q.close.toFixed(1) + 'p';
+        if (chgEl && !isNaN(q.pct)) {
+          chgEl.textContent = (q.pct >= 0 ? '+' : '') + q.pct.toFixed(2) + '%';
+          chgEl.className = q.pct >= 0 ? 'rib-up' : 'rib-dn';
         }
-      } catch(e) { console.warn('Ribbon fetch failed:', sym, e); }
-    }));
+        if (tsEl) tsEl.textContent = `Stooq · ${q.date} ${q.time} · ~15min delay`;
+        // Update price panel too
+        const pEl = document.getElementById('aim-live-price');
+        if (pEl) { pEl.textContent = q.close.toFixed(1) + 'p'; pEl.style.color = q.pct >= 0 ? '#3fb950' : '#f85149'; }
+      }
+    } catch(e) { console.warn('GGP AIM ribbon:', e); }
+
+    // GGP ASX (via FX conversion if direct unavailable)
+    try {
+      let asxPrice = null;
+      try {
+        const q = await stooqQuote('ggp.au');
+        if (q.close > 0) asxPrice = q.close;
+      } catch(e) {}
+      if (!asxPrice && AIM_PRICE_P > 0) {
+        const fxRes = await fetch('https://api.frankfurter.app/latest?from=GBP&to=AUD');
+        const fx = await fxRes.json();
+        asxPrice = +(AIM_PRICE_P / 100 * fx.rates.AUD).toFixed(2);
+      }
+      if (asxPrice) {
+        ASX_PRICE_AUD = asxPrice;
+        const el = document.getElementById('rp-ggp-asx');
+        if (el) el.textContent = 'A$' + asxPrice.toFixed(2);
+        const el2 = document.getElementById('asx-live-price');
+        if (el2) el2.textContent = 'A$' + asxPrice.toFixed(2);
+      }
+    } catch(e) { console.warn('GGP ASX ribbon:', e); }
   }
 
   async function fetchFX() {
