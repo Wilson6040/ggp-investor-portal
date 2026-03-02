@@ -263,31 +263,79 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
 </div>
 
-<!-- GOLD & SILVER TICKER TAPE -->
-<div style="background:#0a0f1a;border-bottom:1px solid #21262d;">
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-      "symbols": [
-        {"proName":"ASX:GGP","title":"GGP (ASX)"},
-        {"proName":"TVC:GOLD","title":"Gold (USD/oz)"},
-        {"proName":"OANDA:XAUAUD","title":"Gold (AUD/oz)"},
-        {"proName":"TVC:SILVER","title":"Silver (USD/oz)"},
-        {"proName":"CAPITALCOM:COPPER","title":"Copper"},
-        {"proName":"OANDA:AUDUSD","title":"AUD/USD"},
-        {"proName":"AMEX:GDX","title":"GDX ETF"},
-        {"proName":"AMEX:GDXJ","title":"GDXJ ETF"}
-      ],
-      "showSymbolLogo": true,
-      "isTransparent": true,
-      "displayMode": "adaptive",
-      "colorTheme": "dark",
-      "locale": "en"
-    }
-    </script>
+<!-- LIVE PRICE TICKER RIBBON (custom — Yahoo Finance + Frankfurter, no TradingView restrictions) -->
+<div id="price-ribbon" style="background:#0a0f1a;border-bottom:1px solid #21262d;padding:7px 16px;display:flex;gap:0;overflow-x:auto;align-items:center;white-space:nowrap;scrollbar-width:none;">
+  <div class="ribbon-item" id="rib-ggp-aim">
+    <span class="rib-label">⛏️ GGP AIM</span>
+    <span class="rib-price" id="rp-ggp-aim">—p</span>
+    <span class="rib-chg" id="rc-ggp-aim"></span>
   </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item" id="rib-ggp-asx">
+    <span class="rib-label">🇦🇺 GGP ASX</span>
+    <span class="rib-price" id="rp-ggp-asx">A$—</span>
+    <span class="rib-chg" id="rc-ggp-asx"></span>
+  </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item">
+    <span class="rib-label">🥇 Gold</span>
+    <span class="rib-price" id="rp-gold">$—</span>
+    <span class="rib-chg" id="rc-gold"></span>
+  </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item">
+    <span class="rib-label">🥇 Gold AUD</span>
+    <span class="rib-price" id="rp-gold-aud">A$—</span>
+    <span class="rib-chg" id="rc-gold-aud"></span>
+  </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item">
+    <span class="rib-label">🔴 Copper</span>
+    <span class="rib-price" id="rp-copper">$—</span>
+    <span class="rib-chg" id="rc-copper"></span>
+  </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item">
+    <span class="rib-label">AUD/USD</span>
+    <span class="rib-price" id="rp-audusd">—</span>
+    <span class="rib-chg" id="rc-audusd"></span>
+  </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item">
+    <span class="rib-label">GBP/AUD</span>
+    <span class="rib-price" id="rp-gbpaud">—</span>
+    <span class="rib-chg" id="rc-gbpaud"></span>
+  </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item">
+    <span class="rib-label">📊 GDX</span>
+    <span class="rib-price" id="rp-gdx">$—</span>
+    <span class="rib-chg" id="rc-gdx"></span>
+  </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item">
+    <span class="rib-label">📊 GDXJ</span>
+    <span class="rib-price" id="rp-gdxj">$—</span>
+    <span class="rib-chg" id="rc-gdxj"></span>
+  </div>
+  <div class="rib-sep">|</div>
+  <div class="ribbon-item">
+    <span class="rib-label">⚡ TSLA</span>
+    <span class="rib-price" id="rp-tsla">$—</span>
+    <span class="rib-chg" id="rc-tsla"></span>
+  </div>
+  <span style="font-size:9px;color:#484f58;margin-left:16px;flex-shrink:0;">~15min delay · Yahoo Finance</span>
 </div>
+<style>
+  .ribbon-item { display:inline-flex; align-items:center; gap:5px; padding:0 10px; }
+  .rib-label   { font-size:10px; color:#8b949e; }
+  .rib-price   { font-size:12px; font-weight:800; color:#e6edf3; }
+  .rib-chg     { font-size:10px; font-weight:600; }
+  .rib-up      { color:#3fb950; }
+  .rib-dn      { color:#f85149; }
+  .rib-sep     { color:#30363d; font-size:14px; padding:0 2px; flex-shrink:0; }
+  #price-ribbon::-webkit-scrollbar { display:none; }
+</style>
 
 <div class="header">
   <div class="header-left">
@@ -317,29 +365,28 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <a href="https://www.tradingview.com/symbols/LSE-GGP/" target="_blank" class="card-link">TradingView ↗</a>
     </div>
     <div class="card-body" style="padding:0;">
-      <!-- TradingView Advanced Chart — LSE:GGP (free, interactive) -->
-      <div class="tradingview-widget-container" style="height:300px;">
-        <div class="tradingview-widget-container__widget" style="height:300px;"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-        {
-          "autosize": true,
-          "symbol": "LSE:GGP",
-          "interval": "D",
-          "timezone": "Europe/London",
-          "theme": "dark",
-          "style": "1",
-          "locale": "en",
-          "backgroundColor": "rgba(13, 17, 23, 1)",
-          "gridColor": "rgba(33, 38, 45, 1)",
-          "hide_top_toolbar": false,
-          "hide_legend": false,
-          "save_image": false,
-          "calendar": false,
-          "hide_volume": false,
-          "support_host": "https://www.tradingview.com"
-        }
-        </script>
+      <!-- Lightweight Charts (open source) + Yahoo Finance — no subscription needed -->
+      <div style="position:relative;">
+        <div id="aim-chart" style="height:300px;background:#0d1117;"></div>
+        <div id="aim-chart-loader" style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:#0d1117;flex-direction:column;gap:8px;">
+          <div style="color:#E8821C;font-size:13px;">Loading GGP.L chart...</div>
+          <div style="width:120px;height:3px;background:#21262d;border-radius:2px;overflow:hidden;">
+            <div id="aim-progress" style="height:100%;background:#E8821C;width:0%;transition:width 0.3s;border-radius:2px;"></div>
+          </div>
+        </div>
+        <div style="position:absolute;top:6px;right:10px;display:flex;gap:6px;z-index:10;" id="aim-range-btns">
+          <button onclick="loadAIMChart('1mo')" class="range-btn" id="rb-1mo">1M</button>
+          <button onclick="loadAIMChart('3mo')" class="range-btn" id="rb-3mo">3M</button>
+          <button onclick="loadAIMChart('6mo')" class="range-btn active-range" id="rb-6mo">6M</button>
+          <button onclick="loadAIMChart('1y')"  class="range-btn" id="rb-1y">1Y</button>
+          <button onclick="loadAIMChart('2y')"  class="range-btn" id="rb-2y">2Y</button>
+        </div>
       </div>
+      <style>
+        .range-btn { background:#161b22; border:1px solid #30363d; color:#8b949e; padding:2px 8px; font-size:10px; border-radius:4px; cursor:pointer; transition:all 0.15s; }
+        .range-btn:hover { border-color:#E8821C; color:#E8821C; }
+        .active-range { border-color:#E8821C !important; color:#E8821C !important; background:#1a0e00 !important; }
+      </style>
       <div style="padding: 10px 16px; display:flex; gap:20px; background:#0d1117; border-top:1px solid #21262d; flex-wrap:wrap; align-items:center;">
         <div>
           <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">AIM Price (delayed)</div>
@@ -1549,50 +1596,156 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
   // ── Live price + FX ──────────────────────────────────────────────────────
   let AIM_PRICE_P = 730;   // updated live from Stooq
   let ASX_PRICE_AUD = 13.80; // updated live from Yahoo Finance proxy
 
-  // Fetch AIM price from Stooq (free, no CORS issues via allorigins proxy)
-  async function fetchAIMPrice() {
-    try {
-      const proxy = 'https://api.allorigins.win/raw?url=';
-      const stooq = 'https://stooq.com/q/l/?s=ggp.uk&f=sd2t2ohlcv&h&e=csv';
-      const res = await fetch(proxy + encodeURIComponent(stooq));
-      const csv = await res.text();
-      const rows = csv.trim().split('\n');
-      if (rows.length >= 2) {
-        const cols = rows[1].split(',');
-        const close = parseFloat(cols[6]);  // Close column
-        const time = cols[2];               // Time column
-        if (!isNaN(close) && close > 0) {
-          AIM_PRICE_P = close;
-          const colour = close >= 730 ? '#3fb950' : '#f85149';
-          const el = document.getElementById('aim-live-price');
-          if (el) { el.textContent = close.toFixed(1) + 'p'; el.style.color = colour; }
-          const upd = document.getElementById('aim-price-updated');
-          if (upd) upd.textContent = 'Stooq · ' + (time || 'delayed') + ' · ~15min delay';
-        }
-      }
-    } catch(e) { console.warn('Stooq AIM fetch failed:', e); }
+  // ── Yahoo Finance fetch (direct — works without proxy for most browsers) ────
+  async function yfFetch(symbol, range='1d', interval='5m') {
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?range=${range}&interval=${interval}`;
+    const res = await fetch(url, {headers:{'User-Agent':'Mozilla/5.0'}});
+    if (!res.ok) throw new Error(res.status);
+    return res.json();
   }
 
-  // Fetch ASX price via Yahoo Finance (15-min delayed, free)
-  async function fetchASXPrice() {
+  // ── Ribbon helper ──────────────────────────────────────────────────────────
+  function setRibbon(id, price, prev, fmt) {
+    const el = document.getElementById('rp-' + id);
+    const chg = document.getElementById('rc-' + id);
+    if (!el) return;
+    el.textContent = fmt(price);
+    if (prev && prev > 0) {
+      const pct = ((price - prev) / prev * 100);
+      const sign = pct >= 0 ? '+' : '';
+      chg.textContent = sign + pct.toFixed(2) + '%';
+      chg.className = 'rib-chg ' + (pct >= 0 ? 'rib-up' : 'rib-dn');
+    }
+  }
+
+  // ── Lightweight Charts: AIM GGP.L ─────────────────────────────────────────
+  let aimChart, aimSeries;
+  async function loadAIMChart(range = '6mo') {
+    // Update active button
+    document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active-range'));
+    const btnMap = {'1mo':'1mo','3mo':'3mo','6mo':'6mo','1y':'1y','2y':'2y'};
+    const btnEl = document.getElementById('rb-' + range.replace('mo','mo'));
+    if (btnEl) btnEl.classList.add('active-range');
+
+    const loader = document.getElementById('aim-chart-loader');
+    const prog   = document.getElementById('aim-progress');
+    if (loader) loader.style.display = 'flex';
+    if (prog)   prog.style.width = '30%';
+
     try {
-      const proxy = 'https://api.allorigins.win/raw?url=';
-      const yf = 'https://query1.finance.yahoo.com/v8/finance/chart/GGP.AX?range=1d&interval=1m';
-      const res = await fetch(proxy + encodeURIComponent(yf));
-      const data = await res.json();
-      const price = data?.chart?.result?.[0]?.meta?.regularMarketPrice;
-      if (price && price > 0) {
-        ASX_PRICE_AUD = price;
-        const el = document.getElementById('asx-live-price');
-        if (el) el.textContent = 'A$' + price.toFixed(2);
-      }
-    } catch(e) { console.warn('Yahoo ASX fetch failed:', e); }
+      const interval = range === '1mo' ? '1d' : range === '3mo' ? '1d' : '1d';
+      const data = await yfFetch('GGP.L', range, interval);
+      const result = data.chart.result[0];
+      const timestamps = result.timestamp;
+      const ohlcv = result.indicators.quote[0];
+      const meta  = result.meta;
+
+      if (prog) prog.style.width = '70%';
+
+      // Build candle data for Lightweight Charts
+      const candles = timestamps.map((t, i) => ({
+        time: t,
+        open:  ohlcv.open[i]  || ohlcv.close[i],
+        high:  ohlcv.high[i]  || ohlcv.close[i],
+        low:   ohlcv.low[i]   || ohlcv.close[i],
+        close: ohlcv.close[i],
+      })).filter(c => c.close != null && !isNaN(c.close));
+
+      const container = document.getElementById('aim-chart');
+
+      // Destroy & recreate chart on range change
+      if (aimChart) { aimChart.remove(); aimChart = null; }
+
+      aimChart = LightweightCharts.createChart(container, {
+        width:  container.clientWidth,
+        height: 300,
+        layout: { background: { color: '#0d1117' }, textColor: '#8b949e' },
+        grid:   { vertLines: { color: '#21262d' }, horzLines: { color: '#21262d' } },
+        crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+        rightPriceScale: { borderColor: '#30363d' },
+        timeScale: { borderColor: '#30363d', timeVisible: true },
+      });
+
+      aimSeries = aimChart.addCandlestickSeries({
+        upColor:        '#3fb950',
+        downColor:      '#f85149',
+        borderUpColor:  '#3fb950',
+        borderDownColor:'#f85149',
+        wickUpColor:    '#3fb950',
+        wickDownColor:  '#f85149',
+      });
+
+      aimSeries.setData(candles);
+      aimChart.timeScale().fitContent();
+
+      // Update price ribbon + panel
+      const price = meta.regularMarketPrice;
+      const prev  = meta.previousClose || meta.chartPreviousClose;
+      AIM_PRICE_P = price;
+      const colour = price >= (prev || price) ? '#3fb950' : '#f85149';
+      const pEl = document.getElementById('aim-live-price');
+      if (pEl) { pEl.textContent = price.toFixed(1) + 'p'; pEl.style.color = colour; }
+      const uEl = document.getElementById('aim-price-updated');
+      if (uEl) uEl.textContent = 'Yahoo Finance · ~15min delay';
+      setRibbon('ggp-aim', price, prev, p => p.toFixed(1) + 'p');
+
+      if (prog) prog.style.width = '100%';
+      setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
+
+      // Resize on window resize
+      new ResizeObserver(() => {
+        if (aimChart) aimChart.applyOptions({ width: container.clientWidth });
+      }).observe(container);
+
+    } catch(e) {
+      console.warn('AIM chart error:', e);
+      if (loader) loader.innerHTML = '<div style="color:#f85149;font-size:12px;">Chart unavailable · <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-price" target="_blank" style="color:#58a6ff;">ADVFN ↗</a> · <a href="https://finance.yahoo.com/quote/GGP.L/" target="_blank" style="color:#58a6ff;">Yahoo ↗</a></div>';
+    }
+  }
+
+  // ── Ticker ribbon: fetch all symbols ──────────────────────────────────────
+  async function fetchRibbon() {
+    const symbols = [
+      ['GGP.L',  'ggp-aim',   p => p.toFixed(1)+'p'],
+      ['GGP.AX', 'ggp-asx',   p => 'A$'+p.toFixed(2)],
+      ['GC=F',   'gold',      p => '$'+p.toFixed(0)],
+      ['HG=F',   'copper',    p => '$'+p.toFixed(3)],
+      ['AUDUSD=X','audusd',   p => p.toFixed(4)],
+      ['GBPAUD=X','gbpaud',   p => p.toFixed(4)],
+      ['GDX',    'gdx',       p => '$'+p.toFixed(2)],
+      ['GDXJ',   'gdxj',      p => '$'+p.toFixed(2)],
+      ['TSLA',   'tsla',      p => '$'+p.toFixed(2)],
+    ];
+    await Promise.all(symbols.map(async ([sym, id, fmt]) => {
+      try {
+        const d = await yfFetch(sym, '1d', '1d');
+        const meta = d.chart.result[0].meta;
+        const price = meta.regularMarketPrice;
+        const prev  = meta.previousClose || meta.chartPreviousClose;
+        setRibbon(id, price, prev, fmt);
+        // Special: gold-aud needs FX
+        if (sym === 'GC=F') {
+          try {
+            const fx = await yfFetch('AUDUSD=X', '1d', '1d');
+            const audusd = fx.chart.result[0].meta.regularMarketPrice;
+            setRibbon('gold-aud', price / audusd, null, p => 'A$'+p.toFixed(0));
+          } catch(e){}
+        }
+        // Also update ASX panel price
+        if (sym === 'GGP.AX') {
+          ASX_PRICE_AUD = price;
+          const el = document.getElementById('asx-live-price');
+          if (el) el.textContent = 'A$' + price.toFixed(2);
+        }
+      } catch(e) { console.warn('Ribbon fetch failed for', sym, e); }
+    }));
   }
 
   async function fetchFX() {
@@ -1618,21 +1771,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       document.getElementById('aim-fx-label').textContent = AIM_PRICE_P.toFixed(1) + 'p ÷ 100 × ' + gbpAud.toFixed(3) + ' GBP/AUD';
       document.getElementById('aim-fx-updated').textContent = 'Updated ' + now;
     } catch(e) {
-      document.getElementById('uk-equiv-live').textContent = '~672p';
-      document.getElementById('fx-label').textContent = 'FX offline';
-      document.getElementById('fx-updated').textContent = 'offline';
-      document.getElementById('aim-aud-equiv').textContent = '~A$14.40';
-      document.getElementById('aim-fx-label').textContent = 'FX offline';
-      document.getElementById('aim-fx-updated').textContent = 'offline';
+      console.warn('FX fetch failed:', e);
     }
   }
-  // Fetch live prices then FX (price first so FX calc uses live prices)
+
   async function refreshAll() {
-    await Promise.all([fetchAIMPrice(), fetchASXPrice()]);
-    await fetchFX();
+    await Promise.all([fetchRibbon(), fetchFX()]);
   }
+  // Load chart immediately, then start ribbon
+  loadAIMChart('6mo');
   refreshAll();
-  setInterval(refreshAll, 60000); // refresh every 60s
+  setInterval(refreshAll, 60000);
 
   // Short position chart
   const ctx = document.getElementById('shortsChart');
