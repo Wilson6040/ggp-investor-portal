@@ -1571,21 +1571,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
   // ── Stooq via Netlify proxy (CORS-safe from any browser/domain) ─────────────
   // Proxy deployed at same Netlify site — zero external dependency
-  const PROXY = '/.netlify/functions/proxy?url=';
-
   async function stooqFetch(stooqUrl) {
-    // Try via Netlify proxy first, fall back to direct (works on localhost/dev)
+    // Ordered list: Netlify function → cors.eu.org → direct
     const urls = [
-      PROXY + encodeURIComponent(stooqUrl),
-      stooqUrl,   // direct fallback (works if CORS allows)
+      '/.netlify/functions/proxy?url=' + encodeURIComponent(stooqUrl),
+      'https://cors.eu.org/' + stooqUrl,
+      stooqUrl,
     ];
     for (const url of urls) {
       try {
         const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
-        if (res.ok) return res.text();
+        if (res.ok) {
+          const text = await res.text();
+          if (text.includes(',')) return text; // valid CSV
+        }
       } catch(e) { /* try next */ }
     }
-    throw new Error('All fetch attempts failed for ' + stooqUrl);
+    throw new Error('All fetch attempts failed');
   }
 
   async function stooqQuote(sym) {
