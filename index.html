@@ -168,6 +168,35 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 </head>
 <body>
 
+<!-- ══ BREAKING NEWS BANNER ══════════════════════════════════════════════════ -->
+<div id="breaking-banner" style="background:linear-gradient(90deg,#1a0a00,#2a1000,#1a0a00);border-bottom:2px solid #f97316;padding:0;overflow:hidden;position:relative;z-index:100;">
+  <div style="display:flex;align-items:center;gap:0;">
+    <!-- Static label -->
+    <div style="background:#f97316;color:#000;font-size:11px;font-weight:900;letter-spacing:1.5px;padding:8px 14px;white-space:nowrap;flex-shrink:0;">
+      ⚡ BREAKING
+    </div>
+    <!-- Scrolling ticker -->
+    <div style="overflow:hidden;flex:1;height:35px;display:flex;align-items:center;">
+      <div id="breaking-ticker" style="display:inline-flex;white-space:nowrap;animation:breaking-scroll 40s linear infinite;gap:0;">
+        <span style="color:#fed7aa;font-size:12px;font-weight:700;padding:0 40px;">
+          🇮🇳 INDIA SEBI — $385 BILLION EQUITY FUNDS NOW PERMITTED UP TO 20% ALLOCATION IN GOLD &amp; SILVER &nbsp;·&nbsp; Structural demand shock for gold — potentially $77B+ in new institutional buying &nbsp;·&nbsp; Announced 26 Feb 2026 by India's Securities and Exchange Board of India (SEBI) &nbsp;·&nbsp; Gold at all-time highs $3,100+/oz &nbsp;·&nbsp; GGP AIM: 757p &nbsp;·&nbsp; GGP ASX: A$14.45 &nbsp;·&nbsp; Havieron NPV: A$2.9B base / A$5.4B at current gold &nbsp;·&nbsp;
+        </span>
+        <span style="color:#fed7aa;font-size:12px;font-weight:700;padding:0 40px;">
+          🇮🇳 INDIA SEBI — $385 BILLION EQUITY FUNDS NOW PERMITTED UP TO 20% ALLOCATION IN GOLD &amp; SILVER &nbsp;·&nbsp; Structural demand shock for gold — potentially $77B+ in new institutional buying &nbsp;·&nbsp; Announced 26 Feb 2026 by India's Securities and Exchange Board of India (SEBI) &nbsp;·&nbsp; Gold at all-time highs $3,100+/oz &nbsp;·&nbsp; GGP AIM: 757p &nbsp;·&nbsp; GGP ASX: A$14.45 &nbsp;·&nbsp; Havieron NPV: A$2.9B base / A$5.4B at current gold &nbsp;·&nbsp;
+        </span>
+      </div>
+    </div>
+    <!-- Close button -->
+    <div onclick="document.getElementById('breaking-banner').style.display='none'" style="color:#f97316;font-size:16px;padding:0 14px;cursor:pointer;flex-shrink:0;opacity:0.7;" title="Dismiss">✕</div>
+  </div>
+</div>
+<style>
+@keyframes breaking-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
 <!-- RNS INTEL DROPDOWN - moved below charts, rendered in grid -->
 <div id="rns-banner" style="display:none">
   <div style="max-width:1600px; margin:0 auto; padding:0 32px;">
