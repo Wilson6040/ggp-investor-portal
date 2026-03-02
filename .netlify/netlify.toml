@@ -1,0 +1,26 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/Users/stuartwilson/.openclaw/workspace/GGP portal"
+publishOrigin = "default"
+base = "/Users/stuartwilson/.openclaw/workspace/GGP portal"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]

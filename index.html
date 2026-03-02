@@ -317,13 +317,35 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <a href="https://www.tradingview.com/symbols/LSE-GGP/" target="_blank" class="card-link">TradingView ↗</a>
     </div>
     <div class="card-body" style="padding:0;">
-      <div style="height:240px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#0d1117; gap:12px;">
-        <div style="font-size:13px; color:#8b949e; text-align:center;">Live interactive chart — opens in TradingView</div>
-        <a href="https://www.tradingview.com/symbols/LSE-GGP/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#E8821C;color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">📈 View LSE:GGP Live Chart ↗</a>
-        <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-price" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;padding:8px 18px;border-radius:8px;font-size:12px;text-decoration:none;">📊 ADVFN Chart ↗</a>
+      <!-- TradingView Advanced Chart — LSE:GGP (free, interactive) -->
+      <div class="tradingview-widget-container" style="height:300px;">
+        <div class="tradingview-widget-container__widget" style="height:300px;"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+        {
+          "autosize": true,
+          "symbol": "LSE:GGP",
+          "interval": "D",
+          "timezone": "Europe/London",
+          "theme": "dark",
+          "style": "1",
+          "locale": "en",
+          "backgroundColor": "rgba(13, 17, 23, 1)",
+          "gridColor": "rgba(33, 38, 45, 1)",
+          "hide_top_toolbar": false,
+          "hide_legend": false,
+          "save_image": false,
+          "calendar": false,
+          "hide_volume": false,
+          "support_host": "https://www.tradingview.com"
+        }
+        </script>
       </div>
       <div style="padding: 10px 16px; display:flex; gap:20px; background:#0d1117; border-top:1px solid #21262d; flex-wrap:wrap; align-items:center;">
-        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">AIM Close</div><div style="font-size:18px;font-weight:800;color:#3fb950;">730p</div><div style="font-size:11px;color:#8b949e;">52wk high 730p</div></div>
+        <div>
+          <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">AIM Price (delayed)</div>
+          <div style="font-size:18px;font-weight:800;color:#3fb950;" id="aim-live-price">—p</div>
+          <div style="font-size:11px;color:#8b949e;" id="aim-price-updated">fetching...</div>
+        </div>
         <div style="font-size:22px;color:#30363d;">→</div>
         <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">ASX Equiv (live FX)</div><div style="font-size:18px;font-weight:800;color:#58a6ff;" id="aim-aud-equiv">Calculating...</div><div style="font-size:11px;color:#484f58;" id="aim-fx-label">fetching GBP/AUD...</div></div>
         <div style="width:1px;height:40px;background:#30363d;"></div>
@@ -414,7 +436,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         </script>
       </div>
       <div style="padding: 10px 16px; display:flex; gap:20px; background:#0d1117; border-top:1px solid #21262d; flex-wrap:wrap; align-items:center;">
-        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">ASX:GGP</div><div style="font-size:18px;font-weight:800;color:#58a6ff;">~A$13.80</div><div style="font-size:11px;color:#3fb950;">↑ Near highs</div></div>
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">ASX:GGP (delayed)</div><div style="font-size:18px;font-weight:800;color:#58a6ff;" id="asx-live-price">A$13.80</div><div style="font-size:11px;color:#3fb950;">~15min delay</div></div>
         <div style="font-size:22px;color:#30363d;">→</div>
         <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">UK Equiv (live FX)</div><div style="font-size:18px;font-weight:800;color:#3fb950;" id="uk-equiv-live">Calculating...</div><div style="font-size:11px;color:#484f58;" id="fx-label">fetching AUD/GBP...</div></div>
         <div style="width:1px;height:40px;background:#30363d;"></div>
@@ -1529,30 +1551,71 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
-  // Live FX conversions — both panels
-  const ASX_PRICE_AUD = 13.80;
-  const AIM_PRICE_P = 730;
+  // ── Live price + FX ──────────────────────────────────────────────────────
+  let AIM_PRICE_P = 730;   // updated live from Stooq
+  let ASX_PRICE_AUD = 13.80; // updated live from Yahoo Finance proxy
+
+  // Fetch AIM price from Stooq (free, no CORS issues via allorigins proxy)
+  async function fetchAIMPrice() {
+    try {
+      const proxy = 'https://api.allorigins.win/raw?url=';
+      const stooq = 'https://stooq.com/q/l/?s=ggp.uk&f=sd2t2ohlcv&h&e=csv';
+      const res = await fetch(proxy + encodeURIComponent(stooq));
+      const csv = await res.text();
+      const rows = csv.trim().split('\n');
+      if (rows.length >= 2) {
+        const cols = rows[1].split(',');
+        const close = parseFloat(cols[6]);  // Close column
+        const time = cols[2];               // Time column
+        if (!isNaN(close) && close > 0) {
+          AIM_PRICE_P = close;
+          const colour = close >= 730 ? '#3fb950' : '#f85149';
+          const el = document.getElementById('aim-live-price');
+          if (el) { el.textContent = close.toFixed(1) + 'p'; el.style.color = colour; }
+          const upd = document.getElementById('aim-price-updated');
+          if (upd) upd.textContent = 'Stooq · ' + (time || 'delayed') + ' · ~15min delay';
+        }
+      }
+    } catch(e) { console.warn('Stooq AIM fetch failed:', e); }
+  }
+
+  // Fetch ASX price via Yahoo Finance (15-min delayed, free)
+  async function fetchASXPrice() {
+    try {
+      const proxy = 'https://api.allorigins.win/raw?url=';
+      const yf = 'https://query1.finance.yahoo.com/v8/finance/chart/GGP.AX?range=1d&interval=1m';
+      const res = await fetch(proxy + encodeURIComponent(yf));
+      const data = await res.json();
+      const price = data?.chart?.result?.[0]?.meta?.regularMarketPrice;
+      if (price && price > 0) {
+        ASX_PRICE_AUD = price;
+        const el = document.getElementById('asx-live-price');
+        if (el) el.textContent = 'A$' + price.toFixed(2);
+      }
+    } catch(e) { console.warn('Yahoo ASX fetch failed:', e); }
+  }
+
   async function fetchFX() {
     try {
       const res = await fetch('https://api.frankfurter.app/latest?from=AUD&to=GBP');
       const data = await res.json();
-      const audGbp = data.rates.GBP;           // e.g. 0.487
-      const gbpAud = 1 / audGbp;              // e.g. 2.053
-      const pPerAud = audGbp * 100;           // pence per A$
+      const audGbp = data.rates.GBP;
+      const gbpAud = 1 / audGbp;
+      const pPerAud = audGbp * 100;
       const now = new Date().toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
 
-      // ASX panel: A$13.80 → pence
+      // ASX panel → pence equiv
       const ukEquiv = (ASX_PRICE_AUD * pPerAud).toFixed(0);
       document.getElementById('fx-rate-live').textContent = audGbp.toFixed(4);
       document.getElementById('uk-equiv-live').textContent = ukEquiv + 'p';
-      document.getElementById('fx-label').textContent = 'A$' + ASX_PRICE_AUD + ' × ' + pPerAud.toFixed(2) + 'p/A$';
+      document.getElementById('fx-label').textContent = 'A$' + ASX_PRICE_AUD.toFixed(2) + ' × ' + pPerAud.toFixed(2) + 'p/A$';
       document.getElementById('fx-updated').textContent = 'Updated ' + now;
 
-      // AIM panel: 730p → A$
+      // AIM panel → A$ equiv
       const audEquiv = ((AIM_PRICE_P / 100) * gbpAud).toFixed(2);
       document.getElementById('gbp-aud-rate').textContent = gbpAud.toFixed(4);
       document.getElementById('aim-aud-equiv').textContent = 'A$' + audEquiv;
-      document.getElementById('aim-fx-label').textContent = '730p ÷ 100 × ' + gbpAud.toFixed(3) + ' GBP/AUD';
+      document.getElementById('aim-fx-label').textContent = AIM_PRICE_P.toFixed(1) + 'p ÷ 100 × ' + gbpAud.toFixed(3) + ' GBP/AUD';
       document.getElementById('aim-fx-updated').textContent = 'Updated ' + now;
     } catch(e) {
       document.getElementById('uk-equiv-live').textContent = '~672p';
@@ -1563,8 +1626,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       document.getElementById('aim-fx-updated').textContent = 'offline';
     }
   }
-  fetchFX();
-  setInterval(fetchFX, 60000);
+  // Fetch live prices then FX (price first so FX calc uses live prices)
+  async function refreshAll() {
+    await Promise.all([fetchAIMPrice(), fetchASXPrice()]);
+    await fetchFX();
+  }
+  refreshAll();
+  setInterval(refreshAll, 60000); // refresh every 60s
 
   // Short position chart
   const ctx = document.getElementById('shortsChart');
