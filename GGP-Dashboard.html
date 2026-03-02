@@ -289,6 +289,56 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
 </div>
 
+<!-- BREAKING NEWS BANNER -->
+<div id="breaking-news-bar" style="
+  background: linear-gradient(90deg, #1a0a00, #2d1200, #1a0a00);
+  border-bottom: 1px solid #ff6b00;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 34px;
+">
+  <div style="
+    background: #ff6b00;
+    color: #000;
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    padding: 0 14px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+  ">🔴 BREAKING</div>
+  <div style="overflow: hidden; flex: 1; height: 100%; display: flex; align-items: center;">
+    <div id="breaking-news-ticker" style="
+      display: inline-block;
+      white-space: nowrap;
+      animation: breakingScroll 40s linear infinite;
+      color: #ffd580;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding-left: 40px;
+    ">
+      🇮🇳 INDIA GOLD DEMAND: India relaxes gold investment rules — RBI eases restrictions on gold ETFs and sovereign gold bonds, opening the world's second-largest gold market to significantly greater retail investment flows &nbsp;&nbsp;|&nbsp;&nbsp; 
+      Analysts estimate potential additional demand of 200–300 tonnes/year — bullish for gold price outlook &nbsp;&nbsp;|&nbsp;&nbsp; 
+      Gold spot: <span id="bn-gold-price">$5,400+/oz</span> &nbsp;&nbsp;|&nbsp;&nbsp; 
+      GGP.L: <span id="bn-ggp-price">~760p</span> &nbsp;&nbsp;|&nbsp;&nbsp;
+      🇮🇳 INDIA GOLD DEMAND: India relaxes gold investment rules — RBI eases restrictions on gold ETFs and sovereign gold bonds, opening the world's second-largest gold market to significantly greater retail investment flows &nbsp;&nbsp;|&nbsp;&nbsp;
+      Analysts estimate potential additional demand of 200–300 tonnes/year — bullish for gold price outlook
+    </div>
+  </div>
+</div>
+<style>
+@keyframes breakingScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
 <div class="header">
   <div class="header-left">
     <div class="logo">⛏️</div>
@@ -560,7 +610,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <div style="font-size:12px; color:#c9d1d9;">
               <div style="display:flex; gap:10px; margin-bottom:8px; padding:8px 10px; background:#1a1a0a; border-radius:6px; border-left:3px solid #3fb950;">
                 <div style="min-width:70px; font-weight:700; color:#3fb950;">Q1 2026<br><span style="font-size:10px;color:#8b949e;">NOW</span></div>
-                <div><strong style="color:#3fb950;">🔑 KEY CATALYSTS:</strong> Maiden WDU MRE (est. 1.5–2Moz) · Updated Telfer MRE · WA EPA environmental approvals targeted · 240,000m record drilling ongoing<br><strong style="color:#f85149;">🔥 ~20 Mar 2026 — GDX inclusion expected</strong> (~$140M forced passive buying) · <strong style="color:#bc8cff;">GDXJ Q1 rebalance — weighting likely ↑ from 1.16%</strong></div>
+                <div><strong style="color:#3fb950;">🔑 KEY CATALYSTS:</strong> Maiden WDU MRE (est. 1.5–2Moz) · Updated Telfer MRE · WA EPA environmental approvals targeted · 240,000m record drilling ongoing<br><strong style="color:#f85149;">🔥 ~20 Mar 2026 — GDX inclusion expected</strong> (~$267M forced passive buying US + ~£26M UK) · <strong style="color:#bc8cff;">GDXJ Q1 rebalance — weighting likely ↑ from 1.16%</strong></div>
               </div>
               <div style="display:flex; gap:10px; margin-bottom:8px; padding:8px 10px; background:#1a1200; border-radius:6px; border-left:3px solid #d29922;">
                 <div style="min-width:70px; font-weight:700; color:#d29922;">H2 2026</div>
@@ -826,7 +876,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <div style="margin-top:12px;padding:8px 14px;background:#0d0800;border-radius:6px;border-left:3px solid #E8821C;font-size:11px;color:#c9d1d9;line-height:1.8;">
           · Current price A$13.80 = <strong style="color:#E8821C;">37% discount to DCF base value</strong> (A$5k base) · Argonaut's A$16.00 validated ✅<br>
           · At <strong style="color:#d29922;">$5,000 USD gold</strong> DCF jumps to <strong style="color:#d29922;">A$34.97 / 1,703p</strong> — 154% upside from current price<br>
-          · <strong style="color:#f85149;">🔥 GDX inclusion ~20 Mar</strong> = ~$140M forced passive buying on top of this valuation<br>
+          · <strong style="color:#f85149;">🔥 GDX inclusion ~20 Mar</strong> = ~$267M forced passive buying (US GDX) + ~£26M (UK GDX) on top of this valuation<br>
           · ⚠️ NOT financial advice — <a href="GGP-Valuation-Report.html" target="_blank" style="color:#58a6ff;">Full report ↗</a>
         </div>
 
@@ -893,40 +943,67 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
               <span style="background:#3d1111;color:#f85149;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;">NOT YET CONFIRMED</span>
             </div>
 
+            <!-- Source badge -->
+            <div style="background:#0d2010;border:1px solid #238636;border-radius:6px;padding:7px 10px;margin-bottom:12px;font-size:10px;color:#7ee787;">
+              📊 <strong>Data source:</strong> MVIS/VanEck live extract — 2 March 2026 · Via <em>Nitram64</em> (community analyst)
+            </div>
+
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
               <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
-                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Est. GDX Weighting</div>
-                <div style="font-size:24px;font-weight:900;color:#f85149;">~0.8–1.2%</div>
-                <div style="font-size:10px;color:#8b949e;">Based on float-adj. mkt cap</div>
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GDX Predicted Weighting</div>
+                <div style="font-size:24px;font-weight:900;color:#f85149;">0.731%</div>
+                <div style="font-size:10px;color:#8b949e;">Float-adj. from live MVIS data</div>
               </div>
               <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
-                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Est. Forced Buying</div>
-                <div style="font-size:20px;font-weight:900;color:#f85149;">$112–168M</div>
-                <div style="font-size:10px;color:#8b949e;">USD at 1% of $14B GDX AUM</div>
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Forced Buying (US GDX)</div>
+                <div style="font-size:20px;font-weight:900;color:#f85149;">~$267M</div>
+                <div style="font-size:10px;color:#8b949e;">0.731% × US$36.5B GDX NAV</div>
               </div>
               <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
-                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GDX AUM</div>
-                <div style="font-size:20px;font-weight:900;color:#d29922;">~$14B</div>
-                <div style="font-size:10px;color:#8b949e;">USD (approx)</div>
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Shares Required (US GDX)</div>
+                <div style="font-size:20px;font-weight:900;color:#d29922;">~27–31M</div>
+                <div style="font-size:10px;color:#8b949e;">ASX shares to be bought</div>
               </div>
               <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
-                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP Mkt Cap (USD)</div>
-                <div style="font-size:20px;font-weight:900;color:#d29922;">~$5.7B</div>
-                <div style="font-size:10px;color:#8b949e;">A$9.25B ÷ AUD/USD</div>
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Shares Required (UK GDX)</div>
+                <div style="font-size:20px;font-weight:900;color:#d29922;">~3.8M</div>
+                <div style="font-size:10px;color:#8b949e;">Additional from £5.1B UK GDX</div>
+              </div>
+            </div>
+
+            <!-- Key stats row -->
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
+              <div style="background:#111;border:1px solid #30363d;border-radius:6px;padding:8px;text-align:center;">
+                <div style="font-size:9px;color:#8b949e;text-transform:uppercase;">GDX US NAV</div>
+                <div style="font-size:15px;font-weight:800;color:#58a6ff;">$36.5B</div>
+              </div>
+              <div style="background:#111;border:1px solid #30363d;border-radius:6px;padding:8px;text-align:center;">
+                <div style="font-size:9px;color:#8b949e;text-transform:uppercase;">GDX UK NAV</div>
+                <div style="font-size:15px;font-weight:800;color:#58a6ff;">£5.1B</div>
+              </div>
+              <div style="background:#111;border:1px solid #30363d;border-radius:6px;padding:8px;text-align:center;">
+                <div style="font-size:9px;color:#8b949e;text-transform:uppercase;">GGP Free Float</div>
+                <div style="font-size:15px;font-weight:800;color:#d29922;">76%</div>
               </div>
             </div>
 
             <div style="font-size:12px;line-height:1.8;color:#c9d1d9;margin-bottom:12px;">
-              <div style="margin-bottom:6px;">· GDX tracks the <strong>NYSE Arca Gold Miners Index</strong> — larger cap producers</div>
-              <div style="margin-bottom:6px;">· GGP market cap of ~$5.7B USD now <strong>comfortably meets minimum threshold</strong> for GDX inclusion</div>
-              <div style="margin-bottom:6px;">· Already in GDXJ = VanEck familiarity — "promotion" from junior to senior ETF</div>
-              <div style="margin-bottom:6px;">· GDX quarterly rebalance expected <strong>~20 March 2026</strong> — inclusion would trigger <strong>$112–168M forced buying</strong></div>
-              <div>· Community analysis on GGPChat estimates ~1.0% weighting (0.8–1.2% range)</div>
+              <div style="margin-bottom:6px;">· GDX tracks the <strong>NYSE Arca Gold Miners Index</strong> (GDMNTR) — large cap gold producers</div>
+              <div style="margin-bottom:6px;">· GGP free float market cap: <strong>A$5.03B (~US$3.59B)</strong> — free float factor 0.76</div>
+              <div style="margin-bottom:6px;">· Already in GDXJ = VanEck familiarity with GGP — "promotion" to senior ETF</div>
+              <div style="margin-bottom:6px;">· Total combined (US + UK GDX): <strong>~30.9–34.9M shares</strong> required at inclusion</div>
+              <div style="margin-bottom:6px;">· GGP currently has <strong>0 shares</strong> in either GDX — all buying is net new</div>
             </div>
 
-            <div style="background:#1a0808;border:1px solid #f85149;border-radius:8px;padding:10px;font-size:11px;color:#c9d1d9;">
-              <strong style="color:#f85149;">⚠️ Key Criteria for GDX:</strong> Must be primarily gold-focused, minimum market cap threshold, minimum daily liquidity ($1M+ USD/day). At 730p with A$9.25B market cap — GGP comfortably qualifies. Watch for official announcement ~1–2 weeks before March 20.<br><br>
-              <a href="https://www.vaneck.com/us/en/investments/gold-miners-etf-gdx" target="_blank" style="color:#58a6ff;">GDX official ↗</a> · <a href="https://stockanalysis.com/etf/gdx/holdings/" target="_blank" style="color:#58a6ff;">GDX Holdings ↗</a>
+            <div style="background:#1a0808;border:1px solid #f85149;border-radius:8px;padding:10px;font-size:11px;color:#c9d1d9;margin-bottom:8px;">
+              <strong style="color:#f85149;">⚠️ Assumptions (Nitram64 caveats):</strong><br>
+              1. GGP is the <em>only addition</em> this quarter &nbsp;|&nbsp; 2. No deletions from GDX &nbsp;|&nbsp; 3. No major share count changes for incumbents &nbsp;|&nbsp; 4. No major free float changes for incumbents
+            </div>
+
+            <div style="font-size:10px;color:#6e7681;">
+              <a href="https://www.vaneck.com/us/en/investments/gold-miners-etf-gdx" target="_blank" style="color:#58a6ff;">GDX official ↗</a> · 
+              <a href="https://stockanalysis.com/etf/gdx/holdings/" target="_blank" style="color:#58a6ff;">GDX Holdings ↗</a> · 
+              <a href="https://www.marketvector.com/indexes/hard-assets/nyse-arca-gold-miners" target="_blank" style="color:#58a6ff;">MVIS Index ↗</a>
             </div>
           </div>
 
@@ -956,7 +1033,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <div style="font-size:11px;font-weight:700;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Combined ETF Buying Pressure</div>
             <div style="background:#0d1117;border-radius:8px;padding:12px;font-size:12px;margin-bottom:12px;">
               <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDXJ current holding</span><span style="color:#bc8cff;font-weight:700;">$134M USD</span></div>
-              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDX expected (at 1%)</span><span style="color:#f85149;font-weight:700;">~$140M USD</span></div>
+              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDX expected (0.731% weighting)</span><span style="color:#f85149;font-weight:700;">~$267M USD</span></div>
               <div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid #30363d;margin-top:4px;"><span><strong>Combined ETF exposure</strong></span><span style="color:#3fb950;font-weight:800;">~$274M USD</span></div>
               <div style="font-size:10px;color:#8b949e;margin-top:6px;">~£218M · ~A$443M in passive buying pressure</div>
             </div>
