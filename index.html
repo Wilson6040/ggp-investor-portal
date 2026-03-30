@@ -29,18 +29,18 @@ body::after {
   animation: orb2drift 34s ease-in-out infinite alternate;
 }
 @keyframes orb1drift {
-  0%   { transform: translateX(0)      translateY(0); }
-  25%  { transform: translateX(8%)     translateY(-5%); }
-  50%  { transform: translateX(-6%)    translateY(8%); }
-  75%  { transform: translateX(10%)    translateY(4%); }
-  100% { transform: translateX(-4%)    translateY(-7%); }
+  0%   { transform: scale(1.00) translateY(0%)   rotate(0deg); }
+  25%  { transform: scale(1.06) translateY(-3%)  rotate(2deg); }
+  50%  { transform: scale(0.97) translateY(4%)   rotate(-2deg); }
+  75%  { transform: scale(1.04) translateY(-2%)  rotate(1deg); }
+  100% { transform: scale(1.02) translateY(3%)   rotate(-1deg); }
 }
 @keyframes orb2drift {
-  0%   { transform: translateX(0)      translateY(0); }
-  20%  { transform: translateX(-9%)    translateY(6%); }
-  50%  { transform: translateX(7%)     translateY(-8%); }
-  80%  { transform: translateX(-5%)    translateY(5%); }
-  100% { transform: translateX(9%)     translateY(-4%); }
+  0%   { transform: scale(1.00) translateY(0%)   rotate(0deg); }
+  20%  { transform: scale(0.96) translateY(3%)   rotate(-2deg); }
+  50%  { transform: scale(1.05) translateY(-4%)  rotate(2deg); }
+  80%  { transform: scale(0.98) translateY(2%)   rotate(-1deg); }
+  100% { transform: scale(1.03) translateY(-3%)  rotate(1deg); }
 }
 
 .header { background: linear-gradient(135deg, rgba(91,33,182,0.85), rgba(109,40,217,0.75)); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 2px solid rgba(167,139,250,0.5); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; position: relative; z-index: 10; box-shadow: 0 4px 32px rgba(124,58,237,0.25); }
@@ -2651,19 +2651,23 @@ body::after {
     if (lEl) { lEl.textContent = lbl; lEl.style.color = col; }
     if (dEl) { dEl.textContent = desc; }
     if (uEl) { uEl.textContent = 'Calculated ' + new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); }
-    // Clip-rect left-to-right wipe (0 = empty, 150 = full width of SVG)
-    var cr = document.getElementById('fg-clip-rect');
-    // Clock-sweep: dashoffset 195 = empty, 0 = full arc
-    var arc = document.getElementById(prefix === 'fg' ? 'fg-arc' : prefix+'-arc');
+    var arc = document.getElementById('fg-arc');
     if (arc) {
+      arc.style.transition = 'none';
       arc.style.strokeDashoffset = '195';
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          arc.style.strokeDashoffset = String(195 - (score / 100 * 195));
-        });
-      });
+      setTimeout(function() {
+        arc.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1)';
+        arc.style.strokeDashoffset = String(195 - (score / 100 * 195));
+      }, 80);
     }
-    if (ndl) { ndl.setAttribute('transform', 'rotate(' + (-90 + score/100*180) + ',75,74)'); }
+    if (ndl) {
+      ndl.style.transition = 'none';
+      ndl.setAttribute('transform', 'rotate(-90,75,74)');
+      setTimeout(function() {
+        ndl.style.transition = 'transform 1.8s cubic-bezier(0.4,0,0.2,1)';
+        ndl.setAttribute('transform', 'rotate(' + (-90 + score/100*180) + ',75,74)');
+      }, 80);
+    }
   }
   function setGauge(prefix, closes, linkedRsi) {
     var rsi = calcRSI(closes);
@@ -2698,17 +2702,24 @@ body::after {
     if (lEl) { lEl.textContent = lbl; lEl.style.color = col; }
     if (dEl) { dEl.textContent = desc; }
     if (uEl) { uEl.textContent = 'Calculated ' + new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); }
-    // Clock-sweep: dashoffset 195 = empty, 0 = full arc
-    var arc = document.getElementById(prefix === 'fg' ? 'fg-arc' : prefix+'-arc');
+    var arcId = prefix === 'fg' ? 'fg-arc' : prefix+'-arc';
+    var arc = document.getElementById(arcId);
     if (arc) {
+      arc.style.transition = 'none';
       arc.style.strokeDashoffset = '195';
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          arc.style.strokeDashoffset = String(195 - (score / 100 * 195));
-        });
-      });
+      setTimeout(function() {
+        arc.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1)';
+        arc.style.strokeDashoffset = String(195 - (score / 100 * 195));
+      }, 80);
     }
-    if (ndl) { ndl.setAttribute('transform', 'rotate(' + (-90 + score/100*180) + ',75,74)'); }
+    if (ndl) {
+      ndl.style.transition = 'none';
+      ndl.setAttribute('transform', 'rotate(-90,75,74)');
+      setTimeout(function() {
+        ndl.style.transition = 'transform 1.8s cubic-bezier(0.4,0,0.2,1)';
+        ndl.setAttribute('transform', 'rotate(' + (-90 + score/100*180) + ',75,74)');
+      }, 80);
+    }
   }
 
   async function loadIndicators() {
