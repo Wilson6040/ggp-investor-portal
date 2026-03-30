@@ -546,15 +546,10 @@ body::after {
                     <stop offset="40%"  stop-color="#d29922"/>
                     <stop offset="100%" stop-color="#3fb950"/>
                   </linearGradient>
-                  <clipPath id="ukfg-clip">
-                    <rect id="ukfg-clip-rect" x="0" y="0" width="0" height="84"/>
-                  </clipPath>
                 </defs>
-                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#ukfgTrack)" stroke-width="14" stroke-linecap="round"/>
-                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="rgba(33,38,45,0.8)" stroke-width="12" stroke-linecap="round"/>
-                <g clip-path="url(#ukfg-clip)">
-                  <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#ukfgFill)" stroke-width="12" stroke-linecap="round"/>
-                </g>
+                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#ukfgTrack)" stroke-width="16" stroke-linecap="round"/>
+                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="rgba(20,14,34,0.92)" stroke-width="13" stroke-linecap="round"/>
+                <path id="ukfg-arc" d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#ukfgFill)" stroke-width="13" stroke-linecap="round" stroke-dasharray="195" stroke-dashoffset="195" style="transition:stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1);"/>
                 <line x1="75" y1="14" x2="75" y2="22" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
                 <line x1="13" y1="74" x2="20" y2="74" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
                 <line x1="137" y1="74" x2="130" y2="74" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
@@ -720,18 +715,13 @@ body::after {
                     <stop offset="40%"  stop-color="#d29922"/>
                     <stop offset="100%" stop-color="#3fb950"/>
                   </linearGradient>
-                  <clipPath id="fg-clip">
-                    <rect id="fg-clip-rect" x="0" y="0" width="0" height="84"/>
-                  </clipPath>
-                </defs>
-                <!-- Purple shaded background arc -->
-                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#fgTrack)" stroke-width="14" stroke-linecap="round"/>
+                  </defs>
+                <!-- Shaded background track -->
+                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#fgTrack)" stroke-width="16" stroke-linecap="round"/>
                 <!-- Dark track -->
-                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="rgba(33,38,45,0.8)" stroke-width="12" stroke-linecap="round"/>
-                <!-- Colour fill arc — clipped left-to-right wipe -->
-                <g clip-path="url(#fg-clip)">
-                  <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#fgFill)" stroke-width="12" stroke-linecap="round"/>
-                </g>
+                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="rgba(20,14,34,0.92)" stroke-width="13" stroke-linecap="round"/>
+                <!-- Clock-sweep fill arc -->
+                <path id="fg-arc" d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#fgFill)" stroke-width="13" stroke-linecap="round" stroke-dasharray="195" stroke-dashoffset="195" style="transition:stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1);"/>
                 <!-- Zone tick marks -->
                 <line x1="75" y1="14" x2="75" y2="22" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
                 <line x1="13" y1="74" x2="20" y2="74" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
@@ -2105,38 +2095,89 @@ body::after {
   <!-- KEY METRICS -->
   <div class="col-4 card highlight">
     <div class="card-header">
-      <h2>📊 Key Metrics</h2>
+      <h2>📊 Key Metrics — H1 FY26</h2>
       <a href="https://www.marketbeat.com/instant-alerts/greatland-gold-longgp-hits-new-52-week-high-should-you-buy-2026-02-23/" target="_blank" class="card-link">MarketBeat ↗</a>
     </div>
-    <div class="card-body">
-      <div class="stat-grid">
-        <div class="stat"><div class="lbl">AIM Close</div><div class="val green">511p</div><div class="chg green">+10.5% today (564.8p intraday)</div></div>
-        <div class="stat"><div class="lbl">ASX Close</div><div class="val blue">A$9.76</div><div class="chg red">-32% from ATH A$14.43</div></div>
-        <div class="stat"><div class="lbl">Revenue H1</div><div class="val green">A$977M</div><div class="chg">~A$2bn annualised</div></div>
-        <div class="stat"><div class="lbl">NPAT H1</div><div class="val green">A$342M</div><div class="chg green">Record</div></div>
-        <div class="stat"><div class="lbl">Commodity</div><div class="val yellow">Gold + Cu</div><div class="chg">Record prices H1</div></div>
-        <div class="stat"><div class="lbl">H2 Guidance</div><div class="val green">✅ On track</div><div class="chg">Production up</div></div>
+    <div class="card-body" style="padding-top:10px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+
+        <div style="background:rgba(63,185,80,0.08);border:2px solid rgba(63,185,80,0.35);border-radius:12px;padding:12px 14px;box-shadow:0 0 14px rgba(63,185,80,0.10);">
+          <div style="font-size:22px;margin-bottom:4px;">💰</div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;">Revenue H1</div>
+          <div style="font-size:22px;font-weight:900;color:#3fb950;margin:4px 0 2px;">A$977M</div>
+          <div style="font-size:10px;color:#8b949e;">~A$2bn annualised</div>
+        </div>
+
+        <div style="background:rgba(63,185,80,0.08);border:2px solid rgba(63,185,80,0.35);border-radius:12px;padding:12px 14px;box-shadow:0 0 14px rgba(63,185,80,0.10);">
+          <div style="font-size:22px;margin-bottom:4px;">📈</div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;">NPAT H1</div>
+          <div style="font-size:22px;font-weight:900;color:#3fb950;margin:4px 0 2px;">A$342M</div>
+          <div style="font-size:10px;color:#3fb950;">Record</div>
+        </div>
+
+        <div style="background:rgba(88,166,255,0.08);border:2px solid rgba(88,166,255,0.35);border-radius:12px;padding:12px 14px;box-shadow:0 0 14px rgba(88,166,255,0.10);">
+          <div style="font-size:22px;margin-bottom:4px;">🏦</div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;">Cash on Hand</div>
+          <div style="font-size:22px;font-weight:900;color:#58a6ff;margin:4px 0 2px;">A$948M</div>
+          <div style="font-size:10px;color:#3fb950;">Zero debt</div>
+        </div>
+
+        <div style="background:rgba(88,166,255,0.08);border:2px solid rgba(88,166,255,0.35);border-radius:12px;padding:12px 14px;box-shadow:0 0 14px rgba(88,166,255,0.10);">
+          <div style="font-size:22px;margin-bottom:4px;">⛏️</div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;">Production FY26</div>
+          <div style="font-size:22px;font-weight:900;color:#58a6ff;margin:4px 0 2px;">260–310koz</div>
+          <div style="font-size:10px;color:#3fb950;">Upper end expected</div>
+        </div>
+
+        <div style="background:rgba(210,153,34,0.08);border:2px solid rgba(210,153,34,0.35);border-radius:12px;padding:12px 14px;box-shadow:0 0 14px rgba(210,153,34,0.10);">
+          <div style="font-size:22px;margin-bottom:4px;">🪨</div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;">Total MRE</div>
+          <div style="font-size:22px;font-weight:900;color:#d29922;margin:4px 0 2px;">14.9Moz Au</div>
+          <div style="font-size:10px;color:#8b949e;">+ 645kt Cu · 30 Mar 2026</div>
+        </div>
+
+        <div style="background:rgba(167,139,250,0.08);border:2px solid rgba(167,139,250,0.35);border-radius:12px;padding:12px 14px;box-shadow:0 0 14px rgba(167,139,250,0.10);">
+          <div style="font-size:22px;margin-bottom:4px;">🔮</div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;">Havieron NPV</div>
+          <div style="font-size:22px;font-weight:900;color:#a78bfa;margin:4px 0 2px;">A$2.9bn</div>
+          <div style="font-size:10px;color:#8b949e;">FID expected H2 FY26</div>
+        </div>
+
+        <div style="background:rgba(232,130,28,0.08);border:2px solid rgba(232,130,28,0.35);border-radius:12px;padding:12px 14px;box-shadow:0 0 14px rgba(232,130,28,0.10);">
+          <div style="font-size:22px;margin-bottom:4px;">⚡</div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;">Tungsten (O'Call.)</div>
+          <div style="font-size:22px;font-weight:900;color:#E8821C;margin:4px 0 2px;">246kt W</div>
+          <div style="font-size:10px;color:#8b949e;">70Mt @ 0.35% WO₃</div>
+        </div>
+
+        <div style="background:rgba(63,185,80,0.08);border:2px solid rgba(63,185,80,0.35);border-radius:12px;padding:12px 14px;box-shadow:0 0 14px rgba(63,185,80,0.10);">
+          <div style="font-size:22px;margin-bottom:4px;">✅</div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;">H2 Guidance</div>
+          <div style="font-size:22px;font-weight:900;color:#3fb950;margin:4px 0 2px;">On Track</div>
+          <div style="font-size:10px;color:#8b949e;">Production up, costs stable</div>
+        </div>
+
       </div>
-      <div style="margin-top: 14px;">
+      <div style="margin-top:12px;">
         <div class="progress-wrap">
-          <div class="progress-label"><span>Telfer Production vs Guidance</span><span>On Track</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width:82%; background: #3fb950;"></div></div>
+          <div class="progress-label"><span>Telfer vs Guidance</span><span style="color:#3fb950;">On Track · 82%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:82%; background: linear-gradient(90deg,#3fb950,#58a6ff);"></div></div>
         </div>
         <div class="progress-wrap">
-          <div class="progress-label"><span>Cost Control</span><span>Strong</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width:78%; background: #58a6ff;"></div></div>
+          <div class="progress-label"><span>Cost Control</span><span style="color:#58a6ff;">Strong · 78%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:78%; background: linear-gradient(90deg,#58a6ff,#a78bfa);"></div></div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- PROJECTS -->
-  <div class="col-4 card">
+  <div class="col-8 card">
     <div class="card-header">
       <h2>🗺️ Project Portfolio</h2>
       <span style="font-size:11px; color:#8b949e;">Western Australia · 8 projects</span>
     </div>
-    <div class="card-body" style="padding-top:4px;">
+    <div class="card-body" style="padding-top:4px;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
 
       <div class="project-card">
         <h3 class="green">⚙️ Telfer Mine — Paterson Province</h3>
@@ -2208,7 +2249,7 @@ body::after {
         </div>
       </div>
 
-      <div class="project-card" style="margin-bottom:0">
+      <div class="project-card">
         <h3 style="color:#8b949e;font-size:14px;font-weight:700;margin-bottom:6px;">🗺️ Yannarie — Gascoyne, WA</h3>
         <p>Exploration stage. ~150km SE of Exmouth in the Gascoyne region. Tenements held. No active drilling results reported as at Q2 FY26.</p>
         <div class="tags">
@@ -2217,7 +2258,7 @@ body::after {
         </div>
       </div>
 
-    </div>
+    </div></div>
   </div>
 
   <!-- LATEST NEWS -->
@@ -2546,12 +2587,13 @@ body::after {
     if (uEl) { uEl.textContent = 'Calculated ' + new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); }
     // Clip-rect left-to-right wipe (0 = empty, 150 = full width of SVG)
     var cr = document.getElementById('fg-clip-rect');
-    if (cr) {
-      cr.setAttribute('width', '0');
+    // Clock-sweep: dashoffset 195 = empty, 0 = full arc
+    var arc = document.getElementById(prefix === 'fg' ? 'fg-arc' : prefix+'-arc');
+    if (arc) {
+      arc.style.strokeDashoffset = '195';
       requestAnimationFrame(function() {
         requestAnimationFrame(function() {
-          cr.style.transition = 'width 1.4s cubic-bezier(0.4,0,0.2,1)';
-          cr.setAttribute('width', String(score / 100 * 150));
+          arc.style.strokeDashoffset = String(195 - (score / 100 * 195));
         });
       });
     }
@@ -2590,12 +2632,13 @@ body::after {
     if (lEl) { lEl.textContent = lbl; lEl.style.color = col; }
     if (dEl) { dEl.textContent = desc; }
     if (uEl) { uEl.textContent = 'Calculated ' + new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); }
-    if (cr) {
-      cr.setAttribute('width', '0');
+    // Clock-sweep: dashoffset 195 = empty, 0 = full arc
+    var arc = document.getElementById(prefix === 'fg' ? 'fg-arc' : prefix+'-arc');
+    if (arc) {
+      arc.style.strokeDashoffset = '195';
       requestAnimationFrame(function() {
         requestAnimationFrame(function() {
-          cr.style.transition = 'width 1.4s cubic-bezier(0.4,0,0.2,1)';
-          cr.setAttribute('width', String(score / 100 * 150));
+          arc.style.strokeDashoffset = String(195 - (score / 100 * 195));
         });
       });
     }
