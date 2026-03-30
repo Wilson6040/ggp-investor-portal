@@ -525,6 +525,61 @@ body::after {
             <div id="aim-vs200-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">price vs MA200</div>
           </div>
         </div>
+
+        <!-- UK FTSE FEAR AND GREED -->
+        <div style="margin-top:12px;background:rgba(30,10,50,0.75);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:14px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.07);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#a78bfa;">&#x1F1EC;&#x1F1E7; FTSE100 Sentiment &mdash; Fear &amp; Greed</div>
+            <div id="uk-fg-updated" style="font-size:9px;color:#8b949e;">calculating...</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+            <div style="position:relative;width:150px;height:84px;flex-shrink:0;">
+              <svg viewBox="0 0 150 84" style="width:150px;height:84px;overflow:visible;">
+                <defs>
+                  <linearGradient id="ukfgTrack" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(248,81,73,0.15)"/>
+                    <stop offset="50%" stop-color="rgba(210,153,34,0.12)"/>
+                    <stop offset="100%" stop-color="rgba(63,185,80,0.12)"/>
+                  </linearGradient>
+                  <linearGradient id="ukfgFill" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stop-color="#f85149"/>
+                    <stop offset="40%"  stop-color="#d29922"/>
+                    <stop offset="100%" stop-color="#3fb950"/>
+                  </linearGradient>
+                  <clipPath id="ukfg-clip">
+                    <rect id="ukfg-clip-rect" x="0" y="0" width="0" height="84"/>
+                  </clipPath>
+                </defs>
+                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#ukfgTrack)" stroke-width="14" stroke-linecap="round"/>
+                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="rgba(33,38,45,0.8)" stroke-width="12" stroke-linecap="round"/>
+                <g clip-path="url(#ukfg-clip)">
+                  <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#ukfgFill)" stroke-width="12" stroke-linecap="round"/>
+                </g>
+                <line x1="75" y1="14" x2="75" y2="22" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <line x1="13" y1="74" x2="20" y2="74" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <line x1="137" y1="74" x2="130" y2="74" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <line id="ukfg-needle" x1="75" y1="74" x2="75" y2="18" stroke="white" stroke-width="2.5" stroke-linecap="round" transform="rotate(-90,75,74)" style="transition:transform 1.4s cubic-bezier(0.34,1.4,0.64,1);filter:drop-shadow(0 0 3px rgba(255,255,255,0.6));"/>
+                <circle cx="75" cy="74" r="5" fill="rgba(30,10,50,1)" stroke="white" stroke-width="1.5"/>
+                <text x="6"   y="78" fill="rgba(248,81,73,0.7)"  font-size="7" font-family="sans-serif">Fear</text>
+                <text x="63"  y="11" fill="rgba(210,153,34,0.7)" font-size="7" font-family="sans-serif">Neutral</text>
+                <text x="116" y="78" fill="rgba(63,185,80,0.7)"  font-size="7" font-family="sans-serif">Greed</text>
+              </svg>
+            </div>
+            <div style="flex:1;min-width:130px;">
+              <div id="ukfg-score" style="font-size:36px;font-weight:900;color:#8b949e;line-height:1;">--</div>
+              <div id="ukfg-label" style="font-size:14px;font-weight:700;color:#8b949e;margin-top:3px;">Loading...</div>
+              <div id="ukfg-desc" style="font-size:10px;color:#8b949e;margin-top:5px;line-height:1.6;">Based on FTSE100 momentum, RSI, 52-week range &amp; 200MA</div>
+            </div>
+            <div style="display:grid;grid-template-columns:auto auto;gap:4px 10px;font-size:10px;align-items:center;">
+              <span style="color:#f85149;">&#9632;</span><span style="color:#8b949e;">0&ndash;20 Extreme Fear</span>
+              <span style="color:#d29922;">&#9632;</span><span style="color:#8b949e;">21&ndash;40 Fear</span>
+              <span style="color:#8b949e;">&#9632;</span><span style="color:#8b949e;">41&ndash;60 Neutral</span>
+              <span style="color:#3fb950;">&#9632;</span><span style="color:#8b949e;">61&ndash;80 Greed</span>
+              <span style="color:#3fb950;font-size:12px;">&#9646;</span><span style="color:#8b949e;">81&ndash;100 Extreme Greed</span>
+            </div>
+          </div>
+          <div style="margin-top:8px;font-size:9px;color:#484f58;">Composite: FTSE100 RSI &middot; 52-wk range &middot; price vs 200MA &middot; LON:GGP RSI. Not financial advice.</div>
+        </div>
       </div>
 
     </div>
@@ -645,41 +700,65 @@ body::after {
         </div>
 
         <!-- ASX FEAR AND GREED -->
-        <div style="margin-top:12px;background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:14px 16px;">
+        <div style="margin-top:12px;background:rgba(30,10,50,0.75);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:14px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.07);">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#a78bfa;">ASX200 Sentiment - Fear and Greed Composite</div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#a78bfa;">&#129504; ASX200 Sentiment &mdash; Fear &amp; Greed</div>
             <div id="fg-updated" style="font-size:9px;color:#8b949e;">calculating...</div>
           </div>
-          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-            <div style="position:relative;width:120px;height:66px;flex-shrink:0;">
-              <svg viewBox="0 0 120 66" style="width:120px;height:66px;">
-                <path d="M10,60 A50,50 0 0,1 110,60" fill="none" stroke="#21262d" stroke-width="10" stroke-linecap="round"/>
+          <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+            <!-- Gauge -->
+            <div style="position:relative;width:150px;height:84px;flex-shrink:0;">
+              <svg viewBox="0 0 150 84" style="width:150px;height:84px;overflow:visible;">
                 <defs>
-                  <linearGradient id="fgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#f85149"/>
-                    <stop offset="50%" stop-color="#d29922"/>
+                  <linearGradient id="fgTrack" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(248,81,73,0.15)"/>
+                    <stop offset="50%" stop-color="rgba(210,153,34,0.12)"/>
+                    <stop offset="100%" stop-color="rgba(63,185,80,0.12)"/>
+                  </linearGradient>
+                  <linearGradient id="fgFill" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stop-color="#f85149"/>
+                    <stop offset="40%"  stop-color="#d29922"/>
                     <stop offset="100%" stop-color="#3fb950"/>
                   </linearGradient>
+                  <clipPath id="fg-clip">
+                    <rect id="fg-clip-rect" x="0" y="0" width="0" height="84"/>
+                  </clipPath>
                 </defs>
-                <path id="fg-arc" d="M10,60 A50,50 0 0,1 110,60" fill="none" stroke="url(#fgGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 157"/>
-                <line id="fg-needle" x1="60" y1="60" x2="60" y2="15" stroke="white" stroke-width="2" stroke-linecap="round" transform="rotate(-90,60,60)" style="transition:transform 1.2s cubic-bezier(0.34,1.56,0.64,1)"/>
-                <circle cx="60" cy="60" r="4" fill="white"/>
+                <!-- Purple shaded background arc -->
+                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#fgTrack)" stroke-width="14" stroke-linecap="round"/>
+                <!-- Dark track -->
+                <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="rgba(33,38,45,0.8)" stroke-width="12" stroke-linecap="round"/>
+                <!-- Colour fill arc — clipped left-to-right wipe -->
+                <g clip-path="url(#fg-clip)">
+                  <path d="M13,74 A62,62 0 0,1 137,74" fill="none" stroke="url(#fgFill)" stroke-width="12" stroke-linecap="round"/>
+                </g>
+                <!-- Zone tick marks -->
+                <line x1="75" y1="14" x2="75" y2="22" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <line x1="13" y1="74" x2="20" y2="74" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <line x1="137" y1="74" x2="130" y2="74" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <!-- Needle -->
+                <line id="fg-needle" x1="75" y1="74" x2="75" y2="18" stroke="white" stroke-width="2.5" stroke-linecap="round" transform="rotate(-90,75,74)" style="transition:transform 1.4s cubic-bezier(0.34,1.4,0.64,1);filter:drop-shadow(0 0 3px rgba(255,255,255,0.6));"/>
+                <circle cx="75" cy="74" r="5" fill="rgba(30,10,50,1)" stroke="white" stroke-width="1.5"/>
+                <!-- Zone labels -->
+                <text x="6"   y="78" fill="rgba(248,81,73,0.7)"  font-size="7" font-family="sans-serif">Fear</text>
+                <text x="63"  y="11" fill="rgba(210,153,34,0.7)" font-size="7" font-family="sans-serif">Neutral</text>
+                <text x="116" y="78" fill="rgba(63,185,80,0.7)"  font-size="7" font-family="sans-serif">Greed</text>
               </svg>
             </div>
-            <div style="flex:1;min-width:140px;">
-              <div id="fg-score" style="font-size:32px;font-weight:900;color:#8b949e;">--</div>
-              <div id="fg-label" style="font-size:13px;font-weight:700;color:#8b949e;margin-top:2px;">Loading...</div>
-              <div id="fg-desc" style="font-size:10px;color:#8b949e;margin-top:4px;line-height:1.5;">Based on ASX200 momentum, RSI, 52-week range and 200MA</div>
+            <div style="flex:1;min-width:130px;">
+              <div id="fg-score" style="font-size:36px;font-weight:900;color:#8b949e;line-height:1;">--</div>
+              <div id="fg-label" style="font-size:14px;font-weight:700;color:#8b949e;margin-top:3px;">Loading...</div>
+              <div id="fg-desc" style="font-size:10px;color:#8b949e;margin-top:5px;line-height:1.6;">Based on ASX200 momentum, RSI, 52-week range &amp; 200MA</div>
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:10px;min-width:160px;">
-              <div style="color:#8b949e;">Extreme Fear</div><div style="color:#f85149;font-weight:700;">0-20</div>
-              <div style="color:#8b949e;">Fear</div><div style="color:#d29922;font-weight:700;">21-40</div>
-              <div style="color:#8b949e;">Neutral</div><div style="color:#8b949e;font-weight:700;">41-60</div>
-              <div style="color:#8b949e;">Greed</div><div style="color:#3fb950;font-weight:700;">61-80</div>
-              <div style="color:#8b949e;">Extreme Greed</div><div style="color:#3fb950;font-weight:700;">81-100</div>
+            <div style="display:grid;grid-template-columns:auto auto;gap:4px 10px;font-size:10px;align-items:center;">
+              <span style="color:#f85149;">&#9632;</span><span style="color:#8b949e;">0&ndash;20 Extreme Fear</span>
+              <span style="color:#d29922;">&#9632;</span><span style="color:#8b949e;">21&ndash;40 Fear</span>
+              <span style="color:#8b949e;">&#9632;</span><span style="color:#8b949e;">41&ndash;60 Neutral</span>
+              <span style="color:#3fb950;">&#9632;</span><span style="color:#8b949e;">61&ndash;80 Greed</span>
+              <span style="color:#3fb950;font-size:12px;">&#9646;</span><span style="color:#8b949e;">81&ndash;100 Extreme Greed</span>
             </div>
           </div>
-          <div style="margin-top:8px;font-size:9px;color:#484f58;">Composite of ASX200 RSI, 52-wk range position, price vs 200MA, GGP RSI. Not financial advice.</div>
+          <div style="margin-top:8px;font-size:9px;color:#484f58;">Composite: ASX200 RSI &middot; 52-wk range &middot; price vs 200MA &middot; GGP RSI. Not financial advice.</div>
         </div>
       </div>
 
@@ -2465,31 +2544,94 @@ body::after {
     if (lEl) { lEl.textContent = lbl; lEl.style.color = col; }
     if (dEl) { dEl.textContent = desc; }
     if (uEl) { uEl.textContent = 'Calculated ' + new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); }
-    if (arc) { arc.setAttribute('stroke-dasharray', (score/100*157) + ' 157'); }
-    if (ndl) { ndl.setAttribute('transform', 'rotate(' + (-90 + score/100*180) + ',60,60)'); }
+    // Clip-rect left-to-right wipe (0 = empty, 150 = full width of SVG)
+    var cr = document.getElementById('fg-clip-rect');
+    if (cr) {
+      cr.setAttribute('width', '0');
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          cr.style.transition = 'width 1.4s cubic-bezier(0.4,0,0.2,1)';
+          cr.setAttribute('width', String(score / 100 * 150));
+        });
+      });
+    }
+    if (ndl) { ndl.setAttribute('transform', 'rotate(' + (-90 + score/100*180) + ',75,74)'); }
   }
+  function setGauge(prefix, closes, linkedRsi) {
+    var rsi = calcRSI(closes);
+    var score = 50;
+    if (rsi !== null) score += (rsi - 50) * 0.45;
+    if (closes.length >= 52) {
+      var yr = closes.slice(-252);
+      var hi = Math.max.apply(null, yr), lo = Math.min.apply(null, yr);
+      var cur = closes[closes.length-1];
+      score += ((cur-lo)/(hi-lo)*100 - 50) * 0.3;
+    }
+    if (linkedRsi !== null && linkedRsi !== undefined) score += (linkedRsi - 50) * 0.15;
+    var ma200 = calcMA(closes, 200);
+    if (ma200 !== null) {
+      var cur2 = closes[closes.length-1];
+      score += Math.max(-15, Math.min(15, (cur2-ma200)/ma200*100*1.5));
+    }
+    score = Math.max(0, Math.min(100, Math.round(score)));
+    var col, lbl, desc;
+    if (score<=20)      { col='#f85149'; lbl='Extreme Fear';  desc='Capitulation zone. Historically a buy signal for quality miners.'; }
+    else if (score<=40) { col='#d29922'; lbl='Fear';          desc='Risk-off sentiment. Watch for reversal catalyst.'; }
+    else if (score<=60) { col='#8b949e'; lbl='Neutral';       desc='No strong directional bias. Market consolidating.'; }
+    else if (score<=80) { col='#3fb950'; lbl='Greed';         desc='Positive risk appetite. Momentum buying present.'; }
+    else                { col='#3fb950'; lbl='Extreme Greed'; desc='Euphoria territory. Watch for mean reversion.'; }
+    var sEl = document.getElementById(prefix+'-score');
+    var lEl = document.getElementById(prefix+'-label');
+    var dEl = document.getElementById(prefix+'-desc');
+    var uEl = document.getElementById(prefix+'-updated');
+    var cr  = document.getElementById(prefix+'-clip-rect');
+    var ndl = document.getElementById(prefix+'-needle');
+    if (sEl) { sEl.textContent = score; sEl.style.color = col; }
+    if (lEl) { lEl.textContent = lbl; lEl.style.color = col; }
+    if (dEl) { dEl.textContent = desc; }
+    if (uEl) { uEl.textContent = 'Calculated ' + new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); }
+    if (cr) {
+      cr.setAttribute('width', '0');
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          cr.style.transition = 'width 1.4s cubic-bezier(0.4,0,0.2,1)';
+          cr.setAttribute('width', String(score / 100 * 150));
+        });
+      });
+    }
+    if (ndl) { ndl.setAttribute('transform', 'rotate(' + (-90 + score/100*180) + ',75,74)'); }
+  }
+
   async function loadIndicators() {
     try {
       var results = await Promise.allSettled([
         yhHistory('GGP.L', '2y'),
         yhHistory('GGP.AX', '2y'),
-        yhHistory('^AXJO', '2y')
+        yhHistory('^AXJO', '2y'),
+        yhHistory('^FTSE', '2y')
       ]);
-      var aimR = results[0], asxR = results[1], idxR = results[2];
-      var ggpRsi = null;
+      var aimR = results[0], asxR = results[1], axjoR = results[2], ftseR = results[3];
+      var ggpAimRsi = null, ggpAsxRsi = null;
       if (aimR.status==='fulfilled' && aimR.value.length > 50) {
         var c = aimR.value.map(function(x){return x.close;});
         setIndicators('aim', c, c[c.length-1], function(v){return v.toFixed(1)+'p';});
+        ggpAimRsi = calcRSI(c);
       }
       if (asxR.status==='fulfilled' && asxR.value.length > 50) {
         var c2 = asxR.value.map(function(x){return x.close;});
         setIndicators('asx', c2, c2[c2.length-1], function(v){return 'A$'+v.toFixed(2);});
-        ggpRsi = calcRSI(c2);
+        ggpAsxRsi = calcRSI(c2);
       }
-      var fgCloses = null;
-      if (idxR.status==='fulfilled' && idxR.value.length > 50) fgCloses = idxR.value.map(function(x){return x.close;});
-      else if (asxR.status==='fulfilled') fgCloses = asxR.value.map(function(x){return x.close;});
-      if (fgCloses) setFearGreed(fgCloses, ggpRsi);
+      // ASX F&G
+      var asxIdx = (axjoR.status==='fulfilled' && axjoR.value.length > 50)
+        ? axjoR.value.map(function(x){return x.close;})
+        : (asxR.status==='fulfilled' ? asxR.value.map(function(x){return x.close;}) : null);
+      if (asxIdx) setGauge('fg', asxIdx, ggpAsxRsi);
+      // UK F&G
+      var ftseIdx = (ftseR.status==='fulfilled' && ftseR.value.length > 50)
+        ? ftseR.value.map(function(x){return x.close;})
+        : (aimR.status==='fulfilled' ? aimR.value.map(function(x){return x.close;}) : null);
+      if (ftseIdx) setGauge('ukfg', ftseIdx, ggpAimRsi);
     } catch(e) { console.warn('Indicators:', e); }
   }
   // ── Ribbon helper ──────────────────────────────────────────────────────────
