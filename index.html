@@ -496,6 +496,35 @@ body::after {
           · <strong style="color:#E8821C;">Volume:</strong> MRE day volume spike confirms institutional accumulation at 61.8% — not distribution<br>
           · <strong style="color:#3fb950;">Signal:</strong> Hold 554p = buy zone. Broker upgrade wave incoming (no analyst has revised post-MRE). Close above 592p = trend resumption. Break below 498p (78.6%) = invalidation
         </div>
+
+        <!-- AIM INDICATORS STRIP -->
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px;">
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">RSI (14)</div>
+            <div id="aim-rsi-val" style="font-size:20px;font-weight:800;color:#8b949e;">—</div>
+            <div id="aim-rsi-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">loading...</div>
+          </div>
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">200-Day MA</div>
+            <div id="aim-ma200-val" style="font-size:20px;font-weight:800;color:#8b949e;">—</div>
+            <div id="aim-ma200-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">loading...</div>
+          </div>
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">50-Day MA</div>
+            <div id="aim-ma50-val" style="font-size:20px;font-weight:800;color:#8b949e;">—</div>
+            <div id="aim-ma50-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">loading...</div>
+          </div>
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">Trend</div>
+            <div id="aim-trend-val" style="font-size:16px;font-weight:800;color:#8b949e;">—</div>
+            <div id="aim-trend-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">MA50 vs MA200</div>
+          </div>
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">vs 200MA</div>
+            <div id="aim-vs200-val" style="font-size:20px;font-weight:800;color:#8b949e;">—</div>
+            <div id="aim-vs200-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">price vs MA200</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -584,6 +613,73 @@ body::after {
           · <strong style="color:#E8821C;">Extensions post-ATH:</strong> Ext 1.272 (A$15.77) → Ext 1.382 (A$16.31) → Ext 1.618 (A$17.48) → Bull case Ext 2.0 (A$19.36) — Argonaut target A$16.00 = Ext 1.322 zone<br>
           · <strong style="color:#E8821C;">Gold context:</strong> Gold ~US$3,100/oz (near ATH). Telfer AISC ~A$2,176/oz. At current spot = ~A$1,600+/oz margin. Best in class.<br>
           · <strong style="color:#3fb950;">Signal:</strong> Hold A$10.56 (78.6%) = accumulation zone. MRE catalyst + broker upgrades pending = asymmetric setup. Full recovery to ATH = +33% from here. Ext 1.618 (A$17.48) = +61% if Ore Reserve delivers
+        </div>
+
+        <!-- ASX INDICATORS -->
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px;">
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">RSI (14)</div>
+            <div id="asx-rsi-val" style="font-size:20px;font-weight:800;color:#8b949e;">—</div>
+            <div id="asx-rsi-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">loading...</div>
+          </div>
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">200-Day MA</div>
+            <div id="asx-ma200-val" style="font-size:20px;font-weight:800;color:#8b949e;">—</div>
+            <div id="asx-ma200-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">loading...</div>
+          </div>
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">50-Day MA</div>
+            <div id="asx-ma50-val" style="font-size:20px;font-weight:800;color:#8b949e;">—</div>
+            <div id="asx-ma50-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">loading...</div>
+          </div>
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">Trend</div>
+            <div id="asx-trend-val" style="font-size:16px;font-weight:800;color:#8b949e;">—</div>
+            <div id="asx-trend-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">MA50 vs MA200</div>
+          </div>
+          <div style="background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:4px;">vs 200MA</div>
+            <div id="asx-vs200-val" style="font-size:20px;font-weight:800;color:#8b949e;">—</div>
+            <div id="asx-vs200-lbl" style="font-size:9px;margin-top:2px;color:#8b949e;">price vs MA200</div>
+          </div>
+        </div>
+
+        <!-- ASX FEAR AND GREED -->
+        <div style="margin-top:12px;background:rgba(9,4,15,0.7);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:14px 16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#a78bfa;">ASX200 Sentiment - Fear and Greed Composite</div>
+            <div id="fg-updated" style="font-size:9px;color:#8b949e;">calculating...</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+            <div style="position:relative;width:120px;height:66px;flex-shrink:0;">
+              <svg viewBox="0 0 120 66" style="width:120px;height:66px;">
+                <path d="M10,60 A50,50 0 0,1 110,60" fill="none" stroke="#21262d" stroke-width="10" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="fgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f85149"/>
+                    <stop offset="50%" stop-color="#d29922"/>
+                    <stop offset="100%" stop-color="#3fb950"/>
+                  </linearGradient>
+                </defs>
+                <path id="fg-arc" d="M10,60 A50,50 0 0,1 110,60" fill="none" stroke="url(#fgGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 157"/>
+                <line id="fg-needle" x1="60" y1="60" x2="60" y2="15" stroke="white" stroke-width="2" stroke-linecap="round" transform="rotate(-90,60,60)" style="transition:transform 1.2s cubic-bezier(0.34,1.56,0.64,1)"/>
+                <circle cx="60" cy="60" r="4" fill="white"/>
+              </svg>
+            </div>
+            <div style="flex:1;min-width:140px;">
+              <div id="fg-score" style="font-size:32px;font-weight:900;color:#8b949e;">--</div>
+              <div id="fg-label" style="font-size:13px;font-weight:700;color:#8b949e;margin-top:2px;">Loading...</div>
+              <div id="fg-desc" style="font-size:10px;color:#8b949e;margin-top:4px;line-height:1.5;">Based on ASX200 momentum, RSI, 52-week range and 200MA</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:10px;min-width:160px;">
+              <div style="color:#8b949e;">Extreme Fear</div><div style="color:#f85149;font-weight:700;">0-20</div>
+              <div style="color:#8b949e;">Fear</div><div style="color:#d29922;font-weight:700;">21-40</div>
+              <div style="color:#8b949e;">Neutral</div><div style="color:#8b949e;font-weight:700;">41-60</div>
+              <div style="color:#8b949e;">Greed</div><div style="color:#3fb950;font-weight:700;">61-80</div>
+              <div style="color:#8b949e;">Extreme Greed</div><div style="color:#3fb950;font-weight:700;">81-100</div>
+            </div>
+          </div>
+          <div style="margin-top:8px;font-size:9px;color:#484f58;">Composite of ASX200 RSI, 52-wk range position, price vs 200MA, GGP RSI. Not financial advice.</div>
         </div>
       </div>
 
@@ -2269,6 +2365,133 @@ body::after {
     return { close, pct, date, time };
   }
 
+  // -- Indicator calculations
+  function calcRSI(closes, period) {
+    period = period || 14;
+    if (closes.length < period + 1) return null;
+    var gains = 0, losses = 0;
+    for (var i = closes.length - period; i < closes.length; i++) {
+      var d = closes[i] - closes[i-1];
+      if (d >= 0) gains += d; else losses -= d;
+    }
+    var avgGain = gains / period, avgLoss = losses / period;
+    if (avgLoss === 0) return 100;
+    return +(100 - (100 / (1 + avgGain/avgLoss))).toFixed(1);
+  }
+  function calcMA(closes, period) {
+    if (closes.length < period) return null;
+    var slice = closes.slice(-period);
+    return +(slice.reduce(function(a,b){return a+b;},0) / period).toFixed(4);
+  }
+  function rsiColor(rsi) {
+    if (rsi === null) return '#8b949e';
+    if (rsi >= 70) return '#f85149';
+    if (rsi <= 30) return '#3fb950';
+    return '#d29922';
+  }
+  function rsiText(rsi) {
+    if (rsi === null) return '--';
+    if (rsi >= 80) return 'Overbought';
+    if (rsi >= 70) return 'Overbought';
+    if (rsi <= 20) return 'Extreme Oversold';
+    if (rsi <= 30) return 'Oversold';
+    if (rsi <= 45) return 'Neutral-Weak';
+    if (rsi <= 55) return 'Neutral';
+    return 'Neutral-Strong';
+  }
+  function setIndicators(prefix, closes, currentPrice, priceFmt) {
+    var rsi = calcRSI(closes);
+    var ma200 = calcMA(closes, 200);
+    var ma50  = calcMA(closes, 50);
+    var rsiEl = document.getElementById(prefix+'-rsi-val');
+    var rsiLbl= document.getElementById(prefix+'-rsi-lbl');
+    if (rsiEl) { rsiEl.textContent = rsi !== null ? rsi : '--'; rsiEl.style.color = rsiColor(rsi); }
+    if (rsiLbl){ rsiLbl.textContent = rsiText(rsi); rsiLbl.style.color = rsiColor(rsi); }
+    var m2El  = document.getElementById(prefix+'-ma200-val');
+    var m2Lbl = document.getElementById(prefix+'-ma200-lbl');
+    if (m2El && ma200 !== null) { m2El.textContent = priceFmt(ma200); m2El.style.color='#58a6ff'; }
+    if (m2Lbl && ma200 !== null) { var ab = currentPrice > ma200; m2Lbl.textContent = ab ? 'Price above' : 'Price below'; m2Lbl.style.color = ab ? '#3fb950' : '#f85149'; }
+    var m5El  = document.getElementById(prefix+'-ma50-val');
+    var m5Lbl = document.getElementById(prefix+'-ma50-lbl');
+    if (m5El && ma50 !== null) { m5El.textContent = priceFmt(ma50); m5El.style.color='#a78bfa'; }
+    if (m5Lbl && ma50 !== null) { var ab5 = currentPrice > ma50; m5Lbl.textContent = ab5 ? 'Price above' : 'Price below'; m5Lbl.style.color = ab5 ? '#3fb950' : '#f85149'; }
+    var tEl   = document.getElementById(prefix+'-trend-val');
+    var tLbl  = document.getElementById(prefix+'-trend-lbl');
+    if (tEl && ma50 !== null && ma200 !== null) {
+      var golden = ma50 > ma200;
+      tEl.textContent = golden ? 'Bull' : 'Bear';
+      tEl.style.color = golden ? '#3fb950' : '#f85149';
+      if (tLbl) { tLbl.textContent = golden ? 'Golden Cross' : 'Death Cross'; tLbl.style.color = tEl.style.color; }
+    }
+    var vEl  = document.getElementById(prefix+'-vs200-val');
+    var vLbl = document.getElementById(prefix+'-vs200-lbl');
+    if (vEl && ma200 !== null) {
+      var pct = +((currentPrice - ma200) / ma200 * 100).toFixed(1);
+      vEl.textContent = (pct >= 0 ? '+' : '') + pct + '%';
+      vEl.style.color = pct >= 0 ? '#3fb950' : '#f85149';
+      if (vLbl) { vLbl.textContent = pct >= 0 ? 'Above 200MA' : 'Below 200MA'; vLbl.style.color = vEl.style.color; }
+    }
+  }
+  function setFearGreed(asxCloses, ggpRsi) {
+    var asxRsi = calcRSI(asxCloses);
+    var score = 50;
+    if (asxRsi !== null) score += (asxRsi - 50) * 0.45;
+    if (asxCloses.length >= 52) {
+      var yr = asxCloses.slice(-252);
+      var hi = Math.max.apply(null, yr), lo = Math.min.apply(null, yr);
+      var cur = asxCloses[asxCloses.length-1];
+      score += ((cur-lo)/(hi-lo)*100 - 50) * 0.3;
+    }
+    if (ggpRsi !== null) score += (ggpRsi - 50) * 0.15;
+    var ma200 = calcMA(asxCloses, 200);
+    if (ma200 !== null) {
+      var cur2 = asxCloses[asxCloses.length-1];
+      score += Math.max(-15, Math.min(15, (cur2-ma200)/ma200*100*1.5));
+    }
+    score = Math.max(0, Math.min(100, Math.round(score)));
+    var sEl = document.getElementById('fg-score');
+    var lEl = document.getElementById('fg-label');
+    var dEl = document.getElementById('fg-desc');
+    var uEl = document.getElementById('fg-updated');
+    var arc = document.getElementById('fg-arc');
+    var ndl = document.getElementById('fg-needle');
+    var col, lbl, desc;
+    if (score<=20)      { col='#f85149'; lbl='Extreme Fear';  desc='Capitulation zone. Historically a buy signal for quality gold miners.'; }
+    else if (score<=40) { col='#d29922'; lbl='Fear';          desc='Risk-off sentiment. Watch for reversal catalyst.'; }
+    else if (score<=60) { col='#8b949e'; lbl='Neutral';       desc='No strong directional bias. Market consolidating.'; }
+    else if (score<=80) { col='#3fb950'; lbl='Greed';         desc='Positive risk appetite. Momentum buying present.'; }
+    else                { col='#3fb950'; lbl='Extreme Greed'; desc='Euphoria territory. Watch for mean reversion.'; }
+    if (sEl) { sEl.textContent = score; sEl.style.color = col; }
+    if (lEl) { lEl.textContent = lbl; lEl.style.color = col; }
+    if (dEl) { dEl.textContent = desc; }
+    if (uEl) { uEl.textContent = 'Calculated ' + new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); }
+    if (arc) { arc.setAttribute('stroke-dasharray', (score/100*157) + ' 157'); }
+    if (ndl) { ndl.setAttribute('transform', 'rotate(' + (-90 + score/100*180) + ',60,60)'); }
+  }
+  async function loadIndicators() {
+    try {
+      var results = await Promise.allSettled([
+        yhHistory('GGP.L', '2y'),
+        yhHistory('GGP.AX', '2y'),
+        yhHistory('^AXJO', '2y')
+      ]);
+      var aimR = results[0], asxR = results[1], idxR = results[2];
+      var ggpRsi = null;
+      if (aimR.status==='fulfilled' && aimR.value.length > 50) {
+        var c = aimR.value.map(function(x){return x.close;});
+        setIndicators('aim', c, c[c.length-1], function(v){return v.toFixed(1)+'p';});
+      }
+      if (asxR.status==='fulfilled' && asxR.value.length > 50) {
+        var c2 = asxR.value.map(function(x){return x.close;});
+        setIndicators('asx', c2, c2[c2.length-1], function(v){return 'A$'+v.toFixed(2);});
+        ggpRsi = calcRSI(c2);
+      }
+      var fgCloses = null;
+      if (idxR.status==='fulfilled' && idxR.value.length > 50) fgCloses = idxR.value.map(function(x){return x.close;});
+      else if (asxR.status==='fulfilled') fgCloses = asxR.value.map(function(x){return x.close;});
+      if (fgCloses) setFearGreed(fgCloses, ggpRsi);
+    } catch(e) { console.warn('Indicators:', e); }
+  }
   // ── Ribbon helper ──────────────────────────────────────────────────────────
   function setRibbon(id, price, prev, fmt) {
     const el = document.getElementById('rp-' + id);
@@ -2474,6 +2697,7 @@ body::after {
   loadAIMChart('6mo');
   loadASXChart('6mo');
   fetchRibbon();
+  loadIndicators();
   fetchFX();
   setInterval(() => { fetchRibbon(); fetchFX(); }, 60000);
 
