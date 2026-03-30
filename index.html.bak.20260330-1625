@@ -227,8 +227,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <div>📌 <strong style="color:#3fb950">Jan 2026</strong> — Q2 production: 86,273oz gold + 3,528t copper; "very promising" Telfer drilling</div>
             <div>📌 <strong style="color:#3fb950">Feb 18, 2026</strong> — COO Simon Tyrrell departs; Otto Richter appointed acting COO</div>
             <div>📌 <strong style="color:#3fb950">Feb 23, 2026</strong> — <strong>H1 FY26: Revenue A$977M · NPAT A$342.9M · Cash A$948M · Zero debt</strong></div>
-            <div>📌 <strong style="color:#3fb950">Mar 2026</strong> — GDX inclusion confirmed · ASX 100 inclusion confirmed</div>
-            <div>📌 <strong style="color:#f85149">30 Mar 2026</strong> — <strong>🚨 Telfer MRE +150% → 8.0Moz Au · Combined Telfer+Havieron: 14.9Moz Au + 645kt Cu · M&amp;I +163% · WDU maiden 0.6Moz @ 2.3g/t · O'Callaghans tungsten: 70Mt @ 0.35% WO₃ (246kt)</strong></div>
           </div>
         </div>
 
@@ -239,7 +237,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <p style="margin-bottom:10px;">Greatland Resources acquired the Telfer gold-copper mine (WA) in 2025 and has executed exceptionally well since. Telfer is cash-generative from day one — A$658M operating cash flow in H1 FY26 alone.</p>
             <p style="margin-bottom:10px;">The balance sheet is fortress-grade: <strong style="color:#3fb950">A$948M cash, zero debt</strong> — and a committed A$500M debt facility in reserve for Havieron construction.</p>
             <p style="margin-bottom:10px;">Havieron Feasibility Study (Dec 2025) confirmed a <strong style="color:#58a6ff">world-class, lowest-quartile-cost mine</strong> with A$2.9bn post-tax NPV — adjacent to Telfer, leveraging existing infrastructure.</p>
-            <p>Record drilling (240,000m FY26). <strong style="color:#f85149;">30 Mar 2026: Telfer MRE +150% → 8.0Moz Au. Combined 14.9Moz Au + 645kt Cu. M&amp;I +163%. WDU maiden 0.6Moz @ 2.3g/t. Ore Reserve update Q4 FY26.</strong> O'Callaghans tungsten 70Mt MRE adds world-class critical mineral optionality. Multi-decade platform — Telfer funds Havieron.</p>
+            <p>Record drilling (240,000m FY26), expanding West Dome Underground resource, and strong H2 FY26 guidance maintained. This is a company building a multi-decade mining platform — Telfer funds Havieron.</p>
           </div>
           <div style="margin-top:12px; padding:10px 14px; background:#0c2233; border-radius:8px; border-left:3px solid #58a6ff; font-size:12px; color:#c9d1d9;">
             <strong style="color:#58a6ff;">Key Metrics (H1 FY26):</strong><br>
@@ -256,8 +254,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
           <div style="font-size:12px; color:#c9d1d9;">
 
             <div style="display:flex; gap:10px; margin-bottom:10px; padding:8px 10px; background:#1a1a0a; border-radius:6px; border-left:3px solid #3fb950;">
-              <div style="min-width:80px; font-weight:700; color:#3fb950;">Q1 2026<br><span style="font-size:10px; color:#3fb950;">✅ DONE</span></div>
-              <div>✅ Telfer MRE +150% → 8.0Moz (30 Mar) · ✅ WDU maiden 0.6Moz @ 2.3g/t · ✅ O'Callaghans tungsten 70Mt MRE · 100,000m drilling ongoing → Ore Reserve Q4 FY26</div>
+              <div style="min-width:80px; font-weight:700; color:#3fb950;">Q1 2026<br><span style="font-size:10px; color:#8b949e;">NOW</span></div>
+              <div>Updated Telfer Mineral Resource estimate · Maiden West Dome Underground resource · Record drilling program ongoing</div>
             </div>
 
             <div style="display:flex; gap:10px; margin-bottom:10px; padding:8px 10px; background:#1a1200; border-radius:6px; border-left:3px solid #d29922;">
@@ -286,7 +284,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       </div>
 
       <div style="margin-top:16px; padding:10px 14px; background:#161b22; border-radius:8px; font-size:11px; color:#484f58; display:flex; justify-content:space-between; align-items:center;">
-        <span>Sources: LSE RNS · Proactive Investors · Sharecast · H&L · Company announcements · Updated 30 Mar 2026</span>
+        <span>Sources: LSE RNS · Proactive Investors · Sharecast · H&L · Company announcements · Feb 2026</span>
         <a href="https://www.londonstockexchange.com/stock/GGP/greatland-resources-limited/regulatory-news" target="_blank" style="color:#58a6ff; text-decoration:none;">View all RNS ↗</a>
       </div>
     </div>
@@ -480,7 +478,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         </div>
       </div>
       <div style="padding: 10px 16px; display:flex; gap:20px; background:#0d1117; border-top:1px solid #21262d; flex-wrap:wrap; align-items:center;">
-        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">ASX:GGP (delayed)</div><div style="font-size:18px;font-weight:800;color:#58a6ff;" id="asx-live-price">A$9.76</div><div style="font-size:11px;color:#3fb950;">~15min delay</div></div>
+        <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">ASX:GGP (delayed)</div><div style="font-size:18px;font-weight:800;color:#58a6ff;" id="asx-live-price">A$11.48</div><div style="font-size:11px;color:#3fb950;">~15min delay</div></div>
         <div style="font-size:22px;color:#30363d;">→</div>
         <div><div style="font-size:10px;color:#8b949e;text-transform:uppercase;">UK Equiv (live FX)</div><div style="font-size:18px;font-weight:800;color:#3fb950;" id="uk-equiv-live">Calculating...</div><div style="font-size:11px;color:#484f58;" id="fx-label">fetching AUD/GBP...</div></div>
         <div style="width:1px;height:40px;background:#30363d;"></div>
@@ -493,7 +491,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <div style="background:#1a0e00;border-top:2px solid #E8821C;padding:14px 18px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
           <span style="font-size:12px;font-weight:800;color:#E8821C;text-transform:uppercase;letter-spacing:1px;">📐 Technical Analysis — ASX:GGP (Daily)</span>
-          <span style="font-size:10px;color:#8b949e;" id="asx-ta-updated">Updated: 30 Mar 2026</span>
+          <span style="font-size:10px;color:#8b949e;" id="asx-ta-updated">Updated: 23 Mar 2026</span>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;font-size:12px;">
 
@@ -535,10 +533,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         </div>
         <div style="margin-top:10px;padding:8px 12px;background:#0d0800;border-radius:6px;border-left:3px solid #E8821C;font-size:11px;color:#c9d1d9;line-height:1.8;" id="asx-ta-bullets">
           · <strong style="color:#E8821C;">Trend:</strong> Correcting from ATH A$14.43 (Jan 2026) — gold slide + macro pressure pulling price lower. ASX 100 inclusion creates passive buying floor.<br>
-          · <strong style="color:#3fb950;">Current (30 Mar):</strong> 564.8p intraday AIM (+10.5%). MRE delivered — 8.0Moz Telfer (+150%), 14.9Moz combined, WDU 0.6Moz @ 2.3g/t. Watch for gap fill on ASX open.<br>
-          · <strong style="color:#E8821C;">Key level:</strong> A$9.50 swing low = critical support on ASX. Recovery above A$11.38 (61.8% Fib) re-enters bull channel — MRE should accelerate that test. Next: Ore Reserve update Q4 FY26.<br>
-          · <strong style="color:#E8821C;">Gold context:</strong> Gold spot ~US$3,100 (near ATH) — tailwind fully restored. Telfer AISC ~A$2,176/oz. Margins exceptional at current spot.<br>
-          · <strong style="color:#3fb950;">Signal:</strong> Catalyst delivered. Broker upgrades not yet in. Structural floor: ASX 100 + GDX/GDXJ. Recovery path: A$11.38 → A$12.55 → retest ATH A$14.43 → new ATH territory if Ore Reserve delivers
+          · <strong style="color:#E8821C;">Current:</strong> A$11.48 — sitting between S3 (Fib 50% A$11.96) and S4 (golden ratio 61.8% A$11.38). Key battleground zone.<br>
+          · <strong style="color:#E8821C;">Key level:</strong> A$11.38 = 61.8% golden ratio — strongest Fib support. Hold here = potential reversal. Break below = A$10.50 area next.<br>
+          · <strong style="color:#E8821C;">Gold context:</strong> Gold spot ~$4,286 (down from $5,345 ATH) — headwind near-term but still historically elevated. Telfer AISC ~A$2,176/oz = margin intact.<br>
+          · <strong style="color:#E8821C;">Signal:</strong> Watch A$11.38 as hard support (61.8% Fib). ASX 100 passive inflows are a structural floor. Recovery targets: A$11.96 → A$12.55 → A$13.11
         </div>
       </div>
 
@@ -550,7 +548,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="big-stat">
       <div class="lbl">AIM (LON:GGP)</div>
       <div class="val">757p</div>
-      <div class="sub">↑ All-Time High · 2 Mar 2026 · Current: 511p</div>
+      <div class="sub">↑ All-Time High · 2 Mar 2026</div>
     </div>
   </div>
   <div class="col-3">
@@ -602,8 +600,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
               <div>📌 <strong style="color:#3fb950">Jan 2026</strong> — Q2: 86,273oz gold + 3,528t copper; "very promising" Telfer drilling</div>
               <div>📌 <strong style="color:#3fb950">Feb 18, 2026</strong> — COO Simon Tyrrell departs; Otto Richter acting COO</div>
               <div>📌 <strong style="color:#3fb950">Feb 23, 2026</strong> — <strong>H1 FY26: Revenue A$977M · NPAT A$342.9M · Cash A$948M · Zero debt</strong></div>
-            <div>📌 <strong style="color:#3fb950">Mar 2026</strong> — GDX inclusion confirmed · ASX 100 inclusion confirmed</div>
-            <div>📌 <strong style="color:#f85149">30 Mar 2026</strong> — <strong>🚨 Telfer MRE +150% → 8.0Moz Au · Combined Telfer+Havieron: 14.9Moz Au + 645kt Cu · M&amp;I +163% · WDU maiden 0.6Moz @ 2.3g/t · O'Callaghans tungsten: 70Mt @ 0.35% WO₃ (246kt)</strong></div>
             </div>
           </div>
 
@@ -628,7 +624,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <div style="font-size:12px; color:#c9d1d9;">
               <div style="display:flex; gap:10px; margin-bottom:8px; padding:8px 10px; background:#1a1a0a; border-radius:6px; border-left:3px solid #3fb950;">
                 <div style="min-width:70px; font-weight:700; color:#3fb950;">Q1 2026<br><span style="font-size:10px;color:#8b949e;">NOW</span></div>
-                <div><strong style="color:#3fb950;">✅ DELIVERED — 30 MAR 2026:</strong> Telfer MRE +150% → 8.0Moz Au (was 3.2Moz) · M&amp;I up 163% → 3.8Moz · WDU maiden 0.6Moz @ 2.3g/t · Discovery cost ~US$5/oz · O'Callaghans tungsten MRE: 70Mt @ 0.35% WO₃ (246kt) — one of world's largest ex-China · Combined Telfer+Havieron: 14.9Moz Au + 645kt Cu<br><strong style="color:#d29922;">🔜 NEXT:</strong> Ore Reserve update (Q4 FY26 — June 2026 quarter) · Havieron FID · 100,000m drilling ongoing · GDXJ/GDX Q2 rebalance ~20 Jun 2026</div>
+                <div><strong style="color:#3fb950;">🔑 KEY CATALYSTS:</strong> Maiden WDU MRE (est. 1.5–2Moz) · Updated Telfer MRE · WA EPA environmental approvals targeted · 240,000m record drilling ongoing<br><strong style="color:#f85149;">🔥 ~20 Mar 2026 — GDX inclusion expected</strong> (~$280–420M forced passive buying — GDX AUM now ~$35B, tracking MVGDXTR) · <strong style="color:#bc8cff;">GDXJ Q1 rebalance — weighting likely ↑ from 1.16%</strong></div>
               </div>
               <div style="display:flex; gap:10px; margin-bottom:8px; padding:8px 10px; background:#1a1200; border-radius:6px; border-left:3px solid #d29922;">
                 <div style="min-width:70px; font-weight:700; color:#d29922;">H2 2026</div>
@@ -664,7 +660,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="card" style="border-color:#f85149;">
       <div class="card-header" style="background:#1a0a0a;">
         <h2 style="color:#f85149;">⚠️ Key Mining Risks &amp; Upcoming Catalysts Priced In</h2>
-        <span style="font-size:11px;color:#8b949e;">Deep dive: Havieron FS · Telfer ops · West Dome Underground · MRE delivered 30 Mar 2026: 8.0Moz Telfer · 14.9Moz combined</span>
+        <span style="font-size:11px;color:#8b949e;">Deep dive: Havieron FS · Telfer ops · West Dome Underground analysis · Wilson's MRE estimate</span>
       </div>
       <div class="card-body" style="padding:0;">
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;">
@@ -686,8 +682,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
           <div style="padding:16px;border-right:1px solid #30363d;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#d29922;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #2d2a00;">🟡 Telfer Operational Risks</div>
             <div style="font-size:12px;line-height:1.8;color:#c9d1d9;">
-              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED ↓</span> — <strong>Grade decline trajectory</strong><br><span style="color:#8b949e;">MRE now 8.0Moz — 4.9Moz West Dome OP (+135%) + 0.6Moz WDU @ 2.3g/t. Higher-grade WDU ore will blend with open pit. Stage 7 West Dome cutback still key H2 watch. Reduced but not eliminated.</span></div>
-              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>COO vacancy</strong><br><span style="color:#8b949e;">Simon Tyrrell resigned Feb 2026. Acting COO Otto Richter in seat. Record MRE delivered successfully under acting leadership — some confidence restored. Permanent appointment still pending.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#f85149;font-weight:700;">HIGH</span> — <strong>Grade decline trajectory</strong><br><span style="color:#8b949e;">Current open pit grade 0.61g/t — well below historical Telfer average. Stage 7 West Dome cutback must deliver higher grade ore or H2 risks disappointment.</span></div>
+              <div style="margin-bottom:8px;"><span style="color:#f85149;font-weight:700;">HIGH</span> — <strong>COO vacancy</strong><br><span style="color:#8b949e;">Simon Tyrrell resigned Feb 2026. Acting COO Otto Richter in seat. Operational continuity risk during a critical ramp-up period.</span></div>
               <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>Tailings Storage (TSF8)</strong><br><span style="color:#8b949e;">Stage 3 lift complete, but TSF management in WA is highly regulated. Failure or regulatory action would halt production.</span></div>
               <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>WA cost inflation</strong><br><span style="color:#8b949e;">Labour, diesel, equipment all inflated in WA. AISC at A$2,176/oz is manageable at spot but leaves limited margin if costs rise.</span></div>
               <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">MED</span> — <strong>Hedge cap on upside</strong><br><span style="color:#8b949e;">225,004oz hedged Jan 2026–Jun 2027 @ A$4,500/oz avg strike. At spot A$6,250 this locks in significant opportunity cost (~$393M foregone revenue on hedged oz).</span></div>
@@ -701,19 +697,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <div style="font-size:12px;color:#c9d1d9;">
               <div style="margin-bottom:12px;padding:10px;background:#0d2b0d;border-radius:6px;border-left:3px solid #3fb950;">
                 <div style="font-weight:700;color:#3fb950;margin-bottom:6px;">✅ Already Priced In</div>
-                <div style="line-height:1.8;">· COO departure — market absorbed, barely moved<br>· H1 results — fully baked in at 757p<br>· Havieron FS capex A$1.065bn — known<br>· $500M debt facility — announced<br>· Conservative FY26 guidance — market expects beat<br>· Record drilling program — widely flagged<br>· <strong style="color:#3fb950;">✅ Telfer MRE +150% → 8.0Moz (30 Mar)</strong> — catalyst delivered, broker upgrades now pending<br>· <strong style="color:#3fb950;">✅ WDU maiden 0.6Moz @ 2.3g/t</strong> — confirmed, ~3–5yr mine life extension<br>· <strong style="color:#3fb950;">✅ O'Callaghans tungsten 70Mt MRE</strong> — world-class critical mineral optionality confirmed</div>
+                <div style="line-height:1.8;">· COO departure — market absorbed, barely moved<br>· H1 results — fully baked in at 757p<br>· Havieron FS capex A$1.065bn — known<br>· $500M debt facility — announced<br>· Conservative FY26 guidance — market expects beat<br>· Record drilling program — widely flagged</div>
               </div>
               <div style="padding:10px;background:#1a0a0a;border-radius:6px;border-left:3px solid #f85149;">
-                <div style="font-weight:700;color:#f85149;margin-bottom:6px;">❗ NOT Yet Priced In (Next Catalysts)</div>
-                <div style="line-height:1.8;">· <strong style="color:#3fb950;">Broker target upgrades</strong> — no analyst revised post-30 Mar MRE yet. Upgrade wave incoming<br>· <strong style="color:#d29922;">Ore Reserve update (Q4 FY26)</strong> — June 2026 quarter. 8.0Moz MRE → bigger Reserve = longer mine life priced in<br>· <strong style="color:#d29922;">Havieron FID</strong> — environmental approval + board sanction = major re-rating event<br>· <strong style="color:#d29922;">WDU pre-feasibility / FID</strong> — 0.6Moz @ 2.3g/t now defined, FS next<br>· <strong style="color:#f85149;">Environmental approval timing</strong> — WA EPA delay = selloff risk<br>· Permanent COO appointment — confidence signal<br>· Telfer H2 production beat vs 260–310koz guidance<br>· <strong style="color:#f85149;">Gold price correction</strong> — A$6,250 → A$5,000 range would hurt near-term NPAT</div>
+                <div style="font-weight:700;color:#f85149;margin-bottom:6px;">❗ NOT Priced In (Upcoming Risk/Reward)</div>
+                <div style="line-height:1.8;">· <strong style="color:#3fb950;">WDU Maiden MRE (Mar 2026)</strong> — likely positive surprise given drilling results<br>· Environmental approval timing — delay = selloff<br>· Havieron FID announcement — re-rating event<br>· Updated Telfer MRE — West Dome adds ounces<br>· Gold price correction from A$6,250 — high sensitivity<br>· New permanent COO appointment — sentiment boost<br>· Telfer H2 production beat vs 260–310koz guidance</div>
               </div>
             </div>
           </div>
 
           <!-- WEST DOME MRE ESTIMATE -->
           <div style="padding:16px;">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#3fb950;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1e3c1e;">✅ West Dome Underground — Official JORC MRE Delivered 30 Mar 2026</div>
-            <div style="font-size:11px;color:#3fb950;margin-bottom:10px;font-style:italic;">✅ Official JORC maiden MRE confirmed. See ASX announcement 30 Mar 2026.</div>
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#bc8cff;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1e0a3c;">🔬 West Dome Underground — Wilson's MRE Estimate</div>
+            <div style="font-size:11px;color:#8b949e;margin-bottom:10px;font-style:italic;">⚠️ Analyst estimate only — NOT official JORC resource. Official maiden MRE targeted March 2026.</div>
 
             <div style="font-size:12px;color:#c9d1d9;margin-bottom:10px;">
               <strong style="color:#bc8cff;">Drilling data used:</strong><br>
@@ -724,19 +720,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
               · 19 holes, >9,000m Phase 2; system open all directions
             </div>
 
-            <div style="background:#0d2b0d;border-radius:8px;padding:12px;margin-bottom:10px;border:1px solid #238636;">
-              <div style="font-size:11px;font-weight:700;color:#3fb950;margin-bottom:8px;">✅ Official JORC Resource (30 Mar 2026)</div>
+            <div style="background:#1e0a3c;border-radius:8px;padding:12px;margin-bottom:10px;">
+              <div style="font-size:11px;font-weight:700;color:#bc8cff;margin-bottom:8px;">Estimated Resource Envelope</div>
               <div style="font-size:12px;line-height:1.9;">
-                <div style="display:flex;justify-content:space-between;"><span>WDU Total Resource</span><span style="color:#3fb950;font-weight:700;">0.6Moz Au</span></div>
-                <div style="display:flex;justify-content:space-between;"><span>Grade</span><span style="color:#3fb950;font-weight:700;">2.3g/t Au</span></div>
-                <div style="display:flex;justify-content:space-between;"><span>Status</span><span style="color:#3fb950;">Maiden — open all directions</span></div>
-                <div style="display:flex;justify-content:space-between;border-top:1px solid #238636;margin-top:6px;padding-top:6px;"><span>Mine life extension</span><span style="color:#3fb950;font-weight:700;">~3–5 years (MDU)</span></div>
-                <div style="display:flex;justify-content:space-between;"><span>NPV add (A$5k gold)</span><span style="color:#3fb950;font-weight:700;">~A$500M–1bn+</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>WSC tonnage (est.)</span><span style="color:#bc8cff;">~21Mt</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>WSC grade (est.)</span><span style="color:#bc8cff;">~1.9g/t Au</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>W+E Limb combined</span><span style="color:#bc8cff;">~3–5Mt @ 4g/t+</span></div>
+                <div style="display:flex;justify-content:space-between;border-top:1px solid #6e40c9;margin-top:6px;padding-top:6px;font-weight:700;"><span>Total Au estimate</span><span style="color:#3fb950;">~1.5–2.0Moz</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Cu (est. avg 0.3%)</span><span style="color:#58a6ff;">~70–100kt Cu</span></div>
               </div>
             </div>
 
-            <div style="font-size:12px;color:#c9d1d9;background:#0d1117;border-radius:6px;padding:10px;border-left:3px solid #3fb950;">
-              <strong style="color:#3fb950;">Wilson's Read:</strong> WDU delivered 0.6Moz @ 2.3g/t — conservative first cut, system wide open. Key point: no new plant needed. MDU infrastructure running at a fraction of capacity means WDU ore goes straight to mill. At A$6,000+/oz gold this 0.6Moz alone adds A$700M–A$1bn+ to mine economics, largely <strong>not in any current analyst target</strong>. Pre-feasibility is the next WDU trigger. If 100,000m H2 drilling expands this to 1Moz+, re-rating is significant.
+            <div style="font-size:12px;color:#c9d1d9;background:#0d1117;border-radius:6px;padding:10px;border-left:3px solid #bc8cff;">
+              <strong style="color:#bc8cff;">Wilson's Read:</strong> If WDU maiden MRE comes in at 1–2Moz (as drilling suggests), this is a <strong>Telfer mine life extension of ~3–5 years</strong> beyond current schedule using existing MDU infrastructure running well below capacity. At A$5,000+/oz gold this adds A$500M–A$1bn+ in NPV value — largely not in the current share price.
             </div>
           </div>
 
@@ -766,7 +762,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
                 <th style="padding:8px 10px;text-align:center;color:#f85149;font-size:11px;border-bottom:1px solid #3d2200;">PE 10×<br>ASX / AIM</th>
                 <th style="padding:8px 10px;text-align:center;color:#d29922;font-size:11px;border-bottom:1px solid #3d2200;">PE 15×<br>ASX / AIM</th>
                 <th style="padding:8px 10px;text-align:center;color:#3fb950;font-size:11px;border-bottom:1px solid #3d2200;">PE 20×<br>ASX / AIM</th>
-                <th style="padding:8px 10px;text-align:center;color:#8b949e;font-size:11px;border-bottom:1px solid #3d2200;">vs A$9.76 (30 Mar)</th>
+                <th style="padding:8px 10px;text-align:center;color:#8b949e;font-size:11px;border-bottom:1px solid #3d2200;">vs A$11.48</th>
               </tr>
             </thead>
             <tbody>
@@ -826,7 +822,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <div style="font-size:22px;font-weight:900;color:#E8821C;">A$19–22</div>
             <div style="font-size:12px;color:#E8821C;">925–1,072p</div>
             <div style="font-size:10px;color:#8b949e;margin-top:3px;">12-month base</div>
-            <div style="font-size:9px;color:#3fb950;margin-top:4px;">Pre-MRE — upward revision likely</div>
           </div>
         </div>
 
@@ -893,7 +888,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         </div>
 
         <div style="margin-top:12px;padding:8px 14px;background:#0d0800;border-radius:6px;border-left:3px solid #E8821C;font-size:11px;color:#c9d1d9;line-height:1.8;">
-          · Current price A$9.76 (27 Mar close) — MRE delivered 30 Mar → upside bias. A$11.38 (61.8% Fib) is first key recovery level. = <strong style="color:#3fb950;">~62% discount to DCF base value</strong> (A$4.5k gold base) · Argonaut's A$16.00 target implies +64% upside · Investing.com high A$18.50 ✅<br>
+          · Current price A$11.48 = <strong style="color:#E8821C;">~54% discount to DCF base value</strong> (A$4.5k gold base) · Argonaut's A$16.00 target implies +39% upside ✅<br>
           · At <strong style="color:#d29922;">$5,000 USD gold</strong> DCF jumps to <strong style="color:#d29922;">A$34.97 / 1,703p</strong> — 205% upside from current price<br>
           · <strong style="color:#3fb950;">🏆 ASX 100 inclusion March 2026</strong> = significant passive fund inflows as index trackers buy to match new weighting<br>
           · ⚠️ NOT financial advice — <a href="GGP-Valuation-Report.html" target="_blank" style="color:#58a6ff;">Full report ↗</a>
@@ -908,7 +903,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="card" style="border-color:#bc8cff;">
       <div class="card-header" style="background:#1a0a2e;">
         <h2 style="color:#bc8cff;">📦 ETF Inclusion — GDXJ &amp; GDX (VanEck)</h2>
-        <span style="font-size:11px;color:#8b949e;">GDXJ: ✅ confirmed · GDX: ✅ confirmed 20 Mar 2026 · ASX 100: ✅ confirmed 23 Mar 2026</span>
+        <span style="font-size:11px;color:#8b949e;">GDXJ: confirmed ✅ · GDX: expected ~20 Mar 2026 🔥</span>
       </div>
       <div class="card-body" style="padding:0;">
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;">
@@ -919,9 +914,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
               <div style="background:#1e0a3c;border-radius:8px;padding:10px;text-align:center;">
-                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP Weighting (Q1)</div>
-                <div style="font-size:24px;font-weight:900;color:#bc8cff;">~1.0–1.3%</div>
-                <div style="font-size:10px;color:#8b949e;">118 holdings · revised up Mar 2026</div>
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP Weighting</div>
+                <div style="font-size:24px;font-weight:900;color:#bc8cff;">1.16%</div>
+                <div style="font-size:10px;color:#8b949e;">#25 of 95 holdings</div>
               </div>
               <div style="background:#1e0a3c;border-radius:8px;padding:10px;text-align:center;">
                 <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">Shares Held</div>
@@ -930,13 +925,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
               </div>
               <div style="background:#1e0a3c;border-radius:8px;padding:10px;text-align:center;">
                 <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GDXJ AUM</div>
-                <div style="font-size:20px;font-weight:900;color:#bc8cff;">$8.48B</div>
-                <div style="font-size:10px;color:#8b949e;">USD · as of 27 Mar 2026</div>
+                <div style="font-size:20px;font-weight:900;color:#bc8cff;">$11.53B</div>
+                <div style="font-size:10px;color:#8b949e;">USD</div>
               </div>
               <div style="background:#1e0a3c;border-radius:8px;padding:10px;text-align:center;">
                 <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP Value in ETF</div>
-                <div style="font-size:20px;font-weight:900;color:#3fb950;">~$85–110M</div>
-                <div style="font-size:10px;color:#8b949e;">USD · est. Mar 2026 · AUM fell with gold</div>
+                <div style="font-size:20px;font-weight:900;color:#3fb950;">~$134M</div>
+                <div style="font-size:10px;color:#8b949e;">USD · as of 26 Feb 2026</div>
               </div>
             </div>
 
@@ -949,36 +944,36 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
             <div style="background:#0d1117;border-radius:8px;padding:10px;font-size:11px;color:#8b949e;">
               <strong style="color:#bc8cff;">GDXJ Rebalance Schedule (MarketVector)</strong><br>
-              ✅ Q1: implemented <strong style="color:#3fb950;">20 Mar 2026</strong> · Q2: announced <strong>12 Jun</strong>, effective <strong>19 Jun 2026</strong><br>
-              Q3: announced 11 Sep, effective 18 Sep · Q4: announced 11 Dec, effective 18 Dec 2026<br>
-              <a href="https://stockanalysis.com/etf/gdxj/holdings/" target="_blank" style="color:#58a6ff;">GDXJ Holdings ↗</a>
+              Quarterly: <strong style="color:#e6edf3;">~20 Mar · ~20 Jun · ~19 Sep · ~19 Dec 2026</strong><br>
+              Changes effective the following trading day after implementation.<br>
+              <a href="https://www.marketvector.com/documents/periodic-index-reviews/quarterly" target="_blank" style="color:#58a6ff;">MarketVector schedule ↗</a> · <a href="https://stockanalysis.com/etf/gdxj/holdings/" target="_blank" style="color:#58a6ff;">GDXJ Holdings ↗</a>
             </div>
           </div>
 
           <!-- GDX -->
           <div style="padding:18px;border-right:1px solid #30363d;">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1e0a3c;">
-              <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#3fb950;">✅ GDX — Gold Miners ETF (CONFIRMED 20 MAR 2026)</div>
-              <span style="background:#0d2b0d;color:#3fb950;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;">✅ INCLUDED</span>
+              <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#f85149;">🔥 GDX — Gold Miners ETF (EXPECTED ~20 MAR 2026)</div>
+              <span style="background:#3d1111;color:#f85149;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;">NOT YET CONFIRMED</span>
             </div>
 
             <!-- Key stats row -->
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
               <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
-                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GDX AUM (current)</div>
-                <div style="font-size:24px;font-weight:900;color:#d29922;">$26.6B</div>
-                <div style="font-size:10px;color:#8b949e;">USD · 54 holdings · 27 Mar 2026</div>
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GDX AUM (confirmed)</div>
+                <div style="font-size:24px;font-weight:900;color:#d29922;">$36.5B</div>
+                <div style="font-size:10px;color:#8b949e;">USD · 49 holdings · Feb 27 2026</div>
               </div>
               <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;text-align:center;">
-                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP in GDX (est.)</div>
-                <div style="font-size:24px;font-weight:900;color:#3fb950;">~0.7–1.0%</div>
-                <div style="font-size:10px;color:#8b949e;">~$190–265M USD at 27 Mar AUM</div>
+                <div style="font-size:10px;color:#8b949e;text-transform:uppercase;">GGP Mkt Cap</div>
+                <div style="font-size:24px;font-weight:900;color:#d29922;">A$7.7B</div>
+                <div style="font-size:10px;color:#8b949e;">463p · ~$4.4B USD · A$11.48 ASX</div>
               </div>
             </div>
 
             <!-- 3 Scenarios table -->
-            <div style="font-size:11px;font-weight:700;color:#3fb950;text-transform:uppercase;letter-spacing:0.7px;margin-bottom:8px;">✅ GDX Q1 INCLUSION COMPLETE · Q2 Rebalance 19 Jun 2026 — Weighting Estimate</div>
-            <div style="font-size:10px;color:#8b949e;margin-bottom:10px;">✅ GGP confirmed in GDX. Basis: MVGDX peers — NST 2.48% · EVN 1.64% · OGC 1.07% (at 27 Mar). GGP ~A$7.7B → est. 0.7–1.0%. AUM now $26.6B.</div>
+            <div style="font-size:11px;font-weight:700;color:#f85149;text-transform:uppercase;letter-spacing:0.7px;margin-bottom:8px;">⚖️ Weighting Scenarios — Peer-Calibrated vs Confirmed GDX Holdings</div>
+            <div style="font-size:10px;color:#8b949e;margin-bottom:10px;">Basis: ASX gold miners confirmed in GDX — Northern Star A$22B→3.21% · Evolution Mining A$9.5B→1.85% · OceanaGold A$5.2B→1.25%</div>
 
             <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:14px;">
               <thead>
@@ -994,25 +989,25 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
               <tbody>
                 <tr style="background:#120808;">
                   <td style="padding:8px;color:#c9d1d9;border-bottom:1px solid #21262d;">🐻 <strong>Bear</strong><br><span style="color:#8b949e;font-size:10px;">Float discount / new ASX listing</span></td>
-                  <td style="padding:8px;text-align:center;color:#f85149;font-weight:700;border-bottom:1px solid #21262d;">~0.7%</td>
-                  <td style="padding:8px;text-align:center;color:#f85149;font-weight:700;border-bottom:1px solid #21262d;">~$186M</td>
-                  <td style="padding:8px;text-align:center;color:#d29922;font-weight:700;border-bottom:1px solid #21262d;">~$271M</td>
+                  <td style="padding:8px;text-align:center;color:#f85149;font-weight:700;border-bottom:1px solid #21262d;">1.16%</td>
+                  <td style="padding:8px;text-align:center;color:#f85149;font-weight:700;border-bottom:1px solid #21262d;">$423M</td>
+                  <td style="padding:8px;text-align:center;color:#d29922;font-weight:700;border-bottom:1px solid #21262d;">$557M</td>
                   <td style="padding:8px;text-align:center;color:#c9d1d9;border-bottom:1px solid #21262d;">+12–22%</td>
                   <td style="padding:8px;text-align:center;color:#3fb950;font-weight:700;border-bottom:1px solid #21262d;">845p–921p</td>
                 </tr>
                 <tr style="background:#0d1a0d;">
                   <td style="padding:8px;color:#c9d1d9;border-bottom:1px solid #21262d;">📊 <strong style="color:#3fb950;">Base</strong><br><span style="color:#8b949e;font-size:10px;">Full float · peer Evolution Mining (A$9.5B→1.85%)</span></td>
-                  <td style="padding:8px;text-align:center;color:#3fb950;font-weight:700;border-bottom:1px solid #21262d;">~0.85%</td>
-                  <td style="padding:8px;text-align:center;color:#3fb950;font-weight:700;border-bottom:1px solid #21262d;">~$226M</td>
-                  <td style="padding:8px;text-align:center;color:#3fb950;font-weight:800;border-bottom:1px solid #21262d;">~$311M</td>
+                  <td style="padding:8px;text-align:center;color:#3fb950;font-weight:700;border-bottom:1px solid #21262d;">2.00%</td>
+                  <td style="padding:8px;text-align:center;color:#3fb950;font-weight:700;border-bottom:1px solid #21262d;">$731M</td>
+                  <td style="padding:8px;text-align:center;color:#3fb950;font-weight:800;border-bottom:1px solid #21262d;">$865M</td>
                   <td style="padding:8px;text-align:center;color:#c9d1d9;border-bottom:1px solid #21262d;">+20–35%</td>
                   <td style="padding:8px;text-align:center;color:#3fb950;font-weight:800;border-bottom:1px solid #21262d;">906p–1,019p</td>
                 </tr>
                 <tr style="background:#0d1117;">
                   <td style="padding:8px;color:#c9d1d9;">🚀 <strong style="color:#bc8cff;">Bull</strong><br><span style="color:#8b949e;font-size:10px;">Gold higher at rebalance · full ASX+AIM float</span></td>
-                  <td style="padding:8px;text-align:center;color:#bc8cff;font-weight:700;">~1.0%</td>
-                  <td style="padding:8px;text-align:center;color:#bc8cff;font-weight:700;">~$266M</td>
-                  <td style="padding:8px;text-align:center;color:#bc8cff;font-weight:800;">~$351M</td>
+                  <td style="padding:8px;text-align:center;color:#bc8cff;font-weight:700;">2.29%</td>
+                  <td style="padding:8px;text-align:center;color:#bc8cff;font-weight:700;">$835M</td>
+                  <td style="padding:8px;text-align:center;color:#bc8cff;font-weight:800;">$969M</td>
                   <td style="padding:8px;text-align:center;color:#c9d1d9;">+20–35%</td>
                   <td style="padding:8px;text-align:center;color:#bc8cff;font-weight:800;">906p–1,019p</td>
                 </tr>
@@ -1020,15 +1015,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             </table>
 
             <div style="font-size:12px;line-height:1.8;color:#c9d1d9;margin-bottom:12px;">
-              <div style="margin-bottom:6px;">· GDX tracks <strong>MarketVector Global Gold Miners Index (MVGDXTR)</strong> — 51 components · switched from NYSE Arca 22 Sep 2025 · GGP included from <strong>20 Mar 2026</strong></div>
+              <div style="margin-bottom:6px;">· GDX now tracks the <strong>MarketVector Global Gold Miners Index (MVGDXTR)</strong> — switched from NYSE Arca on <strong>22 Sep 2025</strong></div>
               <div style="margin-bottom:6px;">· Already in GDXJ = VanEck familiarity — "promotion" from junior to senior ETF is natural next step</div>
               <div style="margin-bottom:6px;">· <strong>Historical comps:</strong> De Grey +18% (GDXJ) · OceanaGold +15% (GDX) · Bellevue +12% (GDXJ)</div>
               <div style="margin-bottom:6px;">· Smart money typically <strong>front-runs 1–2 weeks before</strong> official announcement — watch volume closely</div>
-              <div>· GGP ADTV ~$22M/day on ASX — both GDX (~$226M) and GDXJ (~$95M) holdings now structural and permanent buyers at each rebalance</div>
+              <div>· ADTV ~$22M/day — base case buying ($731M) = <strong>33× average daily volume</strong> compressed into 2–3 days</div>
             </div>
 
             <div style="background:#1a0808;border:1px solid #f85149;border-radius:8px;padding:10px;font-size:11px;color:#c9d1d9;">
-              <strong style="color:#3fb950;">✅ MVGDX Inclusion Criteria (satisfied):</strong> MCap ≥ $150M ✅ · ADTV ≥ $1M ✅ · ≥250k shares/month ✅ · ≥50% revenue gold/silver ✅ · Max 20% cap ✅. <strong>GGP included effective 20 Mar 2026.</strong> Quarterly review. Next GDX rebalance: announced 12 Jun, effective 19 Jun 2026 — first post-MRE weighting review. Index next review date confirmed at MarketVector.<br><br>
+              <strong style="color:#f85149;">⚠️ MVGDX Inclusion Criteria (MarketVector):</strong> Full MCap ≥ $150M USD · 3-month ADTV ≥ $1M USD · ≥250k shares/month · ≥50% revenue gold/silver · Max 20% weighting cap · Quarterly review. GGP at A$7.7B / 463p <strong>comfortably qualifies on all criteria</strong>. Watch for official announcement ~1–2 weeks before March 20.<br><br>
               <a href="https://www.vaneck.com/us/en/investments/gold-miners-etf-gdx" target="_blank" style="color:#58a6ff;">GDX official ↗</a> · <a href="https://stockanalysis.com/etf/gdx/holdings/" target="_blank" style="color:#58a6ff;">GDX Holdings ↗</a> · <a href="https://www.marketvector.com/indexes/hard-asset/marketvector-global-gold-miners" target="_blank" style="color:#58a6ff;">MVGDX Index ↗</a>
             </div>
           </div>
@@ -1040,56 +1035,33 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <div style="font-size:11px;font-weight:700;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">2026 Rebalance Calendar</div>
             <div style="font-size:12px;color:#c9d1d9;margin-bottom:14px;">
               <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
-                <span style="color:#3fb950;font-weight:700;">✅ 20 Mar 2026</span><span>GDX Q1 — <strong>GGP included · MVGDXTR effective</strong></span>
+                <span style="color:#f85149;font-weight:700;">🔥 ~20 Mar 2026</span><span>GDX Q1 rebalance — <strong>GGP inclusion expected</strong></span>
               </div>
               <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
-                <span style="color:#3fb950;font-weight:700;">✅ 23 Mar 2026</span><span>S&amp;P/ASX 100 — <strong>GGP included · effective open</strong></span>
+                <span style="color:#bc8cff;font-weight:700;">~20 Mar 2026</span><span>GDXJ Q1 rebalance — weighting likely ↑</span>
               </div>
               <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
-                <span style="color:#3fb950;font-weight:700;">✅ Mar 2026</span><span>GDXJ Q1 rebalance — <strong>GGP weighting revised</strong></span>
+                <span style="color:#8b949e;">~20 Jun 2026</span><span>GDXJ/GDX Q2 rebalance</span>
               </div>
               <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
-                <span style="color:#d29922;font-weight:700;">12 Jun 2026</span><span>MVGDX Q2 announced (GDX/GDXJ)</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
-                <span style="color:#d29922;font-weight:700;">19 Jun 2026</span><span><strong>GDX/GDXJ Q2 rebalance effective</strong> — first post-MRE weighting review</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
-                <span style="color:#8b949e;">~5 Jun 2026</span><span>S&amp;P/ASX Q2 review announced (1st Fri Jun)</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
-                <span style="color:#8b949e;">~19 Jun 2026</span><span>S&amp;P/ASX Q2 effective — ASX 100 weighting updated</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;">
-                <span style="color:#8b949e;">11 Sep 2026</span><span>GDX/GDXJ Q3 announced · effective 18 Sep</span>
+                <span style="color:#8b949e;">~19 Sep 2026</span><span>GDXJ/GDX Q3 rebalance</span>
               </div>
               <div style="display:flex;justify-content:space-between;padding:6px 0;">
-                <span style="color:#8b949e;">11 Dec 2026</span><span>GDX/GDXJ Q4 announced · effective 18 Dec</span>
+                <span style="color:#8b949e;">~18 Dec 2026</span><span>GDXJ/GDX Q4 rebalance</span>
               </div>
-            </div>
-
-            <div style="font-size:11px;font-weight:700;color:#58a6ff;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;margin-top:14px;">🏆 S&amp;P/ASX 100 Inclusion</div>
-            <div style="background:#001a33;border-radius:8px;padding:10px;font-size:12px;color:#c9d1d9;margin-bottom:14px;">
-              <div style="display:flex;justify-content:space-between;padding:3px 0;"><span>Effective date</span><span style="color:#3fb950;font-weight:700;">23 Mar 2026 (open)</span></div>
-              <div style="display:flex;justify-content:space-between;padding:3px 0;"><span>Indices added</span><span style="color:#3fb950;">ASX 20 · 50 · 100 · 200 · 300</span></div>
-              <div style="display:flex;justify-content:space-between;padding:3px 0;"><span>GGP ASX 100 weighting (est.)</span><span style="color:#58a6ff;font-weight:700;">~0.3–0.4%</span></div>
-              <div style="display:flex;justify-content:space-between;padding:3px 0;"><span>Est. forced passive buying</span><span style="color:#58a6ff;font-weight:700;">A$300–600M+</span></div>
-              <div style="display:flex;justify-content:space-between;padding:3px 0;border-top:1px solid #003366;margin-top:4px;"><span>Next review announced</span><span style="color:#d29922;">~5 Jun 2026 (1st Fri June)</span></div>
-              <div style="display:flex;justify-content:space-between;padding:3px 0;"><span>Next review effective</span><span style="color:#d29922;">~19 Jun 2026</span></div>
-              <div style="font-size:10px;color:#8b949e;margin-top:6px;">S&amp;P/ASX reviews quarterly: announced 1st Friday of Mar/Jun/Sep/Dec · effective ~2 weeks later</div>
             </div>
 
             <div style="font-size:11px;font-weight:700;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Combined ETF Buying Pressure</div>
             <div style="background:#0d1117;border-radius:8px;padding:12px;font-size:12px;margin-bottom:12px;">
-              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDXJ holding (est. Q1 2026)</span><span style="color:#bc8cff;font-weight:700;">~$85–110M USD</span></div>
-              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDX holding (est. ~0.85% of $26.6B)</span><span style="color:#3fb950;font-weight:700;">~$226M USD</span></div>
-              <div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid #30363d;margin-top:4px;"><span><strong>Combined ETF (est. Mar 2026)</strong></span><span style="color:#3fb950;font-weight:800;">~$311–336M USD</span></div>
-              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>Note: AUM reduced vs prior est. (gold correction)</span><span style="color:#8b949e;">GDX was ~$36.5B, now $26.6B</span></div>
-              <div style="font-size:10px;color:#8b949e;margin-top:6px;">⚠️ Estimated — official GGP weighting not published. Q2 19 Jun 2026 = first post-MRE weighting revision.</div>
+              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDXJ current holding</span><span style="color:#bc8cff;font-weight:700;">$134M USD</span></div>
+              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>GDX expected (base 2.0% of $36.5B)</span><span style="color:#f85149;font-weight:700;">~$731M USD</span></div>
+              <div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid #30363d;margin-top:4px;"><span><strong>Combined ETF (base case)</strong></span><span style="color:#3fb950;font-weight:800;">~$865M USD</span></div>
+              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>Bear / Bull range</span><span style="color:#8b949e;">$557M – $969M</span></div>
+              <div style="font-size:10px;color:#8b949e;margin-top:6px;">Base: ~£690M · ~A$1.4B in passive buying pressure</div>
             </div>
 
             <div style="background:#1a0808;border:1px solid #f85149;border-radius:8px;padding:10px;font-size:12px;color:#c9d1d9;line-height:1.8;">
-              <strong style="color:#3fb950;">Wilson's read:</strong> GDX inclusion ✅ confirmed (March 2026). Passive ETF inflows now structural. MRE delivered 30 Mar — Telfer 8.0Moz (+150%), combined 14.9Moz, WDU 0.6Moz @ 2.3g/t. <strong>Next catalysts: Ore Reserve update Q4 FY26 (bigger reserve = longer mine life priced in) + Havieron FID (re-rating event) + WDU pre-feasibility. No broker has upgraded post-MRE yet — that's the next near-term trigger.</strong>
+              <strong style="color:#f85149;">Wilson's read:</strong> GDX inclusion on ~20 March is a <strong>massive forced-buying catalyst</strong>. Passive ETF funds must buy regardless of price. Combined with all shorts covered and gold at ATH — the setup into March 20 is very strong. <strong>Watch for pre-announcement buying in the 1–2 weeks prior.</strong>
             </div>
           </div>
 
@@ -1273,38 +1245,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;">
               <div>
                 <div style="font-size:13px;font-weight:700;color:#e6edf3;">TipRanks (8 analysts, 3 months)</div>
-                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last updated: Mar 2026</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last updated: Feb 2026</div>
                 <div style="font-size:11px;color:#3fb950;margin-top:2px;">High: 968p · Low: 288p</div>
               </div>
               <div style="text-align:right;min-width:80px;">
-                <div style="font-size:16px;font-weight:800;color:#E8821C;">675p</div>
+                <div style="font-size:16px;font-weight:800;color:#E8821C;">672p</div>
                 <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#0d2b0d;color:#3fb950;margin-top:3px;">AVG</div>
-              </div>
-            </div>
-
-            <!-- Citi -->
-            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #21262d;">
-              <div>
-                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Citi</div>
-                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Downgraded: Mar 2026 (from Buy)</div>
-                <div style="font-size:11px;color:#d29922;margin-top:2px;">Downgrade likely on price run + near-term risk. MRE could prompt review.</div>
-              </div>
-              <div style="text-align:right;min-width:80px;">
-                <div style="font-size:16px;font-weight:800;color:#d29922;">780p</div>
-                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#2d2a00;color:#d29922;margin-top:3px;">NEUTRAL</div>
-              </div>
-            </div>
-
-            <!-- MarketBeat consensus -->
-            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #21262d;">
-              <div>
-                <div style="font-size:13px;font-weight:700;color:#e6edf3;">MarketBeat (8 analysts)</div>
-                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Last updated: 24 Mar 2026</div>
-                <div style="font-size:11px;color:#3fb950;margin-top:2px;">Consensus: Moderate Buy</div>
-              </div>
-              <div style="text-align:right;min-width:80px;">
-                <div style="font-size:16px;font-weight:800;color:#E8821C;">592p</div>
-                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#0d2b0d;color:#3fb950;margin-top:3px;">MOD BUY</div>
               </div>
             </div>
 
@@ -1314,19 +1260,18 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
               <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;">
                 <div style="background:#0d1117;border-radius:6px;padding:8px;">
                   <div style="font-size:10px;color:#8b949e;">AVG TARGET</div>
-                  <div style="font-size:18px;font-weight:800;color:#E8821C;">675p</div>
+                  <div style="font-size:18px;font-weight:800;color:#E8821C;">672p</div>
                 </div>
                 <div style="background:#0d1117;border-radius:6px;padding:8px;">
                   <div style="font-size:10px;color:#8b949e;">HIGH</div>
                   <div style="font-size:18px;font-weight:800;color:#3fb950;">968p</div>
-                  <div style="font-size:9px;color:#8b949e;">Citi pre-DG</div>
                 </div>
                 <div style="background:#0d1117;border-radius:6px;padding:8px;">
                   <div style="font-size:10px;color:#8b949e;">LOW</div>
                   <div style="font-size:18px;font-weight:800;color:#f85149;">288p</div>
                 </div>
               </div>
-              <div style="margin-top:8px;font-size:11px;color:#8b949e;text-align:center;">vs current 511p (27 Mar close) · 564.8p intraday 30 Mar · <span style="color:#3fb950;">Avg 675p = +19% upside from 27 Mar close ✅</span></div>
+              <div style="margin-top:8px;font-size:11px;color:#8b949e;text-align:center;">vs current 757p · <span style="color:#f85149;">Avg target BELOW current price</span> — most targets set before the big run ⚠️</div>
             </div>
           </div>
 
@@ -1376,13 +1321,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <!-- High estimate unknown -->
             <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;">
               <div>
-                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Consensus (Investing.com — 9 analysts)</div>
-                <div style="font-size:11px;color:#8b949e;margin-top:2px;">Updated: Mar 2026</div>
-                <div style="font-size:11px;color:#3fb950;margin-top:2px;">High: A$18.50 · Low: A$5.60</div>
+                <div style="font-size:13px;font-weight:700;color:#e6edf3;">Consensus (Investing.com — 8 analysts)</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:2px;">3 Buy · 3 Hold · 2 Sell · Feb 2026</div>
+                <div style="font-size:11px;color:#3fb950;margin-top:2px;">High: A$16.00 · Low: A$5.50</div>
               </div>
               <div style="text-align:right;min-width:90px;">
-                <div style="font-size:16px;font-weight:800;color:#E8821C;">A$13.14</div>
-                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#0d2b0d;color:#3fb950;margin-top:3px;">MOD BUY</div>
+                <div style="font-size:16px;font-weight:800;color:#E8821C;">A$12.41</div>
+                <div style="font-size:10px;padding:2px 6px;border-radius:10px;background:#2d2a00;color:#d29922;margin-top:3px;">NEUTRAL</div>
               </div>
             </div>
 
@@ -1392,7 +1337,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
               <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;">
                 <div style="background:#0d1117;border-radius:6px;padding:8px;">
                   <div style="font-size:10px;color:#8b949e;">AVG TARGET</div>
-                  <div style="font-size:18px;font-weight:800;color:#E8821C;">A$13.14</div>
+                  <div style="font-size:18px;font-weight:800;color:#E8821C;">A$12.41</div>
                 </div>
                 <div style="background:#0d1117;border-radius:6px;padding:8px;">
                   <div style="font-size:10px;color:#8b949e;">HIGH</div>
@@ -1403,7 +1348,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
                   <div style="font-size:18px;font-weight:800;color:#f85149;">A$5.50</div>
                 </div>
               </div>
-              <div style="margin-top:8px;font-size:11px;color:#8b949e;text-align:center;">vs current ~A$9.76 · <span style="color:#3fb950;">All analyst targets now imply very significant upside from current levels</span> ✅</div>
+              <div style="margin-top:8px;font-size:11px;color:#8b949e;text-align:center;">vs current ~A$11.48 · <span style="color:#3fb950;">Most analyst targets now imply significant upside from current levels</span> ✅</div>
             </div>
           </div>
 
@@ -1414,12 +1359,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <!-- Ratings donut summary -->
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px;text-align:center;">
               <div style="background:#0d2b0d;border:1px solid #238636;border-radius:8px;padding:10px;">
-                <div style="font-size:24px;font-weight:900;color:#3fb950;">4</div>
+                <div style="font-size:24px;font-weight:900;color:#3fb950;">3</div>
                 <div style="font-size:11px;color:#3fb950;font-weight:700;">BUY</div>
               </div>
               <div style="background:#1a1200;border:1px solid #9e6a03;border-radius:8px;padding:10px;">
-                <div style="font-size:24px;font-weight:900;color:#d29922;">4</div>
-                <div style="font-size:11px;color:#d29922;font-weight:700;">HOLD/NEUTRAL</div>
+                <div style="font-size:24px;font-weight:900;color:#d29922;">3</div>
+                <div style="font-size:11px;color:#d29922;font-weight:700;">HOLD</div>
               </div>
               <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;">
                 <div style="font-size:24px;font-weight:900;color:#f85149;">2</div>
@@ -1429,14 +1374,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
             <!-- Key insight -->
             <div style="background:#1a0e00;border-left:3px solid #E8821C;border-radius:0 6px 6px 0;padding:12px;margin-bottom:12px;font-size:12px;color:#c9d1d9;line-height:1.8;">
-              <strong style="color:#3fb950;">📊 Current context:</strong> Price pulled back significantly from ATH (757p → 511p on AIM, A$14.43 → A$9.76 ASX). Most analyst targets now <strong>above current price</strong>. MarketBeat avg 592p · TipRanks avg 675p · both imply meaningful upside. MRE catalyst (30 Mar) not yet priced into any published targets.
+              <strong style="color:#E8821C;">⚠️ Critical context:</strong> The majority of analyst targets were set <strong>before the stock's +140% 6-month run</strong> and +25% YTD. Most are now <strong>below the current price</strong> — consensus is lagging reality, not leading it.
             </div>
 
             <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
-              <div style="margin-bottom:6px;">· <strong style="color:#3fb950;">Bull case</strong> (Argonaut A$16.00 / TipRanks high 968p / Investing.com high A$18.50) — reflects Havieron NPV at spot gold + full MRE upside</div>
-              <div style="margin-bottom:6px;">· <strong style="color:#d29922;">Bear case</strong> (RBC A$7.70 / Investing.com low A$5.60 / TipRanks low 288p) — assumes gold price normalisation + capex blowout at Havieron</div>
-              <div style="margin-bottom:6px;">· <strong style="color:#E8821C;">Wilson's view:</strong> Citi downgraded to Neutral (780p) ~3 weeks ago — but MRE just landed with 8.0Moz Telfer (+150%). No broker has revised post-30 Mar yet. Next wave of upgrades should come when Ore Reserve drops (Q4 FY26). Argonaut A$16.00 / TipRanks high 968p / Investing.com high A$18.50 all look increasingly realistic at current gold prices.</div>
-              <div>· <strong style="color:#3fb950;">✅ WDU MRE delivered:</strong> West Dome Underground 0.6Moz @ 2.3g/t confirmed 30 Mar 2026. Analyst upgrades expected — watch for broker target revisions in coming weeks.</div>
+              <div style="margin-bottom:6px;">· <strong style="color:#3fb950;">Bull case</strong> (Argonaut A$16.00 / TipRanks high 968p) — reflects Havieron NPV at spot gold + WDU upside</div>
+              <div style="margin-bottom:6px;">· <strong style="color:#d29922;">Bear case</strong> (RBC A$7.70 / TipRanks low 288p) — assumes gold price normalisation + capex blowout at Havieron</div>
+              <div style="margin-bottom:6px;">· <strong style="color:#E8821C;">Wilson's view:</strong> Consensus is meaningless here — targets set at A$7–$10 are stale. Post H1 results + WDU MRE due, expect a fresh round of upgrades. Argonaut's A$16.00 and the 968p high are more relevant at current gold prices.</div>
+              <div>· <strong style="color:#bc8cff;">Watch for:</strong> Analyst upgrades post WDU MRE (March 2026) — likely to be a significant re-rating event across multiple brokers</div>
             </div>
 
             <div style="margin-top:14px;padding:10px 12px;background:#0d1117;border-radius:8px;border:1px solid #E8821C;font-size:11px;">
@@ -1455,410 +1400,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
   </div>
 
-  <!-- O'CALLAGHANS TUNGSTEN -->
-  <div class="col-12">
-    <div class="card" style="border-color:#a78bfa;">
-      <div class="card-header" style="background:#13002b;">
-        <h2 style="color:#a78bfa;">⚗️ O'Callaghans Tungsten — Critical Mineral Optionality · 100% Greatland-Owned</h2>
-        <a href="https://app.sharelinktechnologies.com/announcement/asx/b9d3bb4242f634c42a9cc8835d03d543" target="_blank" style="background:#a78bfa;color:white;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;text-decoration:none;">📄 ASX Announcement ↗</a>
-      </div>
-      <div class="card-body" style="padding:0;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;">
-
-          <!-- RESOURCE & LOCATION -->
-          <div style="padding:18px;border-right:1px solid #30363d;">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#a78bfa;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #2a0f5c;">📍 Asset Overview</div>
-            <div style="font-size:12px;line-height:2.0;color:#c9d1d9;">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#8b949e;">Resource</span><span style="color:#a78bfa;font-weight:700;">70Mt @ 0.35% WO₃</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#8b949e;">Contained WO₃</span><span style="color:#a78bfa;font-weight:700;">246,000t</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#8b949e;">Copper credit</span><span style="color:#58a6ff;font-weight:700;">207,000t Cu</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#8b949e;">Zinc credit</span><span style="color:#58a6ff;">371,000t Zn</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#8b949e;">Lead credit</span><span style="color:#58a6ff;">182,000t Pb</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#8b949e;">Confidence</span><span style="color:#3fb950;">&gt;95% Indicated</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#8b949e;">Location</span><span style="color:#e6edf3;">10km from Telfer</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#8b949e;">Ownership</span><span style="color:#3fb950;">100% Greatland</span></div>
-              <div style="display:flex;justify-content:space-between;padding:4px 0;"><span style="color:#8b949e;">Prior PFS</span><span style="color:#e6edf3;">2014 (Newcrest) — 2.0Mtpa UG</span></div>
-            </div>
-            <div style="margin-top:12px;padding:10px;background:#1a0f2e;border-radius:6px;border-left:3px solid #a78bfa;font-size:11px;color:#c9d1d9;">
-              Shaun Day: <em>"One of the world's largest high-grade tungsten deposits, in close proximity to Telfer's infrastructure. We are considering appropriate options to demonstrate and enhance value."</em>
-            </div>
-          </div>
-
-          <!-- GLOBAL CONTEXT & SUPPLY CRISIS -->
-          <div style="padding:18px;border-right:1px solid #30363d;">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#f85149;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #3d1111;">🌍 Global Supply Crisis</div>
-            <div style="font-size:12px;line-height:1.9;color:#c9d1d9;">
-              <div style="margin-bottom:8px;"><span style="color:#f85149;font-weight:700;">China controls ~80%</span> of global tungsten production and ~90% of processing. No Western nation can manufacture advanced military hardware, industrial cutting tools, or semiconductors without it.</div>
-              <div style="margin-bottom:8px;"><span style="color:#d29922;font-weight:700;">Jan 2025:</span> China imposed export controls on tungsten — effective ban on exports to "unfriendly" nations. China then flipped to a <strong>net importer</strong> mid-2025 for the first time in decades, draining global supply.</div>
-              <div style="margin-bottom:8px;"><span style="color:#3fb950;font-weight:700;">APT spot Mar 2026:</span> ~<strong>US$2,250/MTU</strong> — up +534% in 12 months. Tungsten is experiencing a genuine supply-shock supercycle.</div>
-              <div style="margin-bottom:8px;"><strong>Critical mineral designation:</strong> AU · US · EU · UK · Canada · Japan · India — all now actively funding development of non-Chinese sources.</div>
-              <div><strong>Key uses:</strong> Tungsten carbide (cutting tools, mining drills) · Military (armour-piercing rounds, missile components) · Semiconductors · Aerospace alloys · EV motors</div>
-            </div>
-            <div style="margin-top:10px;padding:8px 10px;background:#1a0808;border:1px solid #f85149;border-radius:6px;font-size:11px;color:#e6edf3;">
-              🚨 <strong>O'Callaghans sits in one of the world's most geopolitically valuable resource categories at exactly the right moment.</strong>
-            </div>
-          </div>
-
-          <!-- COMPARABLE DEALS & VALUATION -->
-          <div style="padding:18px;border-right:1px solid #30363d;">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#d29922;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #2d2a00;">💰 Comparable Transactions & Valuation</div>
-
-            <div style="font-size:11px;font-weight:700;color:#8b949e;margin-bottom:6px;text-transform:uppercase;">Recent Deals / Benchmarks</div>
-            <div style="font-size:12px;line-height:1.9;color:#c9d1d9;margin-bottom:12px;">
-              <div style="border-bottom:1px solid #21262d;padding:4px 0;"><span style="color:#d29922;font-weight:700;">Almonty / Sangdong (Korea)</span><br><span style="color:#8b949e;">~2,577kt WO₃ P&amp;P · Multiple govt financing deals, KfW loan, US DoD interest · Market cap ~C$500M+ at peak despite smaller resource base than O'Callaghans. Benchmark: ~US$300–500/t WO₃ in-situ for a producing or near-production asset.</span></div>
-              <div style="border-bottom:1px solid #21262d;padding:4px 0;margin-top:6px;"><span style="color:#d29922;font-weight:700;">Almonty / Gentung (Montana, US)</span><br><span style="color:#8b949e;">Acquired Nov 2025 for <strong>US$10M</strong> — near-term production, small resource. Demonstrates strategic buyers are active at any price.</span></div>
-              <div style="border-bottom:1px solid #21262d;padding:4px 0;margin-top:6px;"><span style="color:#d29922;font-weight:700;">USGS / IEA long-term price</span><br><span style="color:#8b949e;">US$700–1,500/MTU WO₃ used for NPV modelling. Spot now US$2,250/MTU — all models severely understated.</span></div>
-              <div style="margin-top:6px;"><span style="color:#d29922;font-weight:700;">Fastmarkets (Feb 2026)</span><br><span style="color:#8b949e;">APT US$1,500–1,550/MTU — already surged 216% from Jan 2025. Mar 2026 reports: US$2,250/MTU trailing 12-month avg.</span></div>
-            </div>
-
-            <div style="font-size:11px;font-weight:700;color:#8b949e;margin-bottom:6px;text-transform:uppercase;">In-Situ Value at Spot</div>
-            <div style="background:#1a1200;border-radius:8px;padding:10px;font-size:12px;color:#c9d1d9;">
-              <div style="display:flex;justify-content:space-between;padding:3px 0;"><span>246,000t WO₃ @ US$2,250/MTU</span><span style="color:#d29922;font-weight:700;">~US$55B</span></div>
-              <div style="display:flex;justify-content:space-between;padding:3px 0;font-size:11px;color:#8b949e;"><span>207kt Cu @ US$9,500/t</span><span>~US$2.0B</span></div>
-              <div style="display:flex;justify-content:space-between;padding:3px 0;border-top:1px solid #3d2200;margin-top:4px;"><span style="font-weight:700;">Total gross in-situ</span><span style="color:#d29922;font-weight:800;">~US$57B+</span></div>
-              <div style="font-size:10px;color:#8b949e;margin-top:4px;">⚠️ In-situ gross — not NPV. Recovery &amp; capex discounts heavily apply.</div>
-            </div>
-          </div>
-
-          <!-- ACQUISITION RANGE & WILSON'S TAKE -->
-          <div style="padding:18px;">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#3fb950;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #1e3c1e;">📈 Acquisition Range & Wilson's Read</div>
-
-            <div style="font-size:11px;font-weight:700;color:#8b949e;margin-bottom:8px;text-transform:uppercase;">Realistic Transaction Range</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:14px;text-align:center;">
-              <div style="background:#1a0808;border:1px solid #6e1010;border-radius:8px;padding:10px;">
-                <div style="font-size:10px;color:#8b949e;margin-bottom:3px;">BEAR CASE</div>
-                <div style="font-size:18px;font-weight:900;color:#f85149;">A$1–2B</div>
-                <div style="font-size:10px;color:#8b949e;">JV / earn-in<br>~5% of gross</div>
-              </div>
-              <div style="background:#1a0e00;border:2px solid #d29922;border-radius:8px;padding:10px;">
-                <div style="font-size:10px;color:#8b949e;margin-bottom:3px;">BASE CASE</div>
-                <div style="font-size:18px;font-weight:900;color:#d29922;">A$3–5B</div>
-                <div style="font-size:10px;color:#8b949e;">Outright sale<br>~8–12% of gross</div>
-              </div>
-              <div style="background:#0d2b0d;border:1px solid #238636;border-radius:8px;padding:10px;">
-                <div style="font-size:10px;color:#8b949e;margin-bottom:3px;">BULL CASE</div>
-                <div style="font-size:18px;font-weight:900;color:#3fb950;">A$6–9B</div>
-                <div style="font-size:10px;color:#8b949e;">Strategic premium<br>bid war / US/EU govt</div>
-              </div>
-            </div>
-
-            <div style="font-size:12px;color:#c9d1d9;line-height:1.9;margin-bottom:10px;">
-              <div style="margin-bottom:6px;">· <strong style="color:#a78bfa;">JV / earn-in (most likely near term):</strong> A strategic partner funds capex in exchange for 50–70% interest. GGP retains upside, removes development risk.</div>
-              <div style="margin-bottom:6px;">· <strong style="color:#d29922;">Trade sale:</strong> Western defence-aligned major (Almonty, US DoD vehicle, EU critical minerals fund) buys 100%. At current spot, A$3–5B is defensible for a fully-scoped feasibility asset.</div>
-              <div style="margin-bottom:6px;">· <strong style="color:#3fb950;">Strategic premium:</strong> If a US or EU govt-backed vehicle bids for supply security, precedent suggests 15–20% of in-situ. At US$2,250/MTU that's A$6–9B.</div>
-              <div>· <strong style="color:#f85149;">GGP's current total market cap:</strong> ~A$7.5–8B. O'Callaghans alone — in the bull case — equals or exceeds the entire company's present valuation. This is the asymmetric upside the market is barely pricing.</div>
-            </div>
-
-            <div style="padding:10px 12px;background:#13002b;border-radius:8px;border:1px solid #a78bfa;font-size:12px;color:#c9d1d9;line-height:1.8;">
-              <strong style="color:#a78bfa;">Wilson's Read:</strong> O'Callaghans is sitting in the middle of a 534% price surge in its primary commodity, with China's export ban creating the most acute Western supply crisis since the rare earth shock of 2010. Greatland's management have been clear: primary focus stays gold + Havieron. That means O'Callaghans gets monetised — JV or sale. A bear-case JV at A$1–2B adds ~20–25% to GGP's market cap from an asset that doesn't appear in any analyst model yet. The bull case — a US or Australian govt-backed strategic acquisition at spot — is transformational. <strong style="color:#3fb950;">This is the option that most GGP holders haven't priced in.</strong>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PEER COMPARISON -->
-  <div class="col-12">
-    <div class="card" style="border-color:#58a6ff;">
-      <div class="card-header" style="background:#001a33;">
-        <h2 style="color:#58a6ff;">📊 Peer Comparison — GGP vs 15 Closest ASX Gold Miners</h2>
-        <span style="font-size:11px;color:#8b949e;">Source: StockAnalysis.com · 30 Mar 2026 · TTM figures · * = estimated</span>
-      </div>
-      <div class="card-body" style="padding:18px;">
-
-        <!-- SUMMARY STATS -->
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px;">
-          <div style="background:#0d1a2e;border:2px solid #58a6ff;border-radius:10px;padding:14px;text-align:center;">
-            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:0.6px;">GGP PE (TTM)</div>
-            <div style="font-size:28px;font-weight:900;color:#58a6ff;">10.5×</div>
-            <div style="font-size:10px;color:#8b949e;">vs sector 16.2×</div>
-          </div>
-          <div style="background:#13200d;border:2px solid #3fb950;border-radius:10px;padding:14px;text-align:center;">
-            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:0.6px;">PE Discount to Peers</div>
-            <div style="font-size:28px;font-weight:900;color:#3fb950;">−35%</div>
-            <div style="font-size:10px;color:#3fb950;">most undervalued</div>
-          </div>
-          <div style="background:#0d1a2e;border:2px solid #58a6ff;border-radius:10px;padding:14px;text-align:center;">
-            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:0.6px;">EV/EBITDA</div>
-            <div style="font-size:28px;font-weight:900;color:#58a6ff;">5.8×</div>
-            <div style="font-size:10px;color:#8b949e;">vs sector 7.8× avg</div>
-          </div>
-          <div style="background:#0d1a0d;border:2px solid #3fb950;border-radius:10px;padding:14px;text-align:center;">
-            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:0.6px;">GGP D/E Ratio</div>
-            <div style="font-size:28px;font-weight:900;color:#3fb950;">0.02</div>
-            <div style="font-size:10px;color:#3fb950;">lowest in sector</div>
-          </div>
-          <div style="background:#1a0e00;border:2px solid #d29922;border-radius:10px;padding:14px;text-align:center;">
-            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:0.6px;">GGP Dividend</div>
-            <div style="font-size:28px;font-weight:900;color:#d29922;">Nil</div>
-            <div style="font-size:10px;color:#d29922;">catalyst: H2 FY26</div>
-          </div>
-        </div>
-
-        <!-- PEER TABLE -->
-        <div style="overflow-x:auto;">
-        <table style="width:100%;border-collapse:collapse;font-size:12px;">
-          <thead>
-            <tr style="background:#0d1117;border-bottom:2px solid #30363d;">
-              <th style="padding:10px 12px;text-align:left;color:#8b949e;font-weight:700;white-space:nowrap;">Company</th>
-              <th style="padding:10px 8px;text-align:center;color:#8b949e;font-weight:700;">ASX</th>
-              <th style="padding:10px 8px;text-align:right;color:#8b949e;font-weight:700;">Mkt Cap</th>
-              <th style="padding:10px 8px;text-align:right;color:#8b949e;font-weight:700;">PE (TTM)</th>
-              <th style="padding:10px 8px;text-align:right;color:#8b949e;font-weight:700;">Fwd PE</th>
-              <th style="padding:10px 8px;text-align:right;color:#8b949e;font-weight:700;">EV/EBITDA</th>
-              <th style="padding:10px 8px;text-align:right;color:#8b949e;font-weight:700;">D/E Ratio</th>
-              <th style="padding:10px 8px;text-align:right;color:#8b949e;font-weight:700;">Div Yield</th>
-              <th style="padding:10px 12px;text-align:right;color:#8b949e;font-weight:700;">PE vs GGP</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <!-- GGP ROW -->
-            <tr style="background:linear-gradient(90deg,rgba(88,166,255,0.15),rgba(88,166,255,0.05));border-bottom:2px solid #58a6ff;">
-              <td style="padding:10px 12px;font-weight:800;color:#58a6ff;white-space:nowrap;">⭐ Greatland Resources</td>
-              <td style="padding:10px 8px;text-align:center;color:#58a6ff;font-weight:700;">GGP</td>
-              <td style="padding:10px 8px;text-align:right;color:#e6edf3;font-weight:700;">A$7.7B</td>
-              <td style="padding:10px 8px;text-align:right;color:#58a6ff;font-weight:900;font-size:14px;">10.5×</td>
-              <td style="padding:10px 8px;text-align:right;color:#58a6ff;font-weight:700;">9.2×</td>
-              <td style="padding:10px 8px;text-align:right;color:#58a6ff;font-weight:700;">5.83×</td>
-              <td style="padding:10px 8px;text-align:right;color:#3fb950;font-weight:700;">0.02</td>
-              <td style="padding:10px 8px;text-align:right;color:#d29922;font-weight:700;">Nil</td>
-              <td style="padding:10px 12px;text-align:right;color:#58a6ff;font-weight:700;">—</td>
-            </tr>
-
-            <!-- PEERS -->
-            <tr style="border-bottom:1px solid #21262d;background:#0d1117;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Northern Star Resources</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">NST</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$27.9B</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;font-weight:700;">16.9×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">11.1×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">7.43×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">0.12</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">3.16%</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+61%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Evolution Mining</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">EVN</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$25.4B</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;font-weight:700;">19.0×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">12.2×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">8.25×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">0.26</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">2.70%</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+80%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;background:#0d1117;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Newmont Corp <span style="font-size:10px;color:#8b949e;">(CDI)</span></td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">NEM</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$170B+</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;font-weight:700;">15.8×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">14.0×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">8.65×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">0.17</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">0.93%</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+50%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Ramelius Resources</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">RMS</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$6.8B</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;font-weight:700;">18.3×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">13.4×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">7.42×</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">~0.0</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">~1.6%</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+74%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;background:#0d1117;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Westgold Resources</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">WGX</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$5.1B</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;font-weight:700;">19.7×</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">5.5×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">5.76×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.25</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~1.0%</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+87%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Perseus Mining</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">PRU</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$6.7B</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:700;">12.8×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">9.6×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">5.98×</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">~0.0</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">~2.0%</td>
-              <td style="padding:9px 12px;text-align:right;color:#d29922;font-weight:700;">+22%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;background:#0d1117;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Regis Resources</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">RRL</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$4.8B</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;font-weight:700;">9.9×</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">5.4×</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">3.91×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.15</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~1.5%</td>
-              <td style="padding:9px 12px;text-align:right;color:#3fb950;font-weight:700;">−6%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Capricorn Metals</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">CMM</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$4.8B</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;font-weight:700;">19.4×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">11.5×</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">12.03×</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">~0.0</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.3%</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+84%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;background:#0d1117;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">OceanaGold Corp</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">OGC</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~A$5.5B</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:700;">~14.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~9.5×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~7.5×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.35*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.5%*</td>
-              <td style="padding:9px 12px;text-align:right;color:#d29922;font-weight:700;">+33%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Bellevue Gold</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">BGL</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">A$2.1B</td>
-              <td style="padding:9px 8px;text-align:right;color:#8b949e;">n/a</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">8.8×</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;">18.09×</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;">0.41</td>
-              <td style="padding:9px 8px;text-align:right;color:#8b949e;">Nil</td>
-              <td style="padding:9px 12px;text-align:right;color:#8b949e;">n/a</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;background:#0d1117;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Genesis Minerals</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">GMD</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~A$3.2B*</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:700;">~22.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~12.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~9.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.1*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.5%*</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+109%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Red 5 <span style="font-size:10px;color:#8b949e;">(Silver Lake merged)</span></td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">RED</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~A$2.5B*</td>
-              <td style="padding:9px 8px;text-align:right;color:#f85149;font-weight:700;">~20.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~11.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~8.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.3*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~0.5%*</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+90%</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;background:#0d1117;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Spartan Resources</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">SPR</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~A$1.5B*</td>
-              <td style="padding:9px 8px;text-align:right;color:#8b949e;">n/a*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~15.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~11.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">~0.0*</td>
-              <td style="padding:9px 8px;text-align:right;color:#8b949e;">Nil*</td>
-              <td style="padding:9px 12px;text-align:right;color:#8b949e;">n/a</td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d;">
-              <td style="padding:9px 12px;color:#c9d1d9;font-weight:600;">Alkane Resources</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">ALK</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~A$0.9B*</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:700;">~18.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~12.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~7.0×*</td>
-              <td style="padding:9px 8px;text-align:right;color:#3fb950;">~0.0*</td>
-              <td style="padding:9px 8px;text-align:right;color:#c9d1d9;">~1.0%*</td>
-              <td style="padding:9px 12px;text-align:right;color:#f85149;font-weight:700;">+71%</td>
-            </tr>
-
-            <!-- SECTOR AVERAGE ROW -->
-            <tr style="background:#1a1400;border-top:2px solid #d29922;border-bottom:1px solid #d29922;">
-              <td style="padding:9px 12px;color:#d29922;font-weight:800;">📊 Sector Median (excl. n/a)</td>
-              <td style="padding:9px 8px;text-align:center;color:#8b949e;">—</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;">—</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:800;">16.2×</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:700;">10.7×</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:700;">7.8×</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:700;">0.17</td>
-              <td style="padding:9px 8px;text-align:right;color:#d29922;font-weight:700;">1.3%</td>
-              <td style="padding:9px 12px;text-align:right;color:#d29922;font-weight:800;">+54% avg</td>
-            </tr>
-
-            <!-- GGP REPEAT AT BOTTOM -->
-            <tr style="background:linear-gradient(90deg,rgba(88,166,255,0.18),rgba(88,166,255,0.06));border-top:2px solid #58a6ff;">
-              <td style="padding:10px 12px;font-weight:800;color:#58a6ff;">⭐ GGP — CURRENT</td>
-              <td style="padding:10px 8px;text-align:center;color:#58a6ff;font-weight:700;">GGP</td>
-              <td style="padding:10px 8px;text-align:right;color:#e6edf3;font-weight:700;">A$7.7B</td>
-              <td style="padding:10px 8px;text-align:right;color:#58a6ff;font-weight:900;font-size:14px;">10.5×</td>
-              <td style="padding:10px 8px;text-align:right;color:#58a6ff;font-weight:700;">9.2×</td>
-              <td style="padding:10px 8px;text-align:right;color:#58a6ff;font-weight:700;">5.83×</td>
-              <td style="padding:10px 8px;text-align:right;color:#3fb950;font-weight:700;">0.02</td>
-              <td style="padding:10px 8px;text-align:right;color:#d29922;font-weight:700;">Nil</td>
-              <td style="padding:10px 12px;text-align:right;color:#3fb950;font-weight:800;">−35% disc.</td>
-            </tr>
-
-          </tbody>
-        </table>
-        </div>
-
-        <!-- ANALYSIS BOX -->
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:18px;">
-
-          <div style="background:#0d1a2e;border-radius:10px;padding:16px;border-left:3px solid #58a6ff;">
-            <div style="font-size:11px;font-weight:700;color:#58a6ff;text-transform:uppercase;margin-bottom:8px;">📉 Why the PE Discount Exists</div>
-            <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
-              <div style="margin-bottom:5px;">· <strong>No dividend</strong> — income funds avoid non-payers. Sector avg yield: 1.3%.</div>
-              <div style="margin-bottom:5px;">· <strong>New listing</strong> — GGP only listed on ASX in late 2023 (carved out from Newcrest acquisition). Low institutional awareness in fund manager models.</div>
-              <div style="margin-bottom:5px;">· <strong>AIM/ASX dual-listed</strong> — UK retail investors used to 500p psychology; liquidity split creates arbitrage overhang.</div>
-              <div style="margin-bottom:5px;">· <strong>Havieron capex</strong> — A$1.065B build cost creates near-term free cash flow uncertainty despite strong earnings.</div>
-              <div>· <strong>No broker coverage</strong> has updated post-30 Mar MRE — valuation models are stale.</div>
-            </div>
-          </div>
-
-          <div style="background:#13200d;border-radius:10px;padding:16px;border-left:3px solid #3fb950;">
-            <div style="font-size:11px;font-weight:700;color:#3fb950;text-transform:uppercase;margin-bottom:8px;">📈 Catalysts to Close the Gap</div>
-            <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
-              <div style="margin-bottom:5px;">· <strong>Dividend initiation (H2 FY26)</strong> — even a 1% yield unlocks income mandates. This alone could re-rate 10–15%.</div>
-              <div style="margin-bottom:5px;">· <strong>Broker upgrades post-MRE</strong> — no analyst has updated models since 30 Mar announcement. Upgrades = immediate re-rating.</div>
-              <div style="margin-bottom:5px;">· <strong>Ore Reserve update Q4 FY26</strong> — reserve upgrade = longer mine life = lower risk = higher PE deserved.</div>
-              <div style="margin-bottom:5px;">· <strong>Havieron FID</strong> — removes biggest uncertainty, confirms growth runway.</div>
-              <div>· <strong>O'Callaghans JV/sale</strong> — adds hidden asset to market cap, zero current valuation.</div>
-            </div>
-          </div>
-
-          <div style="background:#13001a;border-radius:10px;padding:16px;border-left:3px solid #a78bfa;">
-            <div style="font-size:11px;font-weight:700;color:#a78bfa;text-transform:uppercase;margin-bottom:8px;">💡 Wilson's Valuation Upside Math</div>
-            <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
-              <div style="margin-bottom:5px;">If GGP re-rates to <strong>sector median PE of 16.2×</strong>:<br><span style="color:#3fb950;font-weight:700;">→ A$12.0 / 701p (+54% from current)</span></div>
-              <div style="margin-bottom:5px;">If GGP re-rates to <strong>Evolution Mining PE of 19×</strong>:<br><span style="color:#3fb950;font-weight:700;">→ A$14.0 / 818p (+82% from current)</span></div>
-              <div style="margin-bottom:5px;">If GGP re-rates to <strong>EV/EBITDA sector avg 7.8×</strong>:<br><span style="color:#3fb950;font-weight:700;">→ A$11.5 / 671p (+49% from current)</span></div>
-              <div style="color:#8b949e;font-size:11px;margin-top:6px;">⚠️ Based on current GGP earnings. Post-MRE earnings revision + Havieron production = additional upside not modelled here. O'Callaghans unlocked = on top.</div>
-            </div>
-          </div>
-
-        </div>
-
-        <div style="margin-top:12px;font-size:10px;color:#8b949e;text-align:right;">
-          Data: StockAnalysis.com · GuruFocus · 30 Mar 2026 · TTM = trailing 12 months · * = estimated · D/E = debt/equity · Fwd PE = consensus forward estimate
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- KEY METRICS -->
   <div class="col-4 card highlight">
     <div class="card-header">
@@ -1867,8 +1408,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
     <div class="card-body">
       <div class="stat-grid">
-        <div class="stat"><div class="lbl">AIM Close</div><div class="val green">511p</div><div class="chg green">+10.5% today (564.8p intraday)</div></div>
-        <div class="stat"><div class="lbl">ASX Close</div><div class="val blue">A$9.76</div><div class="chg red">-32% from ATH A$14.43</div></div>
+        <div class="stat"><div class="lbl">AIM Close</div><div class="val green">463p</div><div class="chg red">-39% from ATH 757p</div></div>
+        <div class="stat"><div class="lbl">ASX Close</div><div class="val blue">A$11.48</div><div class="chg red">-20% from ATH A$14.43</div></div>
         <div class="stat"><div class="lbl">Revenue H1</div><div class="val green">A$977M</div><div class="chg">~A$2bn annualised</div></div>
         <div class="stat"><div class="lbl">NPAT H1</div><div class="val green">A$342M</div><div class="chg green">Record</div></div>
         <div class="stat"><div class="lbl">Commodity</div><div class="val yellow">Gold + Cu</div><div class="chg">Record prices H1</div></div>
@@ -1937,7 +1478,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       </div>
       <div class="news-item" style="border-left:3px solid #f97316;padding-left:10px;background:linear-gradient(90deg,rgba(249,115,22,0.08),transparent);">
         <div class="source" style="color:#f97316;">🚨 ASX RNS · 30 Mar 2026 — BREAKING</div>
-        <a href="https://app.sharelinktechnologies.com/announcement/asx/b9d3bb4242f634c42a9cc8835d03d543" target="_blank" style="color:#fed7aa;">O'Callaghans Tungsten MRE: 70Mt @ 0.35% WO₃ · 246kt W + 207kt Cu + 371kt Zn · One of world's largest high-grade tungsten deposits outside China · Modelled at US$450/MTU vs spot US$2,250/MTU (Mar 2026, +534% YoY)</a>
+        <a href="https://app.sharelinktechnologies.com/announcement/asx/b9d3bb4242f634c42a9cc8835d03d543" target="_blank" style="color:#fed7aa;">O'Callaghans Tungsten MRE: 70Mt @ 0.35% WO₃ · 246kt W + 207kt Cu + 371kt Zn · One of world's largest high-grade tungsten deposits outside China · Priced at US$450/MTU vs ~US$2,200/MTU spot</a>
         <div class="meta">ASX Announcement · <span class="tag tag-yellow">Critical Minerals</span></div>
       </div>
       <div class="news-item">
@@ -1966,7 +1507,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <div class="meta">Simply Wall St · <span class="tag tag-blue">Earnings</span></div>
       </div>
       <div class="insight-box">
-        <strong>💡 Signal:</strong> MRE DELIVERED 30 Mar — 8.0Moz Telfer (+150%), 14.9Moz combined, WDU 0.6Moz @ 2.3g/t. AIM +10.5% intraday. No broker has revised targets yet — upgrade wave incoming. Next: Ore Reserve Q4 FY26. Structural floor: ASX 100 + GDX + GDXJ. Recovery path: A$11.38 → A$12.55 → retest ATH A$14.43 → new highs if ORE delivers.
+        <strong>💡 Signal:</strong> Price at 61.8% Fib support (A$11.38–11.48) — critical zone. ASX 100 inclusion = structural passive buying floor. Gold correction from $5,345 ATH to ~$4,286 is the headwind, but Telfer AISC ~A$2,176/oz means margins remain strong. Hold thesis intact. Watch A$11.38 as the line in the sand. Recovery path: A$11.96 → A$12.55 → retest ATH A$14.43.
       </div>
     </div>
   </div>
@@ -2100,51 +1641,54 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <script>
   // ── Live price + FX ──────────────────────────────────────────────────────
   let AIM_PRICE_P = 757;   // updated live from Stooq
-  let ASX_PRICE_AUD = 9.76; // updated live via chart fetch
+  let ASX_PRICE_AUD = 14.45; // updated live from Yahoo Finance proxy
 
   // ── Stooq via Netlify proxy (CORS-safe from any browser/domain) ─────────────
   // Proxy deployed at same Netlify site — zero external dependency
-  // ── Yahoo Finance via Vercel CORS proxy ─────────────────────────────────────
-  const CHART_API = 'https://ggp-investor-portal.vercel.app/api/chart';
-
-  const RANGE_MAP = { '1mo': '1mo', '3mo': '3mo', '6mo': '6mo', '1y': '1y', '2y': '2y' };
-
-  async function yhFetch(sym, range = '6mo') {
-    const url = `${CHART_API}?sym=${encodeURIComponent(sym)}&range=${RANGE_MAP[range]||range}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.json();
+  async function stooqFetch(stooqUrl) {
+    // Ordered list: Netlify function → cors.eu.org → direct
+    const urls = [
+      '/.netlify/functions/proxy?url=' + encodeURIComponent(stooqUrl),
+      'https://cors.eu.org/' + stooqUrl,
+      stooqUrl,
+    ];
+    for (const url of urls) {
+      try {
+        const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+        if (res.ok) {
+          const text = await res.text();
+          if (text.includes(',')) return text; // valid CSV
+        }
+      } catch(e) { /* try next */ }
+    }
+    throw new Error('All fetch attempts failed');
   }
 
-  // Returns candles array [{time, open, high, low, close}] for LightweightCharts
-  async function yhHistory(sym, range = '6mo') {
-    const data = await yhFetch(sym, range);
-    const result = data?.chart?.result?.[0];
-    if (!result) throw new Error('no result');
-    const ts = result.timestamp || [];
-    const q  = result.indicators?.quote?.[0] || {};
-    return ts.map((t, i) => ({
-      time:  t,
-      open:  q.open?.[i]  ?? q.close?.[i],
-      high:  q.high?.[i]  ?? q.close?.[i],
-      low:   q.low?.[i]   ?? q.close?.[i],
-      close: q.close?.[i] ?? 0,
-    })).filter(c => c.close > 0 && c.open > 0);
+  async function stooqQuote(sym) {
+    const url = `https://stooq.com/q/l/?s=${sym}&f=sd2t2ohlcvp&h&e=csv`;
+    const csv = await stooqFetch(url);
+    const rows = csv.trim().split('\n');
+    if (rows.length < 2) throw new Error('no data');
+    const cols = rows[1].split(',');
+    return {
+      date: cols[0], time: cols[1],
+      open: +cols[2], high: +cols[3], low: +cols[4], close: +cols[5],
+      volume: +cols[6], pct: +cols[7],
+    };
   }
 
-  // Returns quote object {close, pct, date, time}
-  async function yhQuote(sym) {
-    const data = await yhFetch(sym, '5d');
-    const meta = data?.chart?.result?.[0]?.meta;
-    if (!meta) throw new Error('no meta');
-    const close  = meta.regularMarketPrice ?? 0;
-    const prev   = meta.chartPreviousClose ?? meta.regularMarketPrice ?? close;
-    const pct    = prev > 0 ? ((close - prev) / prev * 100) : 0;
-    const ts     = meta.regularMarketTime ?? 0;
-    const d      = ts ? new Date(ts * 1000) : new Date();
-    const date   = d.toISOString().slice(0,10);
-    const time   = d.toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
-    return { close, pct, date, time };
+  async function stooqHistory(sym, days = 365) {
+    const url = `https://stooq.com/q/d/l/?s=${sym}&i=d`;
+    const csv = await stooqFetch(url);
+    const rows = csv.trim().split('\n').slice(1);
+    const cutoff = Date.now() - days * 86400000;
+    return rows
+      .map(r => {
+        const c = r.split(',');
+        const t = new Date(c[0]).getTime() / 1000;
+        return { time: Math.floor(t), open: +c[1], high: +c[2], low: +c[3], close: +c[4] };
+      })
+      .filter(c => c.time * 1000 >= cutoff && !isNaN(c.close) && c.close > 0);
   }
 
   // ── Ribbon helper ──────────────────────────────────────────────────────────
@@ -2198,8 +1742,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     if (prog)   prog.style.width = '40%';
     try {
       const [candles, quote] = await Promise.all([
-        yhHistory('GGP.L', range),
-        yhQuote('GGP.L'),
+        stooqHistory('ggp.uk', days),
+        stooqQuote('ggp.uk'),
       ]);
       if (prog) prog.style.width = '80%';
       if (!aimLW) aimLW = buildLWChart('aim-chart', '#E8821C', days);
@@ -2212,7 +1756,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       const pEl = document.getElementById('aim-live-price');
       if (pEl) { pEl.textContent = quote.close.toFixed(1) + 'p'; pEl.style.color = colour; }
       const uEl = document.getElementById('aim-price-updated');
-      if (uEl) uEl.textContent = `Yahoo Finance · ${quote.date} ${quote.time} · ~15min delay`;
+      if (uEl) uEl.textContent = `Stooq · ${quote.date} ${quote.time} · ~15min delay`;
       setRibbon('ggp-aim', quote.close, null, p => p.toFixed(1)+'p');
       if (quote.pct) {
         const chgEl = document.getElementById('rc-ggp-aim');
@@ -2222,7 +1766,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
     } catch(e) {
       console.warn('AIM chart error:', e);
-      if (loader) loader.innerHTML = `<div style="color:#f85149;font-size:12px;text-align:center;">Chart error · <a href="https://finance.yahoo.com/quote/GGP.L" target="_blank" style="color:#58a6ff;">Yahoo Finance ↗</a> · <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-price" target="_blank" style="color:#58a6ff;">ADVFN ↗</a></div>`;
+      if (loader) loader.innerHTML = `<div style="color:#f85149;font-size:12px;text-align:center;">Chart error · <a href="https://stooq.com/q/?s=ggp.uk" target="_blank" style="color:#58a6ff;">Stooq ↗</a> · <a href="https://uk.advfn.com/stock-market/london/greatland-resources-GGP/share-price" target="_blank" style="color:#58a6ff;">ADVFN ↗</a></div>`;
     }
   }
 
@@ -2237,20 +1781,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     const loader = document.getElementById('asx-chart-loader');
     if (loader) loader.style.display = 'flex';
     try {
-      // GGP.AX — native ASX data via Yahoo Finance
+      // GGP.AU not on Stooq — use a 6mo GGP.UK price scaled by live AUD/GBP FX as proxy
+      // OR use marketindex.com.au - but simplest: show AIM chart in AUD using FX
+      // Actually let's try Stooq with different symbol formats
       let candles, quote;
       try {
-        [candles, quote] = await Promise.all([
-          yhHistory('GGP.AX', range),
-          yhQuote('GGP.AX'),
-        ]);
+        [candles, quote] = await Promise.all([stooqHistory('ggp.au', days), stooqQuote('ggp.au')]);
         if (!candles.length) throw new Error('empty');
       } catch {
-        // Fallback: convert AIM data to AUD using FX
+        // Fallback: convert AIM data to AUD using current FX
         const fxRes = await fetch('https://api.frankfurter.app/latest?from=GBP&to=AUD');
         const fx = await fxRes.json();
         const gbpAud = fx.rates.AUD;
-        const aimCandles = await yhHistory('GGP.L', range);
+        const aimCandles = await stooqHistory('ggp.uk', days);
         candles = aimCandles.map(c => ({
           time: c.time,
           open:  +(c.open  / 100 * gbpAud).toFixed(3),
@@ -2258,7 +1801,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
           low:   +(c.low   / 100 * gbpAud).toFixed(3),
           close: +(c.close / 100 * gbpAud).toFixed(3),
         }));
-        const aimQ = await yhQuote('GGP.L');
+        const aimQ = await stooqQuote('ggp.uk');
         ASX_PRICE_AUD = +(aimQ.close / 100 * gbpAud).toFixed(2);
         quote = { close: ASX_PRICE_AUD, pct: aimQ.pct };
       }
@@ -2279,9 +1822,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
   // ── GGP ribbon bar (AIM + ASX prices only) ────────────────────────────────
   async function fetchRibbon() {
-    // GGP AIM (London) — Yahoo Finance via proxy
+    // GGP AIM
     try {
-      const q = await yhQuote('GGP.L');
+      const q = await stooqQuote('ggp.uk');
       if (q.close > 0) {
         AIM_PRICE_P = q.close;
         const priceEl = document.getElementById('rp-ggp-aim');
@@ -2292,16 +1835,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
           chgEl.textContent = (q.pct >= 0 ? '+' : '') + q.pct.toFixed(2) + '%';
           chgEl.className = q.pct >= 0 ? 'rib-up' : 'rib-dn';
         }
-        if (tsEl) tsEl.textContent = `Yahoo Finance · ${q.date} ${q.time} · ~15min delay`;
+        if (tsEl) tsEl.textContent = `Stooq · ${q.date} ${q.time} · ~15min delay`;
+        // Update price panel too
         const pEl = document.getElementById('aim-live-price');
         if (pEl) { pEl.textContent = q.close.toFixed(1) + 'p'; pEl.style.color = q.pct >= 0 ? '#3fb950' : '#f85149'; }
       }
     } catch(e) { console.warn('GGP AIM ribbon:', e); }
 
-    // GGP ASX — Yahoo Finance GGP.AX direct
+    // GGP ASX (via FX conversion if direct unavailable)
     try {
-      const q = await yhQuote('GGP.AX');
-      let asxPrice = q.close > 0 ? q.close : null;
+      let asxPrice = null;
+      try {
+        const q = await stooqQuote('ggp.au');
+        if (q.close > 0) asxPrice = q.close;
+      } catch(e) {}
       if (!asxPrice && AIM_PRICE_P > 0) {
         const fxRes = await fetch('https://api.frankfurter.app/latest?from=GBP&to=AUD');
         const fx = await fxRes.json();
