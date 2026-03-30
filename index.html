@@ -6,18 +6,49 @@
 <title>⛏️ Greatland Resources (GGP) — Private Investor Portal</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; min-height: 100vh; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #09040f; color: #e6edf3; min-height: 100vh; position: relative; overflow-x: hidden; }
 
-.header { background: linear-gradient(135deg, #0d2b0d, #1a3a1a); border-bottom: 2px solid #238636; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+/* ── ANIMATED SHIMMER BACKGROUND ─────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -2;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(124,58,237,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(109,40,217,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(192,132,252,0.07) 0%, transparent 70%),
+    #09040f;
+  animation: bgShift 18s ease-in-out infinite alternate;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 40% 30% at 70% 30%, rgba(168,85,247,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 25% at 30% 70%, rgba(139,92,246,0.08) 0%, transparent 60%);
+  animation: bgShift2 22s ease-in-out infinite alternate;
+}
+@keyframes bgShift {
+  0%   { opacity: 0.7; transform: scale(1) translateX(0) translateY(0); }
+  33%  { opacity: 1;   transform: scale(1.05) translateX(2%) translateY(-1%); }
+  66%  { opacity: 0.8; transform: scale(0.97) translateX(-2%) translateY(2%); }
+  100% { opacity: 1;   transform: scale(1.03) translateX(1%) translateY(-2%); }
+}
+@keyframes bgShift2 {
+  0%   { opacity: 0.5; transform: scale(1) translateX(0) translateY(0); }
+  50%  { opacity: 0.9; transform: scale(1.08) translateX(-3%) translateY(2%); }
+  100% { opacity: 0.6; transform: scale(0.95) translateX(3%) translateY(-1%); }
+}
+
+.header { background: linear-gradient(135deg, rgba(91,33,182,0.85), rgba(109,40,217,0.75)); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 2px solid rgba(167,139,250,0.5); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; position: relative; z-index: 10; box-shadow: 0 4px 32px rgba(124,58,237,0.25); }
 .header-left { display: flex; align-items: center; gap: 14px; }
 .logo { font-size: 36px; }
-.header h1 { font-size: 22px; font-weight: 800; color: #3fb950; }
+.header h1 { font-size: 22px; font-weight: 800; color: #E8821C; text-shadow: 0 0 20px rgba(232,130,28,0.4); }
 .header p { font-size: 12px; color: #8b949e; margin-top: 3px; }
 .header-right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .btn { padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; text-decoration: none; display: inline-block; }
-.btn-green { background: #238636; color: white; }
+.btn-green { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; box-shadow: 0 2px 12px rgba(124,58,237,0.4); }
 .btn-ghost { background: transparent; color: #8b949e; border: 1px solid #30363d; }
-.live-badge { background: #0d2b0d; border: 1px solid #238636; color: #3fb950; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.live-badge { background: rgba(124,58,237,0.2); border: 1px solid rgba(167,139,250,0.5); color: #c4b5fd; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
 .status-dot { width: 7px; height: 7px; background: #3fb950; border-radius: 50%; display: inline-block; margin-right: 5px; box-shadow: 0 0 5px #3fb950; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
@@ -31,16 +62,16 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .col-8 { grid-column: span 8; }
 .col-12 { grid-column: span 12; }
 
-.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; }
-.card.highlight { border-color: #238636; }
-.card-header { padding: 13px 18px; border-bottom: 1px solid #30363d; display: flex; align-items: center; justify-content: space-between; }
+.card { background: rgba(22,27,34,0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(139,92,246,0.18); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.35); }
+.card.highlight { border-color: rgba(167,139,250,0.4); }
+.card-header { padding: 13px 18px; border-bottom: 1px solid rgba(139,92,246,0.2); display: flex; align-items: center; justify-content: space-between; }
 .card-header h2 { font-size: 13px; font-weight: 700; color: #f0f6fc; display: flex; align-items: center; gap: 7px; }
 .card-body { padding: 18px; }
 .card-link { font-size: 11px; color: #58a6ff; text-decoration: none; }
 .card-link:hover { text-decoration: underline; }
 
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stat { background: #0d1117; border-radius: 8px; padding: 12px 14px; border: 1px solid #21262d; }
+.stat { background: rgba(9,4,15,0.6); backdrop-filter: blur(8px); border-radius: 8px; padding: 12px 14px; border: 1px solid rgba(139,92,246,0.15); }
 .stat .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: #8b949e; }
 .stat .val { font-size: 22px; font-weight: 800; margin-top: 4px; }
 .stat .chg { font-size: 11px; margin-top: 3px; }
@@ -51,7 +82,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .purple { color: #bc8cff; }
 .muted { color: #8b949e; }
 
-.big-stat { background: #0d1117; border-radius: 10px; padding: 20px; text-align: center; border: 1px solid #238636; }
+.big-stat { background: rgba(9,4,15,0.6); backdrop-filter: blur(8px); border-radius: 10px; padding: 20px; text-align: center; border: 1px solid rgba(167,139,250,0.3); }
 .big-stat .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; }
 .big-stat .val { font-size: 36px; font-weight: 900; color: #3fb950; margin: 8px 0 4px; }
 .big-stat .sub { font-size: 12px; color: #8b949e; }
@@ -74,7 +105,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .tag-yellow { background: #2d2a00; color: #d29922; border: 1px solid #9e6a03; }
 .tag-purple { background: #1e0a3c; color: #bc8cff; border: 1px solid #6e40c9; }
 
-.project-card { background: #0d1117; border-radius: 10px; padding: 16px; border: 1px solid #21262d; margin-bottom: 10px; }
+.project-card { background: rgba(9,4,15,0.55); backdrop-filter: blur(8px); border-radius: 10px; padding: 16px; border: 1px solid rgba(139,92,246,0.15); margin-bottom: 10px; }
 .project-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
 .project-card p { font-size: 12px; color: #8b949e; line-height: 1.6; }
 .project-card .tags { margin-top: 10px; }
@@ -82,7 +113,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .links-col a { display: flex; align-items: center; gap: 8px; padding: 9px 12px; background: #0d1117; border: 1px solid #21262d; border-radius: 8px; text-decoration: none; color: #e6edf3; font-size: 12px; margin-bottom: 7px; transition: border-color 0.2s; }
 .links-col a:hover { border-color: #3fb950; color: #3fb950; }
 
-.insight-box { background: #0d2b0d; border: 1px solid #238636; border-radius: 10px; padding: 16px 18px; font-size: 13px; line-height: 1.6; margin-top: 14px; }
+.insight-box { background: rgba(91,33,182,0.15); border: 1px solid rgba(167,139,250,0.35); border-radius: 10px; padding: 16px 18px; font-size: 13px; line-height: 1.6; margin-top: 14px; }
 .insight-box strong { color: #3fb950; }
 
 .disclaimer { text-align: center; padding: 16px 32px; color: #484f58; font-size: 11px; border-top: 1px solid #21262d; max-width: 1600px; margin: 0 auto; }
