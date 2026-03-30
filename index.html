@@ -2980,162 +2980,6 @@ body::after {
   updateClock();
   setInterval(updateClock, 1000);
 </script>
-<!-- INVESTOR FEEDBACK & COMMENTS -->
-<div style="max-width:100%;padding:0 0 0 0;">
-  <div style="background:#0d1117;border:1px solid #1d9bf0;border-radius:12px;margin:0 0 20px 0;overflow:hidden;">
-
-    <div style="background:#0c1821;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1d9bf0;">
-      <div>
-        <h2 style="font-size:18px;font-weight:800;color:#1d9bf0;margin-bottom:2px;">💬 Investor Feedback &amp; Comments</h2>
-        <p style="font-size:12px;color:#8b949e;">Leave a note, thought, or question · managed by <strong style="color:#e6edf3;">@stuartw6040</strong></p>
-      </div>
-      <a href="https://x.com/search?q=%23GGPPortal&f=live" target="_blank" style="background:#1c2938;color:#1d9bf0;border:1px solid #1d9bf0;padding:7px 14px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;">🔍 View #GGPPortal on X ↗</a>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-
-      <!-- LEFT: comment input + display -->
-      <div style="padding:20px;border-right:1px solid #21262d;">
-
-        <!-- Input form -->
-        <div style="margin-bottom:20px;">
-          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:10px;">✍️ Leave a Comment</div>
-          <input id="fc-name" type="text" placeholder="Your name or handle (optional)" maxlength="50"
-            style="width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:9px 14px;color:#e6edf3;font-size:13px;font-family:inherit;outline:none;margin-bottom:8px;" />
-          <textarea id="fc-text" placeholder="Share a thought, question, analysis, or feedback about GGP or this portal…" maxlength="500" rows="4"
-            style="width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:9px 14px;color:#e6edf3;font-size:13px;font-family:inherit;outline:none;resize:vertical;margin-bottom:8px;"></textarea>
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span id="fc-count" style="font-size:11px;color:#8b949e;">500 chars remaining</span>
-            <button onclick="submitFeedback()" style="background:#1d9bf0;color:white;border:none;border-radius:20px;padding:9px 22px;font-size:13px;font-weight:700;cursor:pointer;">Post Comment</button>
-          </div>
-        </div>
-
-        <!-- X posting prompt modal (hidden by default) -->
-        <div id="fc-xprompt" style="display:none;background:#0c1821;border:1px solid #1d9bf0;border-radius:10px;padding:16px;margin-bottom:16px;">
-          <div style="font-size:13px;font-weight:700;color:#e6edf3;margin-bottom:8px;">🐦 Also share on X?</div>
-          <div style="font-size:12px;color:#8b949e;margin-bottom:12px;">Tag <strong style="color:#1d9bf0;">@stuartw6040</strong> with <strong style="color:#1d9bf0;">#GGPPortal</strong> so the community sees it too.</div>
-          <div style="display:flex;gap:8px;">
-            <button id="fc-xyes" onclick="postToX()" style="flex:1;background:#1d9bf0;color:white;border:none;border-radius:20px;padding:9px;font-size:13px;font-weight:700;cursor:pointer;">Yes, post to 𝕏</button>
-            <button onclick="dismissXPrompt()" style="flex:1;background:#161b22;color:#8b949e;border:1px solid #30363d;border-radius:20px;padding:9px;font-size:13px;font-weight:700;cursor:pointer;">No thanks</button>
-          </div>
-        </div>
-
-        <!-- Saved comments display -->
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:10px;">📋 Comments on this Portal</div>
-        <div id="fc-comments" style="max-height:320px;overflow-y:auto;">
-          <div style="font-size:12px;color:#484f58;text-align:center;padding:20px 0;" id="fc-empty">No comments yet — be the first!</div>
-        </div>
-        <div style="margin-top:8px;text-align:right;">
-          <button onclick="clearComments()" style="background:transparent;color:#484f58;border:none;font-size:11px;cursor:pointer;text-decoration:underline;">Clear all comments</button>
-        </div>
-      </div>
-
-      <!-- RIGHT: pinned notes + quick tags -->
-      <div style="padding:20px;">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:12px;">📌 Quick Tag Posts to X</div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;">
-          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20BUY%20-%20" target="_blank" style="display:block;text-align:center;background:#0d2b0d;border:1px solid #238636;color:#3fb950;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">📈 Log Buy</a>
-          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20WATCH%20-%20" target="_blank" style="display:block;text-align:center;background:#2d2a00;border:1px solid #9e6a03;color:#d29922;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">👀 Flag Watch</a>
-          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20CATALYST%20-%20" target="_blank" style="display:block;text-align:center;background:#1a0808;border:1px solid #6e1010;color:#f85149;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">⚡ Catalyst</a>
-          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20TA%20-%20" target="_blank" style="display:block;text-align:center;background:#1a0e00;border:1px solid #7d3c00;color:#E8821C;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">📊 TA Note</a>
-        </div>
-
-        <div style="background:#161b22;border-radius:10px;padding:14px;margin-bottom:14px;">
-          <div style="font-size:11px;font-weight:700;color:#1d9bf0;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;">📌 How it works</div>
-          <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
-            · Type a comment below and hit <strong>Post Comment</strong><br>
-            · It appears on this page immediately<br>
-            · You'll be asked if you want to also share it on <strong style="color:#1d9bf0;">𝕏</strong> tagged <strong>#GGPPortal @stuartw6040</strong><br>
-            · X posts let the wider GGP community see your note<br>
-            · Comments are stored in your browser locally
-          </div>
-        </div>
-
-        <div style="background:#0d2b0d;border:1px solid #238636;border-radius:10px;padding:14px;">
-          <div style="font-size:11px;font-weight:700;color:#3fb950;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;">💡 Netlify tip</div>
-          <div style="font-size:12px;color:#c9d1d9;line-height:1.8;">
-            Host this portal on <strong>Netlify</strong> to share it with the community — then comments from others will be visible to everyone via the #GGPPortal X feed.
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<script>
-  // ── Feedback / Comment system ──────────────────────────────
-  const FC_KEY = 'ggpPortalComments';
-  let pendingComment = '';
-
-  const fcText = document.getElementById('fc-text');
-  const fcCount = document.getElementById('fc-count');
-  fcText.addEventListener('input', () => { fcCount.textContent = (500 - fcText.value.length) + ' chars remaining'; });
-
-  function loadComments() {
-    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
-    const container = document.getElementById('fc-comments');
-    const empty = document.getElementById('fc-empty');
-    if (stored.length === 0) { empty.style.display = 'block'; return; }
-    empty.style.display = 'none';
-    container.innerHTML = '';
-    [...stored].reverse().forEach(c => {
-      const div = document.createElement('div');
-      div.style.cssText = 'background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px;margin-bottom:8px;';
-      div.innerHTML = `
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-          <span style="font-weight:700;font-size:13px;color:#e6edf3;">${c.name || '👤 Anonymous'}</span>
-          <span style="font-size:10px;color:#484f58;">${c.time}</span>
-        </div>
-        <div style="font-size:13px;color:#c9d1d9;line-height:1.7;">${c.text}</div>
-        ${c.postedToX ? '<div style="font-size:10px;color:#1d9bf0;margin-top:6px;">✓ Also posted to 𝕏 #GGPPortal</div>' : ''}
-      `;
-      container.appendChild(div);
-    });
-  }
-
-  function submitFeedback() {
-    const name = document.getElementById('fc-name').value.trim();
-    const text = fcText.value.trim();
-    if (!text) return;
-    pendingComment = text;
-    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
-    stored.push({ name: name || '', text, time: new Date().toLocaleString('en-GB', {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}), postedToX: false });
-    localStorage.setItem(FC_KEY, JSON.stringify(stored));
-    fcText.value = ''; fcCount.textContent = '500 chars remaining';
-    loadComments();
-    document.getElementById('fc-xprompt').style.display = 'block';
-    document.getElementById('fc-xprompt').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  function postToX() {
-    const name = document.getElementById('fc-name').value.trim() || '';
-    const tag = name ? `(${name}) ` : '';
-    const tweet = encodeURIComponent(`#GGPPortal #GGP ${tag}${pendingComment} @stuartw6040`);
-    window.open('https://twitter.com/intent/tweet?text=' + tweet, '_blank');
-    // Mark latest comment as posted to X
-    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
-    if (stored.length) { stored[stored.length - 1].postedToX = true; localStorage.setItem(FC_KEY, JSON.stringify(stored)); }
-    dismissXPrompt();
-    loadComments();
-  }
-
-  function dismissXPrompt() {
-    document.getElementById('fc-xprompt').style.display = 'none';
-    pendingComment = '';
-  }
-
-  function clearComments() {
-    if (confirm('Clear all comments from this portal?')) {
-      localStorage.removeItem(FC_KEY);
-      loadComments();
-    }
-  }
-
-  loadComments();
-</script>
-
 <!-- GOLD MACRO SECTION -->
 <div style="background:linear-gradient(135deg,#080d08 0%,#0a1a0a 100%);border-top:2px solid #3fb950;border-bottom:2px solid #21262d;padding:32px;margin-top:24px;">
   <div style="max-width:1400px;margin:0 auto;">
@@ -3465,6 +3309,163 @@ body::after {
     <span>Last updated: <span id="footer-updated"></span></span>
   </div>
 </div>
+
+<!-- INVESTOR FEEDBACK & COMMENTS -->
+<div style="max-width:100%;padding:0 0 0 0;">
+  <div style="background:#0d1117;border:1px solid #1d9bf0;border-radius:12px;margin:0 0 20px 0;overflow:hidden;">
+
+    <div style="background:#0c1821;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1d9bf0;">
+      <div>
+        <h2 style="font-size:18px;font-weight:800;color:#1d9bf0;margin-bottom:2px;">💬 Investor Feedback &amp; Comments</h2>
+        <p style="font-size:12px;color:#8b949e;">Leave a note, thought, or question · managed by <strong style="color:#e6edf3;">@stuartw6040</strong></p>
+      </div>
+      <a href="https://x.com/search?q=%23GGPPortal&f=live" target="_blank" style="background:#1c2938;color:#1d9bf0;border:1px solid #1d9bf0;padding:7px 14px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;">🔍 View #GGPPortal on X ↗</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+
+      <!-- LEFT: comment input + display -->
+      <div style="padding:20px;border-right:1px solid #21262d;">
+
+        <!-- Input form -->
+        <div style="margin-bottom:20px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:10px;">✍️ Leave a Comment</div>
+          <input id="fc-name" type="text" placeholder="Your name or handle (optional)" maxlength="50"
+            style="width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:9px 14px;color:#e6edf3;font-size:13px;font-family:inherit;outline:none;margin-bottom:8px;" />
+          <textarea id="fc-text" placeholder="Share a thought, question, analysis, or feedback about GGP or this portal…" maxlength="500" rows="4"
+            style="width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:9px 14px;color:#e6edf3;font-size:13px;font-family:inherit;outline:none;resize:vertical;margin-bottom:8px;"></textarea>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span id="fc-count" style="font-size:11px;color:#8b949e;">500 chars remaining</span>
+            <button onclick="submitFeedback()" style="background:#1d9bf0;color:white;border:none;border-radius:20px;padding:9px 22px;font-size:13px;font-weight:700;cursor:pointer;">Post Comment</button>
+          </div>
+        </div>
+
+        <!-- X posting prompt modal (hidden by default) -->
+        <div id="fc-xprompt" style="display:none;background:#0c1821;border:1px solid #1d9bf0;border-radius:10px;padding:16px;margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:700;color:#e6edf3;margin-bottom:8px;">🐦 Also share on X?</div>
+          <div style="font-size:12px;color:#8b949e;margin-bottom:12px;">Tag <strong style="color:#1d9bf0;">@stuartw6040</strong> with <strong style="color:#1d9bf0;">#GGPPortal</strong> so the community sees it too.</div>
+          <div style="display:flex;gap:8px;">
+            <button id="fc-xyes" onclick="postToX()" style="flex:1;background:#1d9bf0;color:white;border:none;border-radius:20px;padding:9px;font-size:13px;font-weight:700;cursor:pointer;">Yes, post to 𝕏</button>
+            <button onclick="dismissXPrompt()" style="flex:1;background:#161b22;color:#8b949e;border:1px solid #30363d;border-radius:20px;padding:9px;font-size:13px;font-weight:700;cursor:pointer;">No thanks</button>
+          </div>
+        </div>
+
+        <!-- Saved comments display -->
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:10px;">📋 Comments on this Portal</div>
+        <div id="fc-comments" style="max-height:320px;overflow-y:auto;">
+          <div style="font-size:12px;color:#484f58;text-align:center;padding:20px 0;" id="fc-empty">No comments yet — be the first!</div>
+        </div>
+        <div style="margin-top:8px;text-align:right;">
+          <button onclick="clearComments()" style="background:transparent;color:#484f58;border:none;font-size:11px;cursor:pointer;text-decoration:underline;">Clear all comments</button>
+        </div>
+      </div>
+
+      <!-- RIGHT: pinned notes + quick tags -->
+      <div style="padding:20px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8b949e;margin-bottom:12px;">📌 Quick Tag Posts to X</div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;">
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20BUY%20-%20" target="_blank" style="display:block;text-align:center;background:#0d2b0d;border:1px solid #238636;color:#3fb950;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">📈 Log Buy</a>
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20WATCH%20-%20" target="_blank" style="display:block;text-align:center;background:#2d2a00;border:1px solid #9e6a03;color:#d29922;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">👀 Flag Watch</a>
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20CATALYST%20-%20" target="_blank" style="display:block;text-align:center;background:#1a0808;border:1px solid #6e1010;color:#f85149;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">⚡ Catalyst</a>
+          <a href="https://twitter.com/intent/tweet?text=%23GGPPortal%20%23GGP%20TA%20-%20" target="_blank" style="display:block;text-align:center;background:#1a0e00;border:1px solid #7d3c00;color:#E8821C;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">📊 TA Note</a>
+        </div>
+
+        <div style="background:#161b22;border-radius:10px;padding:14px;margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;color:#1d9bf0;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;">📌 How it works</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
+            · Type a comment below and hit <strong>Post Comment</strong><br>
+            · It appears on this page immediately<br>
+            · You'll be asked if you want to also share it on <strong style="color:#1d9bf0;">𝕏</strong> tagged <strong>#GGPPortal @stuartw6040</strong><br>
+            · X posts let the wider GGP community see your note<br>
+            · Comments are stored in your browser locally
+          </div>
+        </div>
+
+        <div style="background:#0d2b0d;border:1px solid #238636;border-radius:10px;padding:14px;">
+          <div style="font-size:11px;font-weight:700;color:#3fb950;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;">💡 Netlify tip</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.8;">
+            Host this portal on <strong>Netlify</strong> to share it with the community — then comments from others will be visible to everyone via the #GGPPortal X feed.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Feedback / Comment system ──────────────────────────────
+  const FC_KEY = 'ggpPortalComments';
+  let pendingComment = '';
+
+  const fcText = document.getElementById('fc-text');
+  const fcCount = document.getElementById('fc-count');
+  fcText.addEventListener('input', () => { fcCount.textContent = (500 - fcText.value.length) + ' chars remaining'; });
+
+  function loadComments() {
+    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
+    const container = document.getElementById('fc-comments');
+    const empty = document.getElementById('fc-empty');
+    if (stored.length === 0) { empty.style.display = 'block'; return; }
+    empty.style.display = 'none';
+    container.innerHTML = '';
+    [...stored].reverse().forEach(c => {
+      const div = document.createElement('div');
+      div.style.cssText = 'background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px;margin-bottom:8px;';
+      div.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span style="font-weight:700;font-size:13px;color:#e6edf3;">${c.name || '👤 Anonymous'}</span>
+          <span style="font-size:10px;color:#484f58;">${c.time}</span>
+        </div>
+        <div style="font-size:13px;color:#c9d1d9;line-height:1.7;">${c.text}</div>
+        ${c.postedToX ? '<div style="font-size:10px;color:#1d9bf0;margin-top:6px;">✓ Also posted to 𝕏 #GGPPortal</div>' : ''}
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function submitFeedback() {
+    const name = document.getElementById('fc-name').value.trim();
+    const text = fcText.value.trim();
+    if (!text) return;
+    pendingComment = text;
+    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
+    stored.push({ name: name || '', text, time: new Date().toLocaleString('en-GB', {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}), postedToX: false });
+    localStorage.setItem(FC_KEY, JSON.stringify(stored));
+    fcText.value = ''; fcCount.textContent = '500 chars remaining';
+    loadComments();
+    document.getElementById('fc-xprompt').style.display = 'block';
+    document.getElementById('fc-xprompt').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function postToX() {
+    const name = document.getElementById('fc-name').value.trim() || '';
+    const tag = name ? `(${name}) ` : '';
+    const tweet = encodeURIComponent(`#GGPPortal #GGP ${tag}${pendingComment} @stuartw6040`);
+    window.open('https://twitter.com/intent/tweet?text=' + tweet, '_blank');
+    // Mark latest comment as posted to X
+    const stored = JSON.parse(localStorage.getItem(FC_KEY) || '[]');
+    if (stored.length) { stored[stored.length - 1].postedToX = true; localStorage.setItem(FC_KEY, JSON.stringify(stored)); }
+    dismissXPrompt();
+    loadComments();
+  }
+
+  function dismissXPrompt() {
+    document.getElementById('fc-xprompt').style.display = 'none';
+    pendingComment = '';
+  }
+
+  function clearComments() {
+    if (confirm('Clear all comments from this portal?')) {
+      localStorage.removeItem(FC_KEY);
+      loadComments();
+    }
+  }
+
+  loadComments();
+</script>
+
 
 <script>
   document.getElementById('footer-updated').textContent = new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
