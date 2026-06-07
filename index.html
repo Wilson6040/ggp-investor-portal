@@ -972,7 +972,7 @@ body::after {
 
         <!-- PE TABLE — UPDATED POST-MRE 30 MAR 2026 -->
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#E8821C;margin-bottom:6px;">P/E Multiple Scenarios — Updated Post-MRE · ASX (A$) &amp; AIM (p)</div>
-        <div style="font-size:10px;color:#8b949e;margin-bottom:10px;">Basis: 671M shares · AUD/USD 0.63 · AUD/GBP 0.485 · Gold AUD A$7,208/oz spot · 300koz/yr Telfer · AISC ~A$1,750/oz · 150koz put options @ A$4,500 floor (through Jun 2027) — full upside retained · 25% tax · ⚠️ Not financial advice</div>
+        <div style="font-size:10px;color:#8b949e;margin-bottom:10px;">Basis: 671M shares · AUD/USD 0.63 · AUD/GBP 0.485 · Gold AUD <span id="model-gold-aud" style="color:#3fb950;font-weight:700;">A$7,208/oz</span> <span style="color:#8b949e;">(live — 60s)</span> · 300koz/yr Telfer · AISC ~A$1,750/oz · 150koz put options @ A$4,500 floor (through Jun 2027) — full upside retained · 25% tax · ⚠️ Not financial advice</div>
         <div style="overflow-x:auto;">
           <table style="width:100%;border-collapse:collapse;font-size:12px;">
             <thead>
@@ -1031,7 +1031,7 @@ body::after {
         <div style="margin-top:14px;padding:6px 10px;background:#0d1a0a;border:1px solid #3fb950;border-radius:6px;font-size:10px;color:#8b949e;margin-bottom:10px;">
           ⚡ <strong style="color:#3fb950;">MRE UPDATE 30 MAR 2026:</strong> Mine life 8yr → 16.5yr (8.0Moz, 62% reserve conversion, 300koz/yr). DCF extended accordingly. Gold AUD A$7,208/oz vs A$4,500 put floor — put options expire Jun 2027. Full spot exposure from then. Earnings at current spot ~63% above A$4,500 floor.
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
           <div style="background:#0d2b0d;border:1px solid #238636;border-radius:8px;padding:12px;text-align:center;">
             <div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:4px;">DCF Base (10%, conservative)</div>
             <div style="font-size:22px;font-weight:900;color:#3fb950;">A$27.90</div>
@@ -1059,6 +1059,22 @@ body::after {
             <div style="font-size:12px;color:#E8821C;">1,310–1,649p</div>
             <div style="font-size:10px;color:#8b949e;margin-top:3px;">12-month · post-MRE revised ↑</div>
             <div style="font-size:9px;color:#3fb950;margin-top:4px;">+37–71% from A$12.91</div>
+          </div>
+        </div>
+
+          <div style="background:#0c1a1f;border:1px solid #58a6ff;border-radius:8px;padding:12px;text-align:center;">
+            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:4px;">90% PoG Scenario</div>
+            <div style="font-size:22px;font-weight:900;color:#58a6ff;" id="dcf-90pog-aud">A$38.2</div>
+            <div style="font-size:12px;color:#58a6ff;" id="dcf-90pog-p">~1,852p</div>
+            <div style="font-size:10px;color:#8b949e;margin-top:3px;" id="dcf-90pog-basis">8% DCF · 90% spot (~A$6,487)</div>
+            <div style="font-size:10px;color:#d29922;margin-top:2px;" id="dcf-90pog-upside">+196% upside</div>
+          </div>
+          <div style="background:#1a0e00;border:1px solid #d29922;border-radius:8px;padding:12px;text-align:center;">
+            <div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:4px;">110% PoG Scenario</div>
+            <div style="font-size:22px;font-weight:900;color:#d29922;" id="dcf-110pog-aud">A$49.8</div>
+            <div style="font-size:12px;color:#d29922;" id="dcf-110pog-p">~2,415p</div>
+            <div style="font-size:10px;color:#8b949e;margin-top:3px;" id="dcf-110pog-basis">8% DCF · 110% spot (~A$7,929)</div>
+            <div style="font-size:10px;color:#3fb950;margin-top:2px;" id="dcf-110pog-upside">+286% upside</div>
           </div>
         </div>
 
@@ -1262,7 +1278,7 @@ body::after {
             </div>
 
             <div style="background:#1a0808;border:1px solid #f85149;border-radius:8px;padding:10px;font-size:11px;color:#c9d1d9;">
-              <strong style="color:#3fb950;">✅ MVGDX Inclusion Criteria (satisfied):</strong> MCap ≥ $150M ✅ · ADTV ≥ $1M ✅ · ≥250k shares/month ✅ · ≥50% revenue gold/silver ✅ · Max 20% cap ✅. <strong>GGP included effective 20 Mar 2026.</strong> Quarterly review. Next GDX rebalance: announced 12 Jun, effective 19 Jun 2026 — first post-MRE weighting review. Index next review date confirmed at MarketVector.<br><br>
+              <strong style="color:#3fb950;">✅ MVGDX Inclusion Criteria (satisfied):</strong> MCap ≥ $150M ✅ · ADTV ≥ $1M ✅ · ≥250k shares/month ✅ · ≥50% revenue gold/silver ✅ · Max 20% cap ✅. <strong>GGP included effective 20 Mar 2026.</strong> Quarterly review. <strong style="color:#f85149;">⚠️ ANNOUNCEMENT THIS FRIDAY 12 JUN 2026 · Effective 19 Jun 2026 — first post-MRE weighting review.</strong> <span style="color:#8b949e;font-size:10px;">Index data: as of Fri 6 Jun 2026</span> Index next review date confirmed at MarketVector.<br><br>
               <a href="https://www.vaneck.com/us/en/investments/gold-miners-etf-gdx" target="_blank" style="color:#58a6ff;">GDX official ↗</a> · <a href="https://stockanalysis.com/etf/gdx/holdings/" target="_blank" style="color:#58a6ff;">GDX Holdings ↗</a> · <a href="https://www.marketvector.com/indexes/hard-asset/marketvector-global-gold-miners" target="_blank" style="color:#58a6ff;">MVGDX Index ↗</a>
             </div>
           </div>
@@ -2955,8 +2971,52 @@ body::after {
     }
   }
 
+  // ── Live Gold Spot ───────────────────────────────────────────────────────
+  let GOLD_AUD_LIVE = 7208;
+
+  async function fetchGoldSpot() {
+    try {
+      const [goldRes, fxRes] = await Promise.allSettled([
+        yhQuote('GC=F'),
+        fetch('https://api.frankfurter.app/latest?from=USD&to=AUD').then(r=>r.json())
+      ]);
+      const goldUSD = goldRes.status==='fulfilled' ? goldRes.value?.close : null;
+      const usdAUD  = fxRes.status==='fulfilled'  ? fxRes.value?.rates?.AUD : null;
+      if (goldUSD && usdAUD) {
+        GOLD_AUD_LIVE = Math.round(goldUSD * usdAUD);
+        updateWilsonModel(GOLD_AUD_LIVE);
+      }
+    } catch(e) { console.warn('Gold spot fetch failed:', e); }
+  }
+
+  function updateWilsonModel(goldAUD) {
+    const aisc = 1750, audGBP = 0.485;
+    const currentPrice = ASX_PRICE_AUD || 12.91;
+    const goldEl = document.getElementById('model-gold-aud');
+    if (goldEl) goldEl.textContent = 'A$' + goldAUD.toLocaleString() + '/oz';
+    const baseNet = 7208 - aisc;
+    function dcf8(pog) { return Math.round((44.0 * (pog - aisc) / baseNet) * 10) / 10; }
+    function toP(aud) { return Math.round(aud * audGBP * 100); }
+    function upside(aud) { const p=Math.round(((aud/currentPrice)-1)*100); return (p>0?'+':'')+p+'% vs A$'+currentPrice.toFixed(2); }
+    const pog90=Math.round(goldAUD*0.9), pog110=Math.round(goldAUD*1.1);
+    const d90=dcf8(pog90), d110=dcf8(pog110);
+    const s=document.getElementById; // shorthand won't work, use direct
+    ['dcf-90pog-aud','dcf-90pog-p','dcf-90pog-basis','dcf-90pog-upside',
+     'dcf-110pog-aud','dcf-110pog-p','dcf-110pog-basis','dcf-110pog-upside'].forEach(id => {
+      const el = document.getElementById(id); if(!el) return;
+      if (id==='dcf-90pog-aud')    el.textContent = 'A$'+d90.toFixed(1);
+      if (id==='dcf-90pog-p')      el.textContent = '~'+toP(d90)+'p';
+      if (id==='dcf-90pog-basis')  el.textContent = '8% DCF · 90% spot (~A$'+pog90.toLocaleString()+')';
+      if (id==='dcf-90pog-upside') el.textContent = upside(d90);
+      if (id==='dcf-110pog-aud')   el.textContent = 'A$'+d110.toFixed(1);
+      if (id==='dcf-110pog-p')     el.textContent = '~'+toP(d110)+'p';
+      if (id==='dcf-110pog-basis') el.textContent = '8% DCF · 110% spot (~A$'+pog110.toLocaleString()+')';
+      if (id==='dcf-110pog-upside') el.textContent = upside(d110);
+    });
+  }
+
   async function refreshAll() {
-    await Promise.all([fetchRibbon(), fetchFX()]);
+    await Promise.all([fetchRibbon(), fetchFX(), fetchGoldSpot()]);
   }
   // Load chart immediately, then start ribbon
   // Init all charts + ribbon
@@ -2965,7 +3025,8 @@ body::after {
   fetchRibbon();
   loadIndicators();
   fetchFX();
-  setInterval(() => { fetchRibbon(); fetchFX(); }, 60000);
+  fetchGoldSpot();
+  setInterval(() => { fetchRibbon(); fetchFX(); fetchGoldSpot(); }, 60000);
 
   // Short position chart
   const ctx = document.getElementById('shortsChart');
